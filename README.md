@@ -4,4 +4,4 @@ Features 1 page site about Tice Kralt, a driven full-stack web developer with 2 
 
 ## Framework
 
-The site is made using ReactJS and is live at (https://ticekralt.com)[https://ticekralt.com].
+The site is made using ReactJS and is live at [https://ticekralt.com](https://ticekralt.com).
