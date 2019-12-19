@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import {
-  MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBNavbarToggler, MDBCollapse
+  MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavbarToggler, MDBCollapse
   } from "mdbreact";
 
 class Header extends Component {
@@ -34,7 +34,23 @@ class Header extends Component {
             <MDBNavbarNav>
 
               <MDBNavItem>
-                <MDBNavLink to="#!">Home</MDBNavLink>
+                <a href="#home">Home</a>
+              </MDBNavItem>
+
+              <MDBNavItem>
+                <a href="#projects">Projects</a>
+              </MDBNavItem>
+
+              <MDBNavItem>
+                <a href="#about">About</a>
+              </MDBNavItem>
+
+              <MDBNavItem>
+                <a href="#testimonials">Testimonials</a>
+              </MDBNavItem>
+
+              <MDBNavItem>
+                <a href="#contact">Contact</a>
               </MDBNavItem>
 
             </MDBNavbarNav>

@@ -1,0 +1,75 @@
+.carousel-container {
+  height: 350px;
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.arrow-left, .arrow-right {
+  z-index: 2;
+  background: var(--theme-color-light);
+  transition: background 300ms ease-in;
+  width: 30px;
+  height: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+}
+
+.arrow-left:hover, .arrow-right:hover {
+  background: var(--theme-color-hover);
+}
+
+.arrow-left {
+  left: 0;
+  top: 0;
+}
+
+.arrow-right {
+  right: 0;
+  top: 0;
+}
+
+.carousel {
+  height: inherit;
+  display: flex;
+  flex-wrap: nowrap;
+  position: absolute;
+  left: 32px;
+  transition: left 400ms cubic-bezier(.78,-0.57,.37,1.74);
+  overflow: hidden;
+  padding: 5px;
+}
+
+.project-card {
+  width: calc(50vw - 54px);
+  margin-right: 20px;
+}
+
+.project-card h4 {
+  font-size: 1.3em;
+}
+
+.project-card img {
+  max-height: 150px;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 720px) {
+  .carousel-container {
+    height: 400px;
+  }
+  .project-card {
+    width: calc(33.3333vw - 43px);
+  }
+}
+
+@media screen and (min-width: 1130px) {
+  .project-card {
+    width: calc(25vw - 40px);
+  }
+  .arrow-left, .arrow-right {
+    width: 70px;
+  }
+
+}

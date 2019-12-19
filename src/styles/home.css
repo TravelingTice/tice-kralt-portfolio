@@ -1,0 +1,28 @@
+#home {
+  height: 370px;
+  background-image: url('../images/big-tice-background-1920.jpg');
+  background-size: 700px 467px;
+  background-position: 70%;
+  background-repeat: no-repeat;
+}
+
+@media screen and (min-width: 609px) {
+  #home {
+    height: 400px;
+    background-size: 900px 600px;
+  }
+}
+
+@media screen and (min-width: 860px) {
+  #home {
+    background-size: 1200px 800px;
+  }
+}
+
+@media screen and (min-width: 1150px) {
+  #home {
+    height: 470px;
+    background-size: 1920px 1280px;
+    background-position: 70% 40%;
+  }
+}
