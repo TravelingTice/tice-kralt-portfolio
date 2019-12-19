@@ -1,0 +1,22 @@
+#testimonials {
+  background: var(--theme-color-dark);
+  color: white;
+}
+
+.testimonial {
+  max-width: 600px;
+  margin: 25px auto;
+  text-align: center;
+}
+
+.testimonial-text {
+  display: flex;
+}
+
+.quote {
+  font-size: 3.5em;
+  font-family: 'Roboto Slab', serif;
+  margin: 0 10px;
+  position: relative;
+  bottom: 27px;
+}

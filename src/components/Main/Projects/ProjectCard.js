@@ -12,7 +12,7 @@ const ProjectCard = props => (
       <MDBCardText>
         {props.children}
       </MDBCardText>
-      <MDBBtn href="#">View</MDBBtn>
+      <MDBBtn color="light-green" href="#">View</MDBBtn>
     </MDBCardBody>
   </MDBCard>
 );
