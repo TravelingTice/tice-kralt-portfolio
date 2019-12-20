@@ -3,8 +3,9 @@ import { MDBBtn, MDBIcon, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBC
 
 const ProjectCard = props => (
   <MDBCard className="project-card">
-
-    <MDBCardImage className="img-fluid" src={props.image} waves />
+    
+    <MDBCardImage 
+    className="img-fluid" src={props.image}/>
 
     <MDBCardBody>
       <MDBCardTitle>{props.title}</MDBCardTitle>
@@ -12,7 +13,7 @@ const ProjectCard = props => (
       <MDBCardText>
         {props.children}
       </MDBCardText>
-      <MDBBtn color="light-green" href="#">
+      <MDBBtn color="light-green" href={props.link} target="_blank">
         View 
         <MDBIcon
         fas="true" icon="angle-right"
