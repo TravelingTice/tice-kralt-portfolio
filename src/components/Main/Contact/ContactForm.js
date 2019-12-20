@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { MDBIcon, MDBBtn, MDBInput } from 'mdbreact';
+import { MDBInput } from 'mdbreact';
 
 class ContactForm extends Component {
   state = {
@@ -22,33 +22,33 @@ class ContactForm extends Component {
   render() {
     const { email, message } = this.state;
     return (
-      <div className="contact-form">
+      <form action="https://formspree.io/xeqeewye" method="POST" className="contact-form">
 
       <MDBInput
-        onChange={this.updateEmail}
-        value={email}
+        // onChange={this.updateEmail}
+        // value={email}
         icon="envelope"
         label="Your email"
         type="text"
         iconClass="grey-text"
+        name="email"
         id="form-email"/>
 
       <MDBInput
-        onChange={this.updateMessage}
-        value={message}
+        // onChange={this.updateMessage}
+        // value={message}
         icon="pencil-alt"
         label="Message"
         iconClass="grey-text"
         type="textarea"
+        name="message"
         id="form-text"/>
 
       <div className="text-center">
-        <MDBBtn 
-        color="light-green"
-        onClick={this.send}>Submit</MDBBtn>
+        <input type="submit" className="btn btn-light-green" value="Send"/>
       </div>
 
-      </div>
+      </form>
     )
   }
 }

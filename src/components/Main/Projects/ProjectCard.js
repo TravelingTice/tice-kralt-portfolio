@@ -1,5 +1,5 @@
 import React from 'react';
-import { MDBBtn, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText } from 'mdbreact';
+import { MDBBtn, MDBIcon, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText } from 'mdbreact';
 
 const ProjectCard = props => (
   <MDBCard className="project-card">
@@ -12,7 +12,12 @@ const ProjectCard = props => (
       <MDBCardText>
         {props.children}
       </MDBCardText>
-      <MDBBtn color="light-green" href="#">View</MDBBtn>
+      <MDBBtn color="light-green" href="#">
+        View 
+        <MDBIcon 
+        fas icon="angle-right"
+        className="arrow"/>
+      </MDBBtn>
     </MDBCardBody>
   </MDBCard>
 );

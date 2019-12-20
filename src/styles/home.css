@@ -1,4 +1,5 @@
 #home {
+  position: relative;
   height: 370px;
   background-image: url('../images/big-tice-background-1920.jpg');
   background-size: 700px 467px;
@@ -6,16 +7,59 @@
   background-repeat: no-repeat;
 }
 
+.home-title {
+  position: absolute;
+  bottom: 106px;
+  left: 15px;
+}
+
+.home-title div {
+  margin: 0;
+}
+
+.home-title h1 {
+  margin: 0;
+  font-size: 2.3em;
+  background: rgba(255,255,255,0.4);
+  display: inline-block;
+}
+
+.home-title h2 {
+  font-size: 1.5em;
+  background: rgba(255,255,255,0.4);
+  display: inline-block;
+}
+
 @media screen and (min-width: 609px) {
   #home {
     height: 400px;
     background-size: 900px 600px;
+  }
+  .home-title {
+    bottom: 126px;
+    left: 60px;
+  }
+  .home-title h1 {
+    font-size: 2.9em;
+  }
+  .home-title h2 {
+    font-size: 1.8em;
   }
 }
 
 @media screen and (min-width: 860px) {
   #home {
     background-size: 1200px 800px;
+  }
+  .home-title {
+    bottom: 110px;
+    left: 110px;
+  }
+  .home-title h1 {
+    font-size: 3.2em;
+  }
+  .home-title h2 {
+    font-size: 2.1em;
   }
 }
 
@@ -24,5 +68,21 @@
     height: 470px;
     background-size: 1920px 1280px;
     background-position: 70% 40%;
+  }
+  .home-title {
+    bottom: 35px;
+    left: 15%;
+  }
+  .home-title h1 {
+    font-size: 3.4em;
+  }
+  .home-title h2 {
+    font-size: 2.2em;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .home-title {
+    left: 21%;
   }
 }
