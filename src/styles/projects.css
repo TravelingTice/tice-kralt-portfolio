@@ -66,11 +66,13 @@
   bottom: 7px;
   right: 10px;
   transition: all 200ms ease-in;
+  white-space: nowrap;
 }
 
 .project-card a.btn .arrow {
   opacity: 0;
   transition: all 150ms ease-in;
+  padding-left: 0;
 }
 
 .project-card a.btn:hover .arrow {

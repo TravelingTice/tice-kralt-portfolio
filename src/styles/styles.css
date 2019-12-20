@@ -51,11 +51,12 @@ h3 {
 }
 
 .title {
-  padding: 20px 100px;
+  padding: 20px 0;
 }
 
 @media screen and (min-width: 560px) {
   .title-container {
     text-align: left;
+    padding: 20px 100px;
   }
 }

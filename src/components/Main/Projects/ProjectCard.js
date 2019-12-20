@@ -14,7 +14,7 @@ const ProjectCard = props => (
       </MDBCardText>
       <MDBBtn color="light-green" href="#">
         View 
-        <MDBIcon 
+        <MDBIcon
         fas="true" icon="angle-right"
         className="arrow"/>
       </MDBBtn>

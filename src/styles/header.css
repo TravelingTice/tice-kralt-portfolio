@@ -16,8 +16,11 @@
   color: var(--text-color);
 }
 
-.nav-item a {
+.nav-item {
   text-align: right;
+}
+
+.nav-item a {
   color: var(--text-color);
 }
 
