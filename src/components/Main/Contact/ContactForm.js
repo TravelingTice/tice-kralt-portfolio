@@ -20,7 +20,6 @@ class ContactForm extends Component {
   }
 
   render() {
-    const { email, message } = this.state;
     return (
       <form action="https://formspree.io/xeqeewye" method="POST" className="contact-form">
 

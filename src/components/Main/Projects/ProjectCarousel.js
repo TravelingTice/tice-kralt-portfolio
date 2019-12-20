@@ -62,7 +62,6 @@ class ProjectCarousel extends Component {
   }
 
   render() {
-    const { bigScreen } = this.state;
     return (
       <div className="carousel-container">
 
