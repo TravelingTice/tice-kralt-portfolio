@@ -1,66 +1,77 @@
 import React, { Component } from 'react';
 
-import {
-  MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavbarToggler, MDBCollapse
-  } from "mdbreact";
-
 class Header extends Component {
   state = {
     isOpen: false
   }
-
+  
   toggleCollapse = () => {
     this.setState({ isOpen: !this.state.isOpen });
   }
-
+  
   render() {
     return (
       <header>
-
-        <MDBNavbar expand="md">
-
+      
+      <nav className="navbar navbar-expand-md">
+        <a href="/" className="navbar-brand">
           {/* logo */}
-          <MDBNavbarBrand>
-            <a href="/">
-              <img src="android-chrome-256x256.png" alt="Tice Kralt Logo" width="53px" height="53px"/>
-            </a>
-          </MDBNavbarBrand>
+          <img src="android-chrome-256x256.png" alt="Tice Kralt Logo" width="53" height="53"/>
+        </a>
+      
+        <button onClick={this.toggleCollapse} class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-          <MDBNavbarToggler onClick={this.toggleCollapse}>
-            <i className="fas fa-bars"></i>
-          </MDBNavbarToggler>
+        <div class="collapse navbar-collapse">
 
-          <MDBCollapse id="navbarCollapse" isOpen={this.state.isOpen} navbar>
-            <MDBNavbarNav>
+          <ul class="navbar-nav mr-auto">
 
-              <MDBNavItem>
-                <a href="#home">Home</a>
-              </MDBNavItem>
+            <li class="nav-item active">
+              <a href="#home">Home</a>
+            </li>
 
-              <MDBNavItem>
-                <a href="#projects">Projects</a>
-              </MDBNavItem>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
 
-              <MDBNavItem>
-                <a href="#about">About</a>
-              </MDBNavItem>
+          </ul>
 
-              <MDBNavItem>
-                <a href="#testimonials">Testimonials</a>
-              </MDBNavItem>
+        </div>
 
-              <MDBNavItem>
-                <a href="#contact">Contact</a>
-              </MDBNavItem>
-
-            </MDBNavbarNav>
-          </MDBCollapse>
-
-        </MDBNavbar>
-
+      </nav>
+{/*       
+      <MDBCollapse id="navbarCollapse" isOpen={this.state.isOpen} navbar>
+      <MDBNavbarNav>
+      
+      <MDBNavItem>
+      <a href="#home">Home</a>
+      </MDBNavItem>
+      
+      <MDBNavItem>
+      <a href="#projects">Projects</a>
+      </MDBNavItem>
+      
+      <MDBNavItem>
+      <a href="#about">About</a>
+      </MDBNavItem>
+      
+      <MDBNavItem>
+      <a href="#testimonials">Testimonials</a>
+      </MDBNavItem>
+      
+      <MDBNavItem>
+      <a href="#contact">Contact</a>
+      </MDBNavItem>
+      
+      </MDBNavbarNav>
+      </MDBCollapse>
+      
+      </MDBNavbar> */}
+      
       </header>
-    )
+      )
+    }
   }
-}
-
-export default Header;
+  
+  export default Header;
