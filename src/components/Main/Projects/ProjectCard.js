@@ -1,26 +1,18 @@
 import React from 'react';
-import { MDBBtn, MDBIcon, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText } from 'mdbreact';
 
 const ProjectCard = props => (
-  <MDBCard className="project-card">
-    
-    <MDBCardImage 
-    className="img-fluid" src={props.image}/>
+  <div className="card project-card">
+    <img src={props.image} alt="" className="card-img-top"/>
+    <div className="card-body">
+      <div className="card-title">{props.title}</div>
 
-    <MDBCardBody>
-      <MDBCardTitle>{props.title}</MDBCardTitle>
+      <div className="card-text">{props.children}</div>
 
-      <MDBCardText>
-        {props.children}
-      </MDBCardText>
-      <MDBBtn color="light-green" href={props.link} target="_blank">
-        View 
-        <MDBIcon
-        fas="true" icon="angle-right"
-        className="arrow"/>
-      </MDBBtn>
-    </MDBCardBody>
-  </MDBCard>
+      <a href={props.link} target="_blank" className="btn btn-success">
+        View<i className="fas fa-angle-right angle-right"></i>
+      </a>
+    </div>
+  </div>
 );
 
 export default ProjectCard;

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { MDBInput } from 'mdbreact';
+import ContactInput from './ContactInput';
 
 class ContactForm extends Component {
   state = {
@@ -23,17 +23,16 @@ class ContactForm extends Component {
     return (
       <form action="https://formspree.io/xeqeewye" method="POST" className="contact-form">
 
-      <MDBInput
+      <ContactInput
         // onChange={this.updateEmail}
         // value={email}
         icon="envelope"
         label="Your email"
-        type="text"
         iconClass="grey-text"
         name="email"
         id="form-email"/>
 
-      <MDBInput
+      <ContactInput
         // onChange={this.updateMessage}
         // value={message}
         icon="pencil-alt"
