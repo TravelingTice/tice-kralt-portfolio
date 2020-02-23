@@ -1,0 +1,39 @@
+@import 'config/colors';
+@import 'components/index';
+
+body {
+  background-color: $light;
+  color: $gray;
+}
+/* title font  */
+
+h1,h2,h3,h4 {
+  font-family: 'Roboto Slab', serif;
+}
+
+h3 {
+  font-size: 1.3em;
+}
+
+.grey-text {
+  color: $gray;
+}
+
+.green-text {
+  color: $green;
+}
+
+.title-container {
+  text-align: center;
+}
+
+.title {
+  padding: 20px 0;
+}
+
+@media screen and (min-width: 560px) {
+  .title-container {
+    text-align: left;
+    padding: 20px 100px;
+  }
+}

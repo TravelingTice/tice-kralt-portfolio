@@ -1,0 +1,12 @@
+@import 'https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Slab&display=swap';
+
+$headerFont: 'Roboto Slab', sans-serif;
+$bodyFont: 'Open Sans', sans-serif;
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $headerFont;
+}
+
+body {
+  font-family: $bodyFont;
+}

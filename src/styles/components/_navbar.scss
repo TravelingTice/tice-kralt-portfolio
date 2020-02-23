@@ -4,7 +4,7 @@
 }
 
 .navbar {
-  background-color: var(--theme-color-light);
+  background-color: $light;
 }
 
 .navbar .navbar-toggler {
@@ -13,7 +13,7 @@
 }
 
 .navbar-toggler-icon {
-  color: var(--text-color);
+  color: $gray;
 }
 
 .nav-item {
@@ -21,7 +21,7 @@
 }
 
 .nav-item a {
-  color: var(--text-color);
+  color: $gray;
 }
 
 .nav-item a:hover {
