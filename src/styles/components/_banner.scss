@@ -1,0 +1,25 @@
+$bannerHeight: 500px;
+
+.banner-container {
+  height: $bannerHeight;
+}
+
+.banner {
+  background-image: url('../../utils/images/big-tice-background-1920.jpg');
+  background-size: cover;
+  background-position: 50% 50%;
+  filter: saturate(1.15);
+  height: 100%;
+  padding-left: 14%;
+  display: grid;
+  align-content: center;
+  .banner-title {
+    margin-top: calc(#{$bannerHeight} / 4);
+  }
+  h1, h2 {
+    margin: 0;
+    padding: 4px;
+    background-color: rgba(255,255,255,.3);
+    display: inline-block;
+  }
+}
