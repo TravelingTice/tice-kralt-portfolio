@@ -2,14 +2,13 @@ import React from 'react';
 
 import ProjectCarousel from './ProjectCarousel';
 
-const Projects = props => (
+const Projects = () => (
   <section id="projects">
     
-    <div className="title-container">
-      <h2 className="title">My <span className="grey-text">P</span>rojects</h2>
-    </div>
+    <h2>My projects</h2>
 
     <ProjectCarousel/>
+
   </section>
 );
 
