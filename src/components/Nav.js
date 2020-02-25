@@ -12,14 +12,16 @@ class Nav extends Component {
   
   render() {
     return (
-      <nav>
-        <a href="/">
-          {/* logo */}
-          <img id="logo" src="ticekralt-logo.png" alt="Tice Kralt Logo" width="53" height="53"/>
-        </a>
-      
-        <button className="hamburger-icon" onClick={this.toggleCollapse}><FontAwesomeIcon icon="bars"/></button>
-      </nav>
+      <>
+        <nav>
+          <a href="/">
+            {/* logo */}
+            <img id="logo" src="ticekralt-logo.png" alt="Tice Kralt Logo" width="53" height="53"/>
+          </a>
+        
+          <button className="hamburger-icon" onClick={this.toggleCollapse}><FontAwesomeIcon icon="bars"/></button>
+        </nav>
+      </>
       );
     }
   }
