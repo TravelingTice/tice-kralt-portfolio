@@ -15,8 +15,8 @@ library.add(fab, faBars);
 const App = () => (
   <>
     <Header/>
-    <Banner/>
-    <Projects/>
+    {/* <Banner/> */}
+    {/* <Projects/> */}
   </>
 );
   
