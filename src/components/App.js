@@ -9,13 +9,15 @@ import Header from './Header/Header';
 import Banner from './Banner/Banner';
 import Projects from './Projects/Projects';
 
+// define height of the header
+const height = 80;
 // add icons to the library
 library.add(fab, faBars);
 
 const App = () => (
   <>
-    <Header/>
-    {/* <Banner/> */}
+    <Header height={height}/>
+    <Banner height={height}/>
     {/* <Projects/> */}
   </>
 );

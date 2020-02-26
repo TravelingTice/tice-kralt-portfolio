@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const StyledSideMenu = styled.div`
+const StyledSideNav = styled.nav`
   position: absolute;
   top: 0;
   height: 100px;
@@ -10,10 +10,10 @@ const StyledSideMenu = styled.div`
   right: ${props => props.isOpen ? 0 : '-20px'};
 `;
 
-const SideMenu = props => (
-  <StyledSideMenu isOpen={props.isOpen}>
+const SideNav = props => (
+  <StyledSideNav isOpen={props.isOpen}>
     <p>Hoi</p>
-  </StyledSideMenu>
+  </StyledSideNav>
 );
 
-export default SideMenu;
+export default SideNav;
