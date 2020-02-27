@@ -17,8 +17,8 @@ library.add(fab, faBars);
 const App = () => (
   <>
     <Header height={height}/>
-    <Banner height={height}/>
-    {/* <Projects/> */}
+    <Banner navHeight={height}/>
+    <Projects/>
   </>
 );
   

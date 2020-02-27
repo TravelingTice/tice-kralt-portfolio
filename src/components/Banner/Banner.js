@@ -1,34 +1,42 @@
 import React from 'react';
 import styled from 'styled-components';
+import BannerBg from './BannerBg';
+
+// height of the banner
+const bannerHeight = 500
 
 const Section = styled.section`
+  height: ${bannerHeight}px;
+  position: relative;
+`;
+
+const PositionedDiv = styled.div`
   position: absolute;
-  width: 100%;
-  height: 500px;
-  margin: 0;
-  background-image: url('big-tice-background-1920.jpg');
-  background-position: 50% 50%;
-  background-size: cover;
-  z-index: -2;
-  top: 0;
+  bottom: 150px;
+  left: 10%;
+  h1, h2 {
+    display: inline-block;
+    padding: 3px 10px;
+    background-color: rgba(255,255,255,.4);
+  }
 `;
 
-const BannerContainer = styled.div`
-  display: flex;
-  height: 300px;
-`;
-
-const Banner = () => (
-  <Section className="banner-container">
-    <BannerContainer>
-      <div className="banner-title">
-        <h1>Tice Kralt</h1>
-      </div>
-      <div className="banner-subtitle">
-        <h2>Full-Stack Web Developer</h2>
-      </div>
-    </BannerContainer>
-  </Section>
+const Banner = (props) => {
+  return (
+    <>
+      <Section height={props.navHeight}>
+        <PositionedDiv>
+          <div>
+            <h1>Tice Kralt</h1>
+          </div>
+          <div>
+            <h2>Full-stack web developer</h2>
+          </div>
+        </PositionedDiv>
+      </Section>
+      <BannerBg navHeight={props.navHeight} height={bannerHeight}/>
+    </>
 );
+}
 
 export default Banner;
