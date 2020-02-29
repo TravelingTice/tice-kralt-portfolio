@@ -1,12 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import BannerBg from './BannerBg';
+import { DimensionsContext } from '../../contexts/DimensionsContext';
 
 // height of the banner
-const bannerHeight = 500
-
 const Section = styled.section`
-  height: ${bannerHeight}px;
+  height: ${props => props.height}px;
   position: relative;
 `;
 
@@ -21,22 +20,25 @@ const PositionedDiv = styled.div`
   }
 `;
 
-const Banner = (props) => {
+const Banner = () => {
   return (
-    <>
-      <Section height={props.navHeight}>
-        <PositionedDiv>
-          <div>
-            <h1>Tice Kralt</h1>
-          </div>
-          <div>
-            <h2>Full-stack web developer</h2>
-          </div>
-        </PositionedDiv>
-      </Section>
-      <BannerBg navHeight={props.navHeight} height={bannerHeight}/>
-    </>
-);
+    <DimensionsContext.Consumer>{context => (
+      <>
+        <Section height={context.bannerHeight}>
+          <PositionedDiv>
+            <div>
+              <h1>Tice Kralt</h1>
+            </div>
+            <div>
+              <h2>Full-stack web developer</h2>
+            </div>
+          </PositionedDiv>
+        </Section>
+        <BannerBg navHeight={context.navHeight} height={context.bannerHeight}/>
+      </>
+    )}
+    </DimensionsContext.Consumer>
+  );
 }
 
 export default Banner;

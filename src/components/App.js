@@ -8,18 +8,17 @@ import {
 import Header from './Header/Header';
 import Banner from './Banner/Banner';
 import Projects from './Projects/Projects';
+import DimensionsContextProvider from '../contexts/DimensionsContext';
 
-// define height of the header
-const height = 80;
 // add icons to the library
 library.add(fab, faBars);
 
 const App = () => (
-  <>
-    <Header height={height}/>
-    <Banner navHeight={height}/>
-    <Projects/>
-  </>
+  <DimensionsContextProvider>
+    <Header />
+    <Banner />
+    <Projects />
+  </DimensionsContextProvider>
 );
   
 export default App;
