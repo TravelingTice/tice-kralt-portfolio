@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const PositionedDiv = styled.div`
   position: absolute;
   z-index: -1;
-  top: -73px;
+  top: -53px;
   width: 100%;
   height: ${props => props.height}px;
 `;
