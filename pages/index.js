@@ -1,6 +1,6 @@
 const Index = () => {
   return (
-    <p>Hello world</p>
+    <p>Hi</p>
   )
 }
 
