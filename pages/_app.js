@@ -1,22 +1,28 @@
-// import App from 'next/app'
-
+import NextApp from 'next/app'
+// import bootstrap styles
+import 'bootstrap/dist/css/bootstrap.min.css';
 // import global styles
-import '../styles/global.scss';
+import '../styles/index.scss';
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+// import theme for ThemeProvider
+import theme from '../theme';
+import { ThemeProvider } from 'styled-components';
+
+export default class App extends NextApp {
+  // remove it here
+  componentDidMount() {
+    const jssStyles = document.querySelector('#jss-server-side')
+    if (jssStyles && jssStyles.parentNode) {
+      jssStyles.parentNode.removeChild(jssStyles)
+    }
+  }
+  
+  render() {
+    const { Component, pageProps } = this.props
+    return (
+      <ThemeProvider theme={theme}>
+        <Component {...pageProps} />
+      </ThemeProvider>
+    );
+  }
 }
-
-// Only uncomment this method if you have blocking data requirements for
-// every single page in your application. This disables the ability to
-// perform automatic static optimization, causing every page in your app to
-// be server-side rendered.
-//
-// MyApp.getInitialProps = async (appContext) => {
-//   // calls page's `getInitialProps` and fills `appProps.pageProps`
-//   const appProps = await App.getInitialProps(appContext);
-//
-//   return { ...appProps }
-// }
-
-export default MyApp
