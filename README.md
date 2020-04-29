@@ -1,7 +1,15 @@
-# Ticekralt Portfolio site
+# Tice Kralt Portfolio
 
-Features 1 page site about Tice Kralt, a driven full-stack web developer with 2 years experience as a freelancer in the field. Completed multiple projects with React.js and Node.js, and Google Maps API. Working with MongoDB and the MERN framework.
+## About
 
-## Framework
+Driven full-stack web developer with 3 years experience as a freelancer in the field. Have worked with many international clients on various projects and was always able to meet their expectations. 
 
-The site is made using ReactJS and is live at [https://ticekralt.com](https://ticekralt.com).
+My strength lies in strong communication with my client during the workflow. I always make sure me and my client are on the same page about the project, to make sure that the end project is of the best quality and service.
+
+Prefer working with ReactJs and Rails API but my skills also include NodeJS, NextJS, Express, PostgreSQL and Ruby on Rails.
+
+## Website specs
+
+Made using NextJS
+Deployed on Zeit Now via this repo
+Live at: [ticekralt.com](https://ticekralt.com)
