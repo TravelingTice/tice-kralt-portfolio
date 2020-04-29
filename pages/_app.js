@@ -7,6 +7,7 @@ import '../styles/index.scss';
 // import theme for ThemeProvider
 import theme from '../theme';
 import { ThemeProvider } from 'styled-components';
+import DimensionsContextProvider from '../contexts/DimensionsContext';
 
 export default class App extends NextApp {
   // remove it here
@@ -20,9 +21,11 @@ export default class App extends NextApp {
   render() {
     const { Component, pageProps } = this.props
     return (
-      <ThemeProvider theme={theme}>
-        <Component {...pageProps} />
-      </ThemeProvider>
+      <DimensionsContextProvider>
+        <ThemeProvider theme={theme}>
+          <Component {...pageProps} />
+        </ThemeProvider>
+      </DimensionsContextProvider>
     );
   }
 }
