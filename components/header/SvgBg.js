@@ -5,13 +5,17 @@ const AbsoluteDiv = styled.div`
   width: 100%;
   top: 0;
   z-index: -1;
+  height: ${props => props.height}px;
+  img {
+    height: ${props => props.height}px;
+    width: 100%;
+  }
 `;
 
 const SvgBg = ({ height }) => {
-  
   return (
-    <AbsoluteDiv>
-      <img src="/shapes/headerbg.svg" alt="header bg"/>
+    <AbsoluteDiv height={height}>
+      <img src="/shapes/headerbg.svg" alt=""/>
     </AbsoluteDiv>
   );
 }

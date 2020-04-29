@@ -10,9 +10,7 @@ const PositionedDiv = styled.div`
 
 const ProjectsSvgBg = (props) => (
   <PositionedDiv height={props.height}>
-    <svg height={props.height} width="100%" viewBox="0 0 100 100" preserveAspectRatio="none">
-      <path  fill="#fcfcfc" d="M0 10 L35 0 L100 10 V100 H0 z" />
-    </svg>
+    <img src="/shapes/banner-project.svg" alt=""/>
   </PositionedDiv>
 );
 

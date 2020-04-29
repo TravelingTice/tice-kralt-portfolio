@@ -16,7 +16,7 @@ const BannerBg = ({ height, navHeight }) => (
         }
       ]}
       style={{
-        height: height,
+        height: height + 23,
         position: 'absolute',
         top: navHeight * 0.4,
         zIndex: -2 
