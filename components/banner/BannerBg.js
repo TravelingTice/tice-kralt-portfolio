@@ -5,7 +5,7 @@ const BannerBg = (props) => (
   <ParallaxBanner
       layers={[
         {
-          image: '/big-tice-background-1920.jpg',
+          image: '/images/big-tice-background.jpg',
           amount: 0.2,
           expanded: true,
           props: { 

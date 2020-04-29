@@ -9,6 +9,8 @@ import theme from '../theme';
 import { ThemeProvider } from 'styled-components';
 import DimensionsContextProvider from '../contexts/DimensionsContext';
 
+import { ParallaxProvider } from 'react-scroll-parallax';
+
 export default class App extends NextApp {
   // remove it here
   componentDidMount() {
@@ -23,7 +25,9 @@ export default class App extends NextApp {
     return (
       <DimensionsContextProvider>
         <ThemeProvider theme={theme}>
-          <Component {...pageProps} />
+          <ParallaxProvider>
+            <Component {...pageProps} />
+          </ParallaxProvider>
         </ThemeProvider>
       </DimensionsContextProvider>
     );

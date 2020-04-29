@@ -26,7 +26,7 @@ const Banner = () => {
 
   return (
     <>
-      <Section height={context.bannerHeight}>
+      <Section height={bannerHeight}>
         <PositionedDiv>
           <div>
             <h1>Tice Kralt</h1>
