@@ -12,7 +12,7 @@ const StyledHeader = styled.header`
   justify-content: space-between;
   align-items: center;
   height: ${props => `${props.height}px`};
-  padding: 0 20px;
+  padding: 0 20px 10px;
 `;
 
 const HamburgerButton = () => (

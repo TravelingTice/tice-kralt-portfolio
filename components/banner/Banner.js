@@ -11,12 +11,13 @@ const Section = styled.section`
 
 const PositionedDiv = styled.div`
   position: absolute;
-  bottom: 150px;
-  left: 10%;
+  bottom: 79px;
+  left: 18px;
   h1, h2 {
     display: inline-block;
     padding: 3px 10px;
     background-color: rgba(255,255,255,.4);
+    font-size: 1.5em;
   }
 `;
 
