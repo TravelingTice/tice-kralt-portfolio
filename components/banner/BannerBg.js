@@ -1,24 +1,24 @@
 import React from 'react';
 import { ParallaxBanner } from 'react-scroll-parallax';
 
-const BannerBg = (props) => (
+const BannerBg = ({ height, navHeight }) => (
   <ParallaxBanner
       layers={[
         {
-          image: '/images/big-tice-background-high.jpg',
+          image: '/images/big-tice-background.jpg',
           amount: 0.4,
           expanded: true,
           props: { 
             style: {
-              backgroundPosition: '50% 0%'
+              backgroundPosition: '60% 0%'
             }
           }
         }
       ]}
       style={{
-        height: props.height,
+        height: height,
         position: 'absolute',
-        top: props.navHeight * 0.4,
+        top: navHeight * 0.4,
         zIndex: -2 
       }}>
     </ParallaxBanner>

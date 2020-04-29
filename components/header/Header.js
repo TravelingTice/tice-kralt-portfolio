@@ -4,7 +4,7 @@ import SvgBg from './SvgBg';
 import { DimensionsContext } from '../../contexts/DimensionsContext';
 import Link from 'next/link';
 import MenuRoundedIcon from '@material-ui/icons/MenuRounded';
-import { Button } from '@material-ui/core';
+import { NoButton } from '../Button';
 
 const StyledHeader = styled.header`
   /* box-shadow: 1px 1px 10px rgba(0,0,0,.3); */
@@ -16,9 +16,9 @@ const StyledHeader = styled.header`
 `;
 
 const HamburgerButton = () => (
-  <Button>
+  <NoButton>
     <MenuRoundedIcon />
-  </Button>
+  </NoButton>
 )
 
 const Header = () => {

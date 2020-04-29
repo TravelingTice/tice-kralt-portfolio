@@ -11,9 +11,7 @@ const SvgBg = ({ height }) => {
   
   return (
     <AbsoluteDiv>
-      <svg height={height} width="100%" viewBox={`0 0 100 100`} preserveAspectRatio="none">
-        <path  fill="#fcfcfc" d="M0 0 V100 l55 -40 L100 100 V0 z" />
-      </svg>
+      <img src="/shapes/headerbg.svg" alt="header bg"/>
     </AbsoluteDiv>
   );
 }
