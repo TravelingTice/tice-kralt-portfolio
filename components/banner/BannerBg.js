@@ -6,7 +6,7 @@ const BannerBg = (props) => (
       layers={[
         {
           image: '/images/big-tice-background.jpg',
-          amount: 0.2,
+          amount: 0.3,
           expanded: true,
           props: { 
             style: {
