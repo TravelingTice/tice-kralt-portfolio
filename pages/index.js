@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Header from '../components/header/Header';
 
 const Index = () => {
   const head = () => (
@@ -9,7 +10,7 @@ const Index = () => {
   return (
     <>
       {head()}
-      <p>Hi</p>
+      <Header />
     </>
   )
 }
