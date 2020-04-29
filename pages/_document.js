@@ -53,7 +53,6 @@ class MyDocument extends Document {
         <Head>
           <meta charSet="UTF-8" />
           <meta name='viewport' content='minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, viewport-fit=cover' />
-          <title>Tice Kralt Full-stack Web Developer Portfolio</title>
           {this.props.styleTags}
           {publicRuntimeConfig.PRODUCTION && (
             <>
