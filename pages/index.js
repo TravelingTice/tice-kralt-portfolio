@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Header from '../components/header/Header';
 import Banner from '../components/banner/Banner';
+import Projects from "../components/projects/Projects";
 
 const Index = () => {
   const head = () => (
@@ -13,6 +14,7 @@ const Index = () => {
       {head()}
       <Header />
       <Banner />
+      <Projects />
     </>
   )
 }

@@ -5,7 +5,7 @@ export const DimensionsContext = createContext();
 const DimensionsContextProvider = ({ children }) => {
   const [values, setValues] = useState({
     navHeight: 70,
-    bannerHeight: 350,
+    bannerHeight: 400,
     projectsHeight: 400
   });
 

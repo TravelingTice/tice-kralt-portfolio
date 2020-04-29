@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import LinkBtn from '../Buttons/LinkBtn';
+import { Button } from '@material-ui/core';
 
 const Card = styled.div`
   background-color: white;
@@ -39,9 +39,9 @@ const ProjectCard = ({ image, title, children, link }) => (
     </CardText>
     
     <div>
-      <LinkBtn href={link} color="green" target="_blank">
-        View<i className="fas fa-angle-right angle-right"></i>
-      </LinkBtn>
+      <Button href={link} color="green" target="_blank">
+        View
+      </Button>
     </div>
 
   </Card>

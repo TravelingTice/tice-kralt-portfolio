@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import styled from 'styled-components';
 import ProjectsSvgBg from './ProjectsSvgBg';
-import ProjectGrid from './ProjectGrid';
+import ProjectsGrid from './ProjectsGrid';
 import { DimensionsContext } from '../../contexts/DimensionsContext';
 
 const Section = styled.section`
@@ -24,7 +24,7 @@ const Projects = () => {
     <Section id="projects" height={projectsHeight}>
       <H2>My projects</H2>
 
-      <ProjectGrid/>
+      <ProjectsGrid/>
 
       <ProjectsSvgBg height={projectsHeight}/>
     </Section>
