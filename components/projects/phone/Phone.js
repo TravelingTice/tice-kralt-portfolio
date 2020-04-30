@@ -16,15 +16,15 @@ const ArrowDiv = styled.div`
 const Phone = () => {
   const { selectedProject, projects, isFirstProject, isLastProject, onPreviousProject, onNextProject } = useContext(ProjectsContext);
 
-  const leftArrow = () => !isFirstProject() && (
+  const leftArrow = () => (
     <ArrowDiv onClick={onPreviousProject}>
-      <ArrowBackIosRoundedIcon />
+      { !isFirstProject() && <ArrowBackIosRoundedIcon />}
     </ArrowDiv>
   )
 
-  const rightArrow = () => !isLastProject() && (
+  const rightArrow = () => (
     <ArrowDiv onClick={onNextProject}>
-      <ArrowForwardIosRoundedIcon />
+      {!isLastProject() && <ArrowForwardIosRoundedIcon />}
     </ArrowDiv>
   )
 
