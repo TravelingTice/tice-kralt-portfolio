@@ -13,6 +13,24 @@ const ProjectsContextProvider = ({ children }) => {
     if (!projects.length) fetchData();
   }, []);
 
+  useEffect(() => {
+    if (selectedProject) {
+      let timeout = setTimeout(setNextSelectedProject, 10000);
+      return () => {
+        clearTimeout(timeout);
+      }
+    }
+  }, [selectedProject]);
+
+  const setNextSelectedProject = () => {
+    const index = projects.indexOf(selectedProject);
+    if (index < projects.length - 1) {
+      setSelectedProject(projects[index + 1])
+    } else {
+      setSelectedProject(projects[0]);
+    }
+  }
+
   const fetchData = async () => {
     const res = await fetch(`${DOMAIN}/projects.json`);
     const data = await res.json();
