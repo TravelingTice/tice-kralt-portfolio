@@ -8,13 +8,15 @@ const ProjectsContextProvider = ({ children }) => {
   const [selectedProject, setSelectedProject] = useState(null);
 
   useEffect(() => {
-    fetch(`${DOMAIN}/projects.json`).then(data => {
-      if (data.error) {
-        console.log(data.error);
-      } else {
-        setProjects(data);
-      }
-    })
+    const fetchData = async () => {
+      const res = await fetch(`${DOMAIN}/projects.json`);
+      const data = await res.json();
+      if (data.error) return console.log(data.error);
+
+      setProjects(data);
+      setSelectedProject(data[0]);
+    }
+    fetchData();
   }, []);
 
   return (

@@ -16,6 +16,7 @@ const PositionedDiv = styled.div`
   h1, h2 {
     display: inline-block;
     padding: 3px 10px;
+    margin: 0;
     background-color: rgba(255,255,255,.4);
     font-size: 1.5em;
   }
