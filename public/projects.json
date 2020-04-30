@@ -7,7 +7,7 @@
   },
   {
     "title": "Product Database Quote Engine",
-    "images": [ "/PDQE/pdqe1.png", "/PDQE/pdqe2.png", "/PDQE/pdqe3.png", "/PDQE/pdqe4.png", "/PDQE/pdqe5.png", "/PDQE/pdqe6.png", "/PDQE/pdqe7.png" ],
+    "images": [ "/PDQE/pdqe1.png", "/PDQE/pdqe2.png", "/PDQE/pdqe3.png", "/PDQE/pdqe4.png" ],
     "link": "https://pdqe-nextjs.now.sh",
     "description": "An app that will allow you to <strong>quote</strong> your products to clients and send them a beautifully designed email in a couple clicks."
   },
