@@ -6,7 +6,8 @@ import '../styles/index.scss';
 
 // import theme for ThemeProvider
 import theme from '../theme';
-import { ThemeProvider } from 'styled-components';
+import { ThemeProvider } from '@material-ui/core/styles';
+
 import DimensionsContextProvider from '../contexts/DimensionsContext';
 
 import { ParallaxProvider } from 'react-scroll-parallax';
