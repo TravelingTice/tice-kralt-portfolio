@@ -6,6 +6,7 @@ import ArrowBackIosRoundedIcon from '@material-ui/icons/ArrowBackIosRounded';
 import ArrowForwardIosRoundedIcon from '@material-ui/icons/ArrowForwardIosRounded';
 import renderHTML from 'react-render-html';
 import PhoneBg from './PhoneBg';
+import { Motion, spring } from 'react-motion';
 
 const ArrowDiv = styled.div`
   display: flex;
@@ -14,6 +15,37 @@ const ArrowDiv = styled.div`
   justify-content: center;
   background-color: white;
 `;
+
+const Detail = ({ appear, project }) => {
+  // depending on what appear is
+  const states = {
+    left: {
+      leftOffset: -100,
+      opacity: 0
+    },
+    right: {
+      leftOffset: 100,
+      opacity: 0
+    },
+    center: {
+      leftOffset: 0,
+      opacity: 1
+    }
+  }
+
+  const { leftOffset, opacity } = states[appear];
+
+  return (
+    <Motion style={{leftOffset: spring(leftOffset), opacity: spring(opacity) }}>{({leftOffset, opacity}) => 
+      <div style={{position: 'absolute', left: leftOffset, opacity }}>
+        <h5>{project.title}</h5>
+        <p className="px-4">{renderHTML(project.description)}</p>
+        <Button color='primary' variant='outlined'>View</Button>
+      </div>
+    }
+    </Motion>
+  )
+}
 
 const Phone = () => {
   const { selectedProject, projects, isFirstProject, isLastProject, onPreviousProject, onNextProject, phoneWidth } = useContext(ProjectsContext);
@@ -30,38 +62,26 @@ const Phone = () => {
     </ArrowDiv>
   )
 
-  const showDetails = () => selectedProject && (
-    <div className="px-3">
-      <h4>{selectedProject.title}</h4>
-      <p>{renderHTML(selectedProject.description)}</p>
-      <Button color="primary" variant="outlined">View</Button>
-    </div>
-  )
-
-  const showImages = (project, url) => project.images.map(imgUrl => {
-    const className = imgUrl === url ? 'd-block' : 'd-none';
-
+  const showDetails = () => {
     return (
-      <img className={className} style={{width: '100%'}} src={`/images${imgUrl}`}  alt={selectedProject.title} />
+      <div style={{ position: 'relative', maxWidth: 400, width: '100%', height: 100 }}>
+        {/* map over and show details for each and every project */}
+        {selectedProject && projects.map((project, i) => {
+          const index = projects.indexOf(selectedProject);
+
+          let pos;
+          if (i === index) {
+            pos = 'center';
+          } else if (index === i + 1 || (i === projects.length - 1 && index === 0)) {
+            pos = 'left'
+          } else {
+            pos = 'right'
+          }
+          return <Detail key={project.title} appear={pos} project={project} />
+        })}
+      </div>
     )
-  })
-
-  const showPhoneBg = ({ leftOffset, opacity, url }) =>  (
-    <Motion style={{leftOffset: spring(leftOffset), opacity: spring(opacity)}}>
-      {({leftOffset, opacity }) =>
-
-        <div style={{position: 'absolute', top: 15, left: leftOffset, opacity, zIndex: -2, padding: 7, width: '100%', height: '100%'}}>
-          {selectedProject ? (
-            <>{projects.map(project => showImages(project, url))}</>
-          ) : (
-            <div className="d-flex justify-content-center align-items-center" style={{height: '80%'}}>
-              <img style={{ width: 50 }} src="/shapes/loading.svg" alt="loading"/>
-            </div>
-          )}
-        </div>
-      }
-    </Motion>
-  )
+  }
 
   return (
     <>
