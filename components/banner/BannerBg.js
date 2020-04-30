@@ -10,7 +10,7 @@ const BannerBg = ({ height, navHeight }) => (
           expanded: true,
           props: { 
             style: {
-              backgroundPosition: '60% 0%'
+              backgroundPosition: '60% 50%'
             }
           }
         }

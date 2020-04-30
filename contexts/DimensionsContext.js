@@ -1,4 +1,4 @@
-import React, { createContext, useState, useEffect } from 'react';
+import { createContext, useState, useEffect } from 'react';
 
 export const DimensionsContext = createContext();
 
@@ -10,7 +10,7 @@ const DimensionsContextProvider = ({ children }) => {
   });
 
   useEffect(() => {
-    console.log(window.innerWidth);
+    // console.log(window.innerWidth);
   }, []);
 
   return (
