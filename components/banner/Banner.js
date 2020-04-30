@@ -11,7 +11,7 @@ const Section = styled.section`
 
 const PositionedDiv = styled.div`
   position: absolute;
-  bottom: 79px;
+  bottom: 103px;
   left: 18px;
   h1, h2 {
     display: inline-block;
