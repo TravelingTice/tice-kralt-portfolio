@@ -20,19 +20,24 @@ const ProjectsContextProvider = ({ children }) => {
   }, []);
 
   const isFirstProject = () => {
-    return false
+    const index = projects.indexOf(selectedProject);
+    return index === 0;
   }
-
+  
   const isLastProject = () => {
-    return false
+    const index = projects.indexOf(selectedProject);
+    return index === projects.length - 1;
   }
 
   const onPreviousProject = () => {
-    console.log('previous');
+    if (!isFirstProject()) {
+      
+    }
   }
 
   const onNextProject = () => {
-    console.log('next');
+    const currentIndex = projects.indexOf(selectedProject);
+    console.log(currentIndex);
   }
 
   return (
