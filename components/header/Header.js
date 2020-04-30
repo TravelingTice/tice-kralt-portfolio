@@ -34,7 +34,7 @@ const Header = () => {
     <>
       <StyledHeader height={navHeight}>
         <Link href="/"><img id="logo" src="/android-icon-192x192.png" alt="Tice Kralt Logo" width="45" height="45"/></Link>
-        <HamburgerButton onClick={toggleNav}/>
+        {/* <HamburgerButton onClick={toggleNav}/> */}
       </StyledHeader>
       <SvgBg height={navHeight}/>
     </>
