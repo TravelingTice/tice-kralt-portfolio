@@ -1,6 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 85">
-	<path stroke="#fdfdfd" stroke-width="1" fill="#fdfdfd" d="m 15 1 c -10 0 -10 5 -10 10 v 60 c 0 10 4 10 10 10 h 20 c 10 0 10 -4 10 -10 v -60 c 0 -10 -6 -10 -10 -10 z M 0 0 v 90 h 50 v -90 z" />
-	<path stroke="#333" stroke-width="1" fill="#333" d="m 15 1 l 3 3 h 15 l 3 -3 z" />
-	<path stroke="#333" stroke-width="1" fill="rgba(0,0,0,0)" d="m 15 1 c -10 0 -10 5 -10 10 v 60 c 0 10 4 10 10 10 h 20 c 10 0 10 -4 10 -10 v -60 c 0 -10 -6 -10 -10 -10 z" />
-	<path stroke="#333" stroke-width="1" fill="rgba(0,0,0,0)" d="m 15 1 c -10 0 -10 5 -10 10 v 60 c 0 10 4 10 10 10 h 20 c 10 0 10 -4 10 -10 v -60 c 0 -10 -6 -10 -10 -10 z" />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 85">
+	<path stroke="#333" stroke-width="1" fill="#333" d="m 10 1 l 3 3 h 15 l 3 -3 z" />
+	<path stroke="#333" stroke-width="1" fill="rgba(0,0,0,0)" d="m 11 1 c -10 0 -10 5 -10 10 v 60 c 0 10 4 10 10 10 h 20 c 10 0 10 -4 10 -10 v -60 c 0 -10 -6 -10 -10 -10 z" />
+	<path stroke="#333" stroke-width="1" fill="rgba(0,0,0,0)" d="m 11 1 c -10 0 -10 5 -10 10 v 60 c 0 10 4 10 10 10 h 20 c 10 0 10 -4 10 -10 v -60 c 0 -10 -6 -10 -10 -10 z" />
 </svg>
