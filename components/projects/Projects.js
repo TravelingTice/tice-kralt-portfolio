@@ -20,7 +20,7 @@ const Projects = () => {
     <Section id="projects" height={projectsHeight}>
       
       <ProjectsSvgBg height={projectsHeight}/>
-      <h2 className="ml-4 mb-4">My projects</h2>
+      <h2 className="ml-4 mb-5">My projects</h2>
 
       <ProjectsContextProvider>
         <Phone />
