@@ -4,6 +4,7 @@ import { Button } from '@material-ui/core';
 import styled from 'styled-components';
 import ArrowBackIosRoundedIcon from '@material-ui/icons/ArrowBackIosRounded';
 import ArrowForwardIosRoundedIcon from '@material-ui/icons/ArrowForwardIosRounded';
+import renderHTML from 'react-render-html';
 
 const ArrowDiv = styled.div`
   display: flex;
@@ -31,7 +32,7 @@ const Phone = () => {
   const showDetails = () => selectedProject && (
     <div className="px-3">
       <h4>{selectedProject.title}</h4>
-      <p>{selectedProject.description}</p>
+      <p>{renderHTML(selectedProject.description)}</p>
       <Button color="primary" variant="outlined">View</Button>
     </div>
   )
