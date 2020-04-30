@@ -19,10 +19,30 @@ const ProjectsContextProvider = ({ children }) => {
     fetchData();
   }, []);
 
+  const isFirstProject = () => {
+    return false
+  }
+
+  const isLastProject = () => {
+    return false
+  }
+
+  const onPreviousProject = () => {
+    console.log('previous');
+  }
+
+  const onNextProject = () => {
+    console.log('next');
+  }
+
   return (
     <ProjectsContext.Provider value={{
       projects,
-      selectedProject
+      selectedProject,
+      isFirstProject,
+      isLastProject,
+      onPreviousProject,
+      onNextProject
     }}>
       {children}
     </ProjectsContext.Provider>
