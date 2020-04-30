@@ -29,18 +29,17 @@ const PhoneImage = ({ appear, url }) => {
   )
 }
 
-const PhoneBg = () => {
-  const { selectedProject } = useContext(ProjectsContext);
+const PhoneBg = ({ project, pos }) => {
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
-    if (selectedProject) {
+    if (project) {
       setTimeout(nextImage, 2000);
     }
-  }, [selectedProject, index]);
+  }, [project, index]);
 
   const nextImage = () => {
-    if (index < selectedProject.images.length - 1) {
+    if (index < project.images.length - 1) {
       setIndex(index + 1);
     } else {
       setIndex(0);
@@ -53,27 +52,50 @@ const PhoneBg = () => {
     </div>
   )
 
-  return (
-    <div style={{ position: 'absolute', overflowX: 'hidden', top: 15, left: 0, zIndex: -2, padding: 7, width: '100%', height: '100%' }}>
-      <div style={{ position: 'relative' }}>
-        {!selectedProject ? (
-          showLoading()
-        ) : selectedProject.images.map((img, i) => {
-          let pos;
-          if (i === index) {
-            pos = 'center';
-          } else if (index === i + 1 || (i === selectedProject.images.length - 1 && index === 0)) {
-            pos = 'left'
-          } else {
-            pos = 'right'
-          }
+  // depending on what appear is
+  const states = {
+    left: {
+      leftOffset: -50,
+      opacity: 0
+    },
+    right: {
+      leftOffset: 50,
+      opacity: 0
+    },
+    center: {
+      leftOffset: 0,
+      opacity: 1
+    }
+  }
 
-          return (
-            <PhoneImage key={img} appear={pos} url={img} />
-          )
-        })}
+  const { leftOffset, opacity } = states[pos]
+
+  return (
+    <Motion style={{leftOffset: spring(leftOffset), opacity: spring(opacity) }}>{({leftOffset, opacity}) => 
+
+      <div style={{ position: 'absolute', overflowX: 'hidden', top: 15, left: leftOffset, opacity, zIndex: -2, padding: 7, width: '100%', height: '100%' }}>
+        <div style={{ position: 'relative' }}>
+          {!project ? (
+            showLoading()
+          ) : project.images.map((img, i) => {
+            let pos;
+            if (i === index) {
+              pos = 'center';
+            } else if (index === i + 1 || (i === project.images.length - 1 && index === 0)) {
+              pos = 'left'
+            } else {
+              pos = 'right'
+            }
+
+            return (
+              <PhoneImage key={img} appear={pos} url={img} />
+            )
+          })}
+        </div>
       </div>
-    </div>
+      
+    }
+    </Motion>
   );
 }
 

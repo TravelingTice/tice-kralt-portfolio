@@ -92,7 +92,22 @@ const Phone = () => {
 
         <img style={{width: '100%', position: 'absolute', top: 0}} src="/shapes/iphonex.svg" alt="smartphone"/>
 
-        <PhoneBg/>
+        {projects.map((project, i) => {
+          const index = projects.indexOf(selectedProject);
+          let pos;
+
+          if (i === index) {
+            pos = 'center';
+          } else if (index === i + 1 || (i === projects.length - 1 && index === 0)) {
+            pos = 'left'
+          } else {
+            pos = 'right'
+          }
+
+          return (
+            <PhoneBg key={project.title} project={project} pos={pos} />
+          )
+        })}
 
       </div>
 
