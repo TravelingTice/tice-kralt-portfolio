@@ -30,7 +30,7 @@ const PhoneImage = ({ appear, url }) => {
 }
 
 const PhoneBg = () => {
-  const { selectedProject, phoneWidth } = useContext(ProjectsContext);
+  const { selectedProject } = useContext(ProjectsContext);
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
@@ -67,8 +67,6 @@ const PhoneBg = () => {
           } else {
             pos = 'right'
           }
-
-          console.log({ pos, img });
 
           return (
             <PhoneImage key={img} appear={pos} url={img} />

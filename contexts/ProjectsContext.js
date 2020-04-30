@@ -9,8 +9,6 @@ const ProjectsContextProvider = ({ children }) => {
 
   const phoneWidth = 250;
 
-  const everythingLoaded = projects.length > 0 && !!selectedProject;
-
   useEffect(() => {
     if (!projects.length) fetchData();
   }, []);
