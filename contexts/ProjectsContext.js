@@ -15,7 +15,7 @@ const ProjectsContextProvider = ({ children }) => {
 
   useEffect(() => {
     if (selectedProject) {
-      let timeout = setTimeout(setNextSelectedProject, 10000);
+      let timeout = setTimeout(setNextSelectedProject, 7000);
       return () => {
         clearTimeout(timeout);
       }
