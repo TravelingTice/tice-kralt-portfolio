@@ -92,7 +92,7 @@ const Testimonials = () => {
             <h2 className="mb-4">Testimonials</h2>
 
             <div className="d-flex justify-content-center">
-              <div style={{position: 'relative', height: 300, backgroundColor: 'red', maxWidth: 500, width: '100%' }}>
+              <div style={{position: 'relative', height: 300, maxWidth: 500, width: '100%' }}>
                 {showTestimonials()}
               </div>
             </div>

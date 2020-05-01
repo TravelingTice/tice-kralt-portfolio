@@ -3,8 +3,6 @@ import styled from 'styled-components';
 import SvgBg from './SvgBg';
 import { DimensionsContext } from '../../contexts/DimensionsContext';
 import Link from 'next/link';
-import MenuRoundedIcon from '@material-ui/icons/MenuRounded';
-import { NoButton } from '../Button';
 
 const StyledHeader = styled.header`
   /* box-shadow: 1px 1px 10px rgba(0,0,0,.3); */
@@ -15,20 +13,14 @@ const StyledHeader = styled.header`
   padding: 0 20px 10px;
 `;
 
-const HamburgerButton = () => (
-  <NoButton>
-    <MenuRoundedIcon />
-  </NoButton>
-)
-
 const Header = () => {
   const { values } = useContext(DimensionsContext);
   const { navHeight } = values;
   const [navOpen, setNavOpen] = useState(false);
 
-  const toggleNav = () => {
-    setNavOpen(!navOpen);
-  }
+  // const toggleNav = () => {
+  //   setNavOpen(!navOpen);
+  // }
 
   return (
     <>
