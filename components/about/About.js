@@ -13,6 +13,10 @@ const AboutSvgTop = styled.img`
   height: 70px;
   width: 100%;
   z-index: 0;
+  @media (min-width: 768px) {
+    height: 100px;
+    top: -99px;
+  }
 `;
 
 const About = () => (

@@ -8,6 +8,10 @@ const ContactSvgTop = styled.img`
   height: 70px;
   width: 100%;
   top: -69px;
+  @media (min-width: 768px) {
+    height: 100px;
+    top: -99px;
+  }
 `;
 
 const Contact = () => {
@@ -66,7 +70,7 @@ const Contact = () => {
             <h2>Contact</h2>
           </Col>
 
-          <Col xs="12" md={{size: 8, offset: 2}} lg={{size: 6, offset: 3}}>
+          <Col xs={{size: 10, offset: 1}} md={{size: 8, offset: 2}} lg={{size: 6, offset: 3}}>
             {showForm()}
           </Col>
         </Row>

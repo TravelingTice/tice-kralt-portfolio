@@ -9,6 +9,10 @@ const TestimonialSvgTop = styled.img`
   height: 60px;
   position: absolute;
   top: -59px;
+  @media (min-width: 768px) {
+    height: 100px;
+    top: -99px;
+  }
 `;
 
 const Testimonial = ({ pos, testimonial }) => {

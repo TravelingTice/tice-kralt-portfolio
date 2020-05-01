@@ -9,6 +9,10 @@ const FooterSvgTop = styled.img`
   top: -69px;
   height: 70px;
   width: 100%;
+  @media (min-width: 768px) {
+    height: 100px;
+    top: -99px;
+  }
 `;
 
 const Footer = () => {
