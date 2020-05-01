@@ -8,7 +8,7 @@ module.exports = [
   {
     title: "I Am Greener",
     images: [ "/IAG/iag1.jpg", "/IAG/iag2.jpg", "/IAG/iag3.jpg", "/IAG/iag4.jpg" ],
-    link: "https://iamgreener.life",
+    link: "http://www.iamgreener.life",
     description: "An app that will help you make greener choices in life by gamifying the process of making the greener decisions. Reduce your carbon footprint in a fun way!"
   },
   {
