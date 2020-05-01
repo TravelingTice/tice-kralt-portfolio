@@ -20,17 +20,17 @@ const About = () => (
     
     <AboutSvgTop src="/shapes/aboutme-top.svg" alt="" />
 
-    <Container fluid>
+    <Container>
       <Row>
-        <Col xs="12">
+        <Col xs="12" lg={{size: 10, offset: 1}} xl={{size: 8, offset: 2}}>
           <h2 className="mb-3">About Me</h2>
         </Col>
 
-        <Col xs="12" className="d-flex justify-content-center mt-3">
+        <Col xs="12" md="4" lg={{size: 3, offset: 1}} xl={{size: 2, offset: 2}} className="d-flex justify-content-center align-items-center mt-3">
           <Avatar src="images/avatar.jpg" alt="TravelingTice" />
         </Col>
 
-        <Col xs="12 text-center">
+        <Col xs="12" md="8" lg="7" xl="6" className="text-center text-md-right">
           <h4 className="my-3">Matthijs Kralt</h4>
           <p>Driven full-stack web developer with 3 years experience as a freelancer in the field. Have worked with many international clients on various projects and was always able to meet their expectations. </p>
 
