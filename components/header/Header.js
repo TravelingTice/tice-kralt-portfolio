@@ -1,9 +1,15 @@
 import styled from 'styled-components';
 import Link from 'next/link';
+import useViewportWidth from '../../hooks/useViewportWidth';
+import sortBy from 'sort-by';
 
 const Avatar = styled.img`
   width: 45px;
   height: 45px;
+  @media (min-width: 778px) {
+    width: 60px;
+    height: 60px;
+  }
   border-radius: 50%;
   margin-left: 20px;
   margin-bottom: 2px;
@@ -18,7 +24,11 @@ const SvgBg = styled.img`
 `;
 
 const Header = () => {
-  const navHeight = 70;
+  const { vw } = useViewportWidth();
+
+  const isBigScreen = vw > 778;
+
+  const navHeight = isBigScreen ? 100 : 70;
 
   return (
     <header style={{position: 'absolute', top: 0, height: navHeight, width: '100%'}}>
