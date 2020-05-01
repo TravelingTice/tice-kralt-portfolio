@@ -9,8 +9,8 @@ const Avatar = styled.img`
 
 const AboutSvgTop = styled.img`
   position: absolute;
-  top: -50px;
-  height: 50px;
+  top: -69px;
+  height: 70px;
   width: 100%;
   z-index: 0;
 `;
