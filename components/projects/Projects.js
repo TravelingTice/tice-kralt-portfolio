@@ -16,13 +16,13 @@ const ProjectsSvgTop = styled.img`
 
 const Projects = () => {
   return (
-    <section id="projects" style={{position: 'relative', paddingBottom: 50}}>
-      <ProjectsSvgTop src="/shapes/banner-project.svg" alt="" />
+    <section id="projects" style={{position: 'relative', paddingBottom: 80}}>
+      <ProjectsSvgTop src="/shapes/project-top.svg" alt="" />
 
       <Container>
         <Row>
           <Col xs="12">
-            <h2 className="mb-5 text-center">What I'm working on</h2>
+            <h2 className="my-5 text-center">What I'm working on</h2>
 
             <ProjectsContextProvider>
               <Phone />
