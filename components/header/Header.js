@@ -1,7 +1,5 @@
-import { useContext, useState } from 'react';
 import styled from 'styled-components';
 import SvgBg from './SvgBg';
-import { DimensionsContext } from '../../contexts/DimensionsContext';
 import Link from 'next/link';
 
 const Avatar = styled.img`
@@ -12,16 +10,25 @@ const Avatar = styled.img`
   margin-bottom: 2px;
 `;
 
+const SvgBg = styled.img`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: ${props => props.height}px;
+`;
+
 const Header = () => {
-  const { values } = useContext(DimensionsContext);
-  const { navHeight } = values;
+  const navHeight = 70;
 
   return (
     <>
-      <header style={{position: 'absolute', top: 0, height: navHeight, width: '100%'}} className="d-flex align-items-center">
-        <Link href="/"><Avatar id="logo" src="/android-icon-192x192.png" alt="Tice Kralt Logo" /></Link>
+      <header style={{position: 'absolute', top: 0, height: navHeight, width: '100%'}}>
+        <div style={{position: 'relative', width: '100%', height: '100%'}} className="d-flex align-items-center">
+          <Link href="/"><Avatar id="logo" src="/android-icon-192x192.png" alt="Tice Kralt Logo" /></Link>
 
-        <SvgBg height={navHeight} src="/shapes/headerbg.svg" alt="" />
+          <SvgBg height={navHeight} src="/shapes/headerbg.svg" alt="" />
+        </div>
       </header>
     </>
   )
