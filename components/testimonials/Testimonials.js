@@ -33,15 +33,15 @@ const Testimonial = ({ pos, testimonial }) => {
 
   const quotes = () => (
     <div className="d-flex justify-content-between" style={{position: 'relative', top: 20}}>
-      <h3 className="d-inline">“</h3>
-      <h3 className="d-inline">”</h3>
+      <h3 className="d-inline" style={{position: 'relative', right: 5}}>“</h3>
+      <h3 className="d-inline" style={{position: 'relative', left: 5}}>”</h3>
     </div>
   )
 
   const { leftOffset, opacity } = states[pos];
   return (
     <Motion style={{leftOffset: spring(leftOffset), opacity: spring(opacity)}}>{({leftOffset, opacity}) => 
-      <div style={{position: 'absolute', left: leftOffset, opacity, textAlign: 'center', width: '100%' }}>
+      <div style={{position: 'absolute', left: leftOffset, opacity, textAlign: 'center', width: '100%' }} className="px-3">
         {quotes()}
         <p>{testimonial.content}</p>
         <a href={testimonial.authorLink}><h4>- {testimonial.author}</h4></a>
@@ -92,7 +92,7 @@ const Testimonials = () => {
       <Container>
         <Row>
           <Col xs="12" sm={{size: 10, offset: 1}}>
-            <h2 className="mb-5" style={{maxWidth: 500}}>Testimonials</h2>
+            <h2 className="mb-5" style={{maxWidth: 500, margin: '0 auto'}}>Testimonials</h2>
 
             <div className="d-flex justify-content-center">
               <div style={{position: 'relative', height: 300, maxWidth: 500, width: '100%' }}>
