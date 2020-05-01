@@ -60,11 +60,13 @@ const Contact = () => {
     <section id="contact" style={{position: 'relative', backgroundColor: '#e5e5e5', paddingBottom: 90}}>
       <ContactSvgTop src="/shapes/contact-top.svg" alt="" />
 
-      <Container fluid>
+      <Container>
         <Row>
-          <Col xs="12">
+          <Col xs="12" md={{size: 10, offset: 1}}>
             <h2>Contact</h2>
+          </Col>
 
+          <Col xs="12" md={{size: 8, offset: 2}} lg={{size: 6, offset: 3}}>
             {showForm()}
           </Col>
         </Row>
