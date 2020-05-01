@@ -30,13 +30,21 @@ const PhoneImage = ({ appear, url }) => {
 }
 
 const PhoneBg = ({ project, pos }) => {
+  const { selectedProject } = useContext(ProjectsContext);
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
-    if (project) {
-      setTimeout(nextImage, 2000);
+    let nextImageTimeout;
+    if (project === selectedProject) {
+      nextImageTimeout = setTimeout(nextImage, 2000);
     }
-  }, [project, index]);
+    return () => {
+      if (project !== selectedProject) {
+        clearTimeout(nextImageTimeout);
+        setIndex(0);
+      }
+    }
+  }, [project, index, selectedProject]);
 
   const nextImage = () => {
     if (index < project.images.length - 1) {
@@ -73,8 +81,8 @@ const PhoneBg = ({ project, pos }) => {
   return (
     <Motion style={{leftOffset: spring(leftOffset), opacity: spring(opacity) }}>{({leftOffset, opacity}) => 
 
-      <div style={{ position: 'absolute', overflowX: 'hidden', top: 15, left: leftOffset, opacity, zIndex: -2, padding: 7, width: '100%', height: '100%' }}>
-        <div style={{ position: 'relative' }}>
+      <div style={{ position: 'absolute', overflowX: 'hidden', top: 15, left: leftOffset, opacity, zIndex: 2, padding: 7, width: '100%', height: '100%' }}>
+        <div style={{ position: 'relative', height: '100%' }}>
           {!project ? (
             showLoading()
           ) : project.images.map((img, i) => {

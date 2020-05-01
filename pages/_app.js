@@ -8,8 +8,6 @@ import '../styles/index.scss';
 import theme from '../theme';
 import { ThemeProvider } from '@material-ui/core/styles';
 
-import DimensionsContextProvider from '../contexts/DimensionsContext';
-
 import { ParallaxProvider } from 'react-scroll-parallax';
 
 export default class App extends NextApp {
@@ -24,13 +22,11 @@ export default class App extends NextApp {
   render() {
     const { Component, pageProps } = this.props
     return (
-      <DimensionsContextProvider>
-        <ThemeProvider theme={theme}>
-          <ParallaxProvider>
-            <Component {...pageProps} />
-          </ParallaxProvider>
-        </ThemeProvider>
-      </DimensionsContextProvider>
+      <ThemeProvider theme={theme}>
+        <ParallaxProvider>
+          <Component {...pageProps} />
+        </ParallaxProvider>
+      </ThemeProvider>
     );
   }
 }
