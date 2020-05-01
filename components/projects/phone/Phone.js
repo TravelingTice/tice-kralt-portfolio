@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import { ProjectsContext } from "../../../contexts/ProjectsContext";
 import { Button } from '@material-ui/core';
 import styled from 'styled-components';
