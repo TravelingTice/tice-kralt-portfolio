@@ -1,7 +1,28 @@
-import React, { useContext } from 'react';
 import styled from 'styled-components';
-import BannerBg from './BannerBg';
-import { DimensionsContext } from '../../contexts/DimensionsContext';
+import { ParallaxBanner } from 'react-scroll-parallax';
+
+const BannerBg = ({ height }) => (
+  <ParallaxBanner
+      layers={[
+        {
+          image: '/images/big-tice-background.jpg',
+          amount: 0.4,
+          expanded: true,
+          props: { 
+            style: {
+              backgroundPosition: '60% 50%'
+            }
+          }
+        }
+      ]}
+      style={{
+        height,
+        position: 'absolute',
+        top: 0,
+        zIndex: -2 
+      }}>
+    </ParallaxBanner>
+);
 
 const PositionedDiv = styled.div`
   position: absolute;
@@ -17,8 +38,7 @@ const PositionedDiv = styled.div`
 `;
 
 const Banner = () => {
-  const { values } = useContext(DimensionsContext);
-  const { bannerHeight, navHeight } = values;
+  const bannerHeight = 413;
 
   return (
     <>
@@ -32,7 +52,7 @@ const Banner = () => {
           </div>
         </PositionedDiv>
       </section>
-      <BannerBg navHeight={navHeight} height={bannerHeight}/>
+      <BannerBg height={bannerHeight}/>
     </>
   );
 }
