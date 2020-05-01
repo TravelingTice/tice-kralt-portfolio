@@ -64,7 +64,7 @@ const Phone = () => {
 
   const showDetails = () => {
     return (
-      <div style={{ position: 'relative', maxWidth: 400, width: '100%', height: 100 }}>
+      <div style={{ position: 'relative', maxWidth: 400, width: '100%', height: 250 }}>
         {/* map over and show details for each and every project */}
         {selectedProject && projects.map((project, i) => {
           const index = projects.indexOf(selectedProject);

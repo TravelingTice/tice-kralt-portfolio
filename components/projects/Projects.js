@@ -17,7 +17,7 @@ const Projects = () => {
   const { projectsHeight } = values;
 
   return (
-    <Section id="projects" height={projectsHeight}>
+    <Section id="projects">
       
       <ProjectsSvgBg height={projectsHeight}/>
       <h2 className="ml-4 mb-5">My projects</h2>
