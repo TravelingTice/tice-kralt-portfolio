@@ -4,31 +4,25 @@ import SvgBg from './SvgBg';
 import { DimensionsContext } from '../../contexts/DimensionsContext';
 import Link from 'next/link';
 
-const StyledHeader = styled.header`
-  /* box-shadow: 1px 1px 10px rgba(0,0,0,.3); */
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: ${props => `${props.height}px`};
-  padding: 0 20px 10px;
+const Avatar = styled.img`
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  margin-left: 20px;
+  margin-bottom: 2px;
 `;
 
 const Header = () => {
   const { values } = useContext(DimensionsContext);
   const { navHeight } = values;
-  const [navOpen, setNavOpen] = useState(false);
-
-  // const toggleNav = () => {
-  //   setNavOpen(!navOpen);
-  // }
 
   return (
     <>
-      <StyledHeader height={navHeight}>
-        <Link href="/"><img id="logo" src="/android-icon-192x192.png" alt="Tice Kralt Logo" width="45" height="45"/></Link>
-        {/* <HamburgerButton onClick={toggleNav}/> */}
-      </StyledHeader>
-      <SvgBg height={navHeight}/>
+      <header style={{position: 'absolute', top: 0, height: navHeight, width: '100%'}} className="d-flex align-items-center">
+        <Link href="/"><Avatar id="logo" src="/android-icon-192x192.png" alt="Tice Kralt Logo" /></Link>
+
+        <SvgBg height={navHeight} src="/shapes/headerbg.svg" alt="" />
+      </header>
     </>
   )
 }
