@@ -14,6 +14,7 @@ const ArrowDiv = styled.div`
   align-items: center;
   justify-content: center;
   background-color: white;
+  z-index: 4;
 `;
 
 const Detail = ({ appear, project }) => {
