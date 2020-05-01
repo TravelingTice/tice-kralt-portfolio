@@ -61,7 +61,6 @@ const Testimonials = () => {
   }, [index, testimonials]);
 
   const nextImage = () => {
-    console.log(testimonials.length);
     if (index < testimonials.length - 1) {
       setIndex(index + 1);
     } else {
