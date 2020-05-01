@@ -37,7 +37,7 @@ const Detail = ({ appear, project }) => {
 
   return (
     <Motion style={{leftOffset: spring(leftOffset), opacity: spring(opacity) }}>{({leftOffset, opacity}) => 
-      <div style={{position: 'absolute', left: leftOffset, opacity }}>
+      <div style={{position: 'absolute', left: leftOffset, opacity, height: 225 }}>
         <h5>{project.title}</h5>
         <p className="px-4">{renderHTML(project.description)}</p>
         <Button color='primary' variant='outlined'>View</Button>
