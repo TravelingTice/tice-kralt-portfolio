@@ -1,5 +1,5 @@
 import { createContext, useState, useEffect } from 'react';
-import { DOMAIN } from '../config';
+import allProjects from '../projects';
 
 export const ProjectsContext = createContext();
 
@@ -10,7 +10,10 @@ const ProjectsContextProvider = ({ children }) => {
   const phoneWidth = 250;
 
   useEffect(() => {
-    if (!projects.length) fetchData();
+    if (!projects.length) {
+      setProjects(allProjects);
+      setSelectedProject(allProjects[0]);
+    }
   }, []);
 
   useEffect(() => {
@@ -31,15 +34,15 @@ const ProjectsContextProvider = ({ children }) => {
     }
   }
 
-  const fetchData = async () => {
-    const res = await fetch(`${DOMAIN}/projects.json`);
-    const data = await res.json();
+  // const fetchData = async () => {
+  //   const res = await fetch(`${DOMAIN}/projects.json`);
+  //   const data = await res.json();
 
-    if (data.error) return console.log(data.error);
+  //   if (data.error) return console.log(data.error);
 
-    setProjects(data);
-    setSelectedProject(data[0]);
-  }
+  //   setProjects(data);
+  //   setSelectedProject(data[0]);
+  // }
 
   const isFirstProject = () => {
     const index = projects.indexOf(selectedProject);
