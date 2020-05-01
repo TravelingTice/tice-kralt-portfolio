@@ -27,7 +27,7 @@ const About = () => (
     <Container>
       <Row>
         <Col xs="12" lg={{size: 10, offset: 1}} xl={{size: 8, offset: 2}}>
-          <h2 className="mb-3">About Me</h2>
+          <h2 className="mt-4 mb-5 mb-md-3 text-center text-md-left">About Me</h2>
         </Col>
 
         <Col xs="12" md="4" lg={{size: 3, offset: 1}} xl={{size: 2, offset: 2}} className="d-flex justify-content-center align-items-center mt-3">

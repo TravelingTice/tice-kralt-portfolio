@@ -91,8 +91,8 @@ const Testimonials = () => {
       <TestimonialSvgTop src="/shapes/testimonial-top.svg" />
       <Container>
         <Row>
-          <Col xs="12" md={{size: 10, offset: 1}}>
-            <h2 className="mb-4">Testimonials</h2>
+          <Col xs="12" sm={{size: 10, offset: 1}}>
+            <h2 className="mb-5" style={{maxWidth: 500}}>Testimonials</h2>
 
             <div className="d-flex justify-content-center">
               <div style={{position: 'relative', height: 300, maxWidth: 500, width: '100%' }}>
