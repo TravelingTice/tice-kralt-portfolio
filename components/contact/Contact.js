@@ -73,7 +73,7 @@ const Contact = () => {
   const showMessage = () => message && <div className="my-5 text-muted font-italic">{renderHTML(message)}</div>
 
   return (
-    <section id="contact" style={{position: 'relative', backgroundColor: '#e5e5e5', paddingBottom: 90}}>
+    <section id="contact" style={{position: 'relative', backgroundColor: '#e5e5e5', paddingBottom: 150}}>
       <ContactSvgTop src="/shapes/contact-top.svg" alt="" />
 
       <Container>
