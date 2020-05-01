@@ -1,33 +1,74 @@
-class Testimonials extends Component {
-  state = {
-    leftOffset: 32
+import { useState, useEffect } from "react";
+import allTestimonials from '../../testimonials';
+import { Container, Row, Col } from "reactstrap";
+import styled from "styled-components";
+import { Motion, spring } from "react-motion";
+
+const TestimonialSvgTop = styled.img`
+  width: 100%;
+  height: 60px;
+  position: absolute;
+  top: -59px;
+`;
+
+const Testimonial = ({ pos }) => {
+  const states = {
+    left: {
+      leftOffset: -100,
+      opacity: 0
+    },
+    center: {
+      leftOffset: 0,
+      opacity: 1
+    },
+    right: {
+      leftOffset: 100,
+      opacity: 0
+    }
   }
 
-  render() {
-    return (
-      <section id="testimonials">
+  const { leftOffset, opacity } = states[pos];
+  return (
+    <Motion style={{leftOffset: spring(leftOffset), opacity: spring(opacity)}}>{({leftOffset, opacity}) => 
+      <div style={{position: 'absolute', left: leftOffset, opacity }}>
+        <p>Hello</p>
+      </div>
+    }</Motion>
+  )
+}
 
-        <div className="title-container">
-          <h2 className="title"><span className="grey-text">T</span>estimonials</h2>
-        </div>
+const Testimonials = () => {
+  const [testimonials, setTestimonials] = useState([]);
 
-        <div className="testimonial">
-          <div className="testimonial-text">
-            <span className="quote">“</span>
+  useEffect(() => {
+    setTestimonials(allTestimonials);
+  }, []);
 
-            <p><i>Tice is a trustworthy, hard working, no nonsense type of guy. He has been someone I can rely on to get things done and take the extra step to infuse his creativity into whatever project he is working on. He’s helped me with projects ranging from rebuilding my website to acting as a consultant regarding my video production. In the process of doing so, he’s also become a real friend.</i></p>
+  const showTestimonials = () => testimonials.map(test => {
+    const pos = 'center';
 
-            <span className="quote">”</span>
+    return <Testimonial pos={pos} />
+  });
 
-          </div>
+  return (
+    <section id="testimonials" style={{position: 'relative', paddingBottom: 100}}>
+      <TestimonialSvgTop src="/shapes/testimonial-top.svg" />
+      <Container fluid>
+        <Row>
+          <Col xs="12">
+            <h2 className="mb-4">Testimonials</h2>
 
-          <h3 className="author">
-            - Matt Galat
-          </h3>
-        </div>
-      </section>
-    )
-  }
+            <div className="d-flex justify-content-center">
+              <div style={{position: 'relative', height: 300, backgroundColor: 'red', maxWidth: 500, width: '100%' }}>
+                {showTestimonials()}
+              </div>
+            </div>
+
+          </Col>
+        </Row>
+      </Container>
+    </section>
+  )
 }
 
 export default Testimonials;
