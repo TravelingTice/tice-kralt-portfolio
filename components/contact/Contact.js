@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import styled from 'styled-components';
 import { Container, Row, Col, Form } from 'reactstrap';
-import { FormGroup, FormControl, InputLabel, Input, TextField } from '@material-ui/core';
+import { FormGroup, FormControl, InputLabel, Input, TextField, Button } from '@material-ui/core';
 
 const ContactSvgTop = styled.img`
   position: absolute;
@@ -19,15 +19,16 @@ const Contact = () => {
   const { email, content } = form;
 
   const handleChange = name => e => {
-    console.log(name);
+    setForm({ ...form, [name]: e.target.value });
   }
 
   const handleSubmit = e => {
     e.preventDefault();
 
+    console.log(form);
   }
   const showForm = () => (
-    <Form onSubmit={handleSubmit}>
+    <Form onSubmit={handleSubmit} className="mt-4">
        <FormGroup>
         <FormControl>
           <InputLabel htmlFor="email">Email</InputLabel>
@@ -35,29 +36,29 @@ const Contact = () => {
         </FormControl>
       </FormGroup>
 
-      <FormGroup>
-
+      <FormGroup className="mt-3">
         <FormControl>
-        <InputLabel htmlFor="content">Content</InputLabel>
-        <TextField
-          id="content"
-          multiline
-          rows={2}
-          rowsMax={4}
-        />
+          <TextField
+            id="content"
+            label="Content"
+            multiline
+            rows={4}
+            value={content}
+            onChange={handleChange('content')}
+          />
         </FormControl>
       </FormGroup>
 
+      <div className="my-4">
+        <Button type="submit" style={{color: 'white'}} color="primary" variant="contained">Send</Button>
+      </div>
 
-      {/* <FormGroup>
-          <TextField id="content" onChange={handleChange('content')} value={content} />
-      </FormGroup> */}
     </Form>
   )
 
   return (
-    <section id="contact" style={{position: 'relative', backgroundColor: '#e5e5e5'}}>
-      <ContactSvgTop src="/shapes/contact-top.svg" />
+    <section id="contact" style={{position: 'relative', backgroundColor: '#e5e5e5', paddingBottom: 90}}>
+      <ContactSvgTop src="/shapes/contact-top.svg" alt="" />
 
       <Container fluid>
         <Row>
