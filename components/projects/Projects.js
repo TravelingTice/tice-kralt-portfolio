@@ -1,33 +1,37 @@
-import { useContext } from 'react';
 import styled from 'styled-components';
-import ProjectsSvgBg from './ProjectsSvgBg';
-// import ProjectsGrid from './ProjectsGrid';
-import { DimensionsContext } from '../../contexts/DimensionsContext';
 import ProjectsContextProvider from '../../contexts/ProjectsContext';
 import Phone from './phone/Phone';
+import { Container, Row, Col } from 'reactstrap';
 
-const Section = styled.section`
-  height: ${props => props.height}px;
-  position: relative;
-  top: -20px;
+const ProjectsSvgTop = styled.img`
+  width: 100%;
+  height: 70px;
+  top: -69px;
+  position: absolute;
+  @media (min-width: 768px) {
+    height: 100px;
+    top: -99px;
+  }
 `;
 
 const Projects = () => {
-  const { values } = useContext(DimensionsContext);
-  const { projectsHeight } = values;
-
   return (
-    <Section id="projects" height={projectsHeight}>
-      
-      <ProjectsSvgBg height={projectsHeight}/>
-      <h2 className="ml-4 mb-5">My projects</h2>
+    <section id="projects" style={{position: 'relative', paddingBottom: 80}}>
+      <ProjectsSvgTop src="/shapes/project-top.svg" alt="" />
 
-      <ProjectsContextProvider>
-        <Phone />
-      </ProjectsContextProvider>
+      <Container>
+        <Row>
+          <Col xs="12">
+            <h2 className="my-5 text-center">What I'm working on</h2>
 
+            <ProjectsContextProvider>
+              <Phone />
+            </ProjectsContextProvider>
 
-    </Section>
+          </Col>
+        </Row>
+      </Container>
+    </section>
   );
 }
 

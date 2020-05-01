@@ -1,33 +1,110 @@
-class Testimonials extends Component {
-  state = {
-    leftOffset: 32
+import { useState, useEffect } from "react";
+import allTestimonials from '../../testimonials';
+import { Container, Row, Col } from "reactstrap";
+import styled from "styled-components";
+import { Motion, spring } from "react-motion";
+
+const TestimonialSvgTop = styled.img`
+  width: 100%;
+  height: 60px;
+  position: absolute;
+  top: -59px;
+  @media (min-width: 768px) {
+    height: 100px;
+    top: -99px;
+  }
+`;
+
+const Testimonial = ({ pos, testimonial }) => {
+  const states = {
+    left: {
+      leftOffset: -100,
+      opacity: 0
+    },
+    center: {
+      leftOffset: 0,
+      opacity: 1
+    },
+    right: {
+      leftOffset: 100,
+      opacity: 0
+    }
   }
 
-  render() {
-    return (
-      <section id="testimonials">
+  const quotes = () => (
+    <div className="d-flex justify-content-between" style={{position: 'relative', top: 20}}>
+      <h3 className="d-inline">“</h3>
+      <h3 className="d-inline">”</h3>
+    </div>
+  )
 
-        <div className="title-container">
-          <h2 className="title"><span className="grey-text">T</span>estimonials</h2>
-        </div>
+  const { leftOffset, opacity } = states[pos];
+  return (
+    <Motion style={{leftOffset: spring(leftOffset), opacity: spring(opacity)}}>{({leftOffset, opacity}) => 
+      <div style={{position: 'absolute', left: leftOffset, opacity, textAlign: 'center', width: '100%' }}>
+        {quotes()}
+        <p>{testimonial.content}</p>
+        <a href={testimonial.authorLink}><h4>- {testimonial.author}</h4></a>
+      </div>
+    }</Motion>
+  )
+}
 
-        <div className="testimonial">
-          <div className="testimonial-text">
-            <span className="quote">“</span>
+const Testimonials = () => {
+  const [testimonials, setTestimonials] = useState([]);
+  const [index, setIndex] = useState(0);
 
-            <p><i>Tice is a trustworthy, hard working, no nonsense type of guy. He has been someone I can rely on to get things done and take the extra step to infuse his creativity into whatever project he is working on. He’s helped me with projects ranging from rebuilding my website to acting as a consultant regarding my video production. In the process of doing so, he’s also become a real friend.</i></p>
+  useEffect(() => {
+    setTestimonials(allTestimonials);
+  }, []);
 
-            <span className="quote">”</span>
+  useEffect(() => {
+    if (testimonials.length > 0) {
+      let timeout = setTimeout(nextImage, 7000);
+    }
+  }, [index, testimonials]);
 
-          </div>
-
-          <h3 className="author">
-            - Matt Galat
-          </h3>
-        </div>
-      </section>
-    )
+  const nextImage = () => {
+    if (index < testimonials.length - 1) {
+      setIndex(index + 1);
+    } else {
+      setIndex(0);
+    }
   }
+
+  const showTestimonials = () => testimonials.map((test, i) => {
+    let pos;
+
+    if (i === index) {
+      pos = 'center';
+    } else if (index === i + 1 || (i === testimonials.length - 1 && index === 0)) {
+      pos = 'left'
+    } else {
+      pos = 'right'
+    }
+
+    return <Testimonial key={test.author} pos={pos} testimonial={test} />
+  });
+
+  return (
+    <section id="testimonials" style={{position: 'relative', paddingBottom: 100}}>
+      <TestimonialSvgTop src="/shapes/testimonial-top.svg" />
+      <Container>
+        <Row>
+          <Col xs="12" sm={{size: 10, offset: 1}}>
+            <h2 className="mb-5" style={{maxWidth: 500}}>Testimonials</h2>
+
+            <div className="d-flex justify-content-center">
+              <div style={{position: 'relative', height: 300, maxWidth: 500, width: '100%' }}>
+                {showTestimonials()}
+              </div>
+            </div>
+
+          </Col>
+        </Row>
+      </Container>
+    </section>
+  )
 }
 
 export default Testimonials;
