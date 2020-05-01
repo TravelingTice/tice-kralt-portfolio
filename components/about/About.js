@@ -16,14 +16,14 @@ const AboutSvgTop = styled.img`
 `;
 
 const About = () => (
-  <section id="about" style={{backgroundColor: '#0c111a', color: '#fcfcfc', padding: '10px 0', position: 'relative'}}>
+  <section id="about" style={{ backgroundColor: '#0c111a', color: '#fcfcfc', padding: '10px 0 100px', position: 'relative' }}>
     
     <AboutSvgTop src="/shapes/aboutme-top.svg" alt="" />
 
     <Container fluid>
       <Row>
         <Col xs="12">
-          <h2 className="">About Me</h2>
+          <h2 className="mb-3">About Me</h2>
         </Col>
 
         <Col xs="12" className="d-flex justify-content-center mt-3">
