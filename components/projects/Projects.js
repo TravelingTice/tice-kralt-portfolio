@@ -18,7 +18,7 @@ const Projects = () => {
       <Container>
         <Row>
           <Col xs="12">
-            <h2 className="mb-5">My projects</h2>
+            <h2 className="mb-5 text-center">What I'm working on</h2>
 
             <ProjectsContextProvider>
               <Phone />

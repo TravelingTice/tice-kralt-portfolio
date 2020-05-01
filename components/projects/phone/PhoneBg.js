@@ -81,8 +81,8 @@ const PhoneBg = ({ project, pos }) => {
   return (
     <Motion style={{leftOffset: spring(leftOffset), opacity: spring(opacity) }}>{({leftOffset, opacity}) => 
 
-      <div style={{ position: 'absolute', overflowX: 'hidden', top: 15, left: leftOffset, opacity, zIndex: -2, padding: 7, width: '100%', height: '100%' }}>
-        <div style={{ position: 'relative' }}>
+      <div style={{ position: 'absolute', overflowX: 'hidden', top: 15, left: leftOffset, opacity, zIndex: 2, padding: 7, width: '100%', height: '100%' }}>
+        <div style={{ position: 'relative', height: '100%' }}>
           {!project ? (
             showLoading()
           ) : project.images.map((img, i) => {
