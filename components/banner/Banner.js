@@ -31,7 +31,7 @@ const PositionedDiv = styled.div`
   position: absolute;
   bottom: 103px;
   width: 100%;
-  @media (min-width: 992px) {
+  @media (min-width: 768px) {
     bottom: 150px;
   }
   h1, h2 {

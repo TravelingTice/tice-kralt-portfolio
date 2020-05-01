@@ -8,6 +8,10 @@ const ProjectsSvgTop = styled.img`
   height: 70px;
   top: -69px;
   position: absolute;
+  @media (min-width: 768px) {
+    height: 100px;
+    top: -99px;
+  }
 `;
 
 const Projects = () => {
