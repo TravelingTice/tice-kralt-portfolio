@@ -37,7 +37,7 @@ const Detail = ({ appear, project }) => {
 
   return (
     <Motion style={{leftOffset: spring(leftOffset), opacity: spring(opacity) }}>{({leftOffset, opacity}) => 
-      <div style={{position: 'absolute', left: leftOffset, opacity, height: 225 }}>
+      <div style={{position: 'absolute', left: leftOffset, opacity, height: 225, zIndex: 3 }}>
         <h5>{project.title}</h5>
         <p className="px-4">{renderHTML(project.description)}</p>
         <Button color='primary' variant='outlined'>View</Button>
@@ -90,7 +90,7 @@ const Phone = () => {
 
       <div style={{width: phoneWidth, position: 'relative', height: 500}}>
 
-        <img style={{width: '100%', position: 'absolute', top: 0}} src="/shapes/iphonex.svg" alt="smartphone"/>
+        <img style={{width: '100%', position: 'absolute', top: 0, zIndex: 5}} src="/shapes/iphonex.svg" alt="smartphone"/>
 
         {projects.map((project, i) => {
           const index = projects.indexOf(selectedProject);
