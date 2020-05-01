@@ -11,7 +11,7 @@ const TestimonialSvgTop = styled.img`
   top: -59px;
 `;
 
-const Testimonial = ({ pos }) => {
+const Testimonial = ({ pos, testimonial }) => {
   const states = {
     left: {
       leftOffset: -100,
@@ -27,11 +27,20 @@ const Testimonial = ({ pos }) => {
     }
   }
 
+  const quotes = () => (
+    <div className="d-flex justify-content-between" style={{position: 'relative', top: 20}}>
+      <h3 className="d-inline">“</h3>
+      <h3 className="d-inline">”</h3>
+    </div>
+  )
+
   const { leftOffset, opacity } = states[pos];
   return (
     <Motion style={{leftOffset: spring(leftOffset), opacity: spring(opacity)}}>{({leftOffset, opacity}) => 
-      <div style={{position: 'absolute', left: leftOffset, opacity }}>
-        <p>Hello</p>
+      <div style={{position: 'absolute', left: leftOffset, opacity, textAlign: 'center', width: '100%' }}>
+        {quotes()}
+        <p>{testimonial.content}</p>
+        <a href={testimonial.authorLink}><h4>- {testimonial.author}</h4></a>
       </div>
     }</Motion>
   )
@@ -39,15 +48,39 @@ const Testimonial = ({ pos }) => {
 
 const Testimonials = () => {
   const [testimonials, setTestimonials] = useState([]);
+  const [index, setIndex] = useState(0);
 
   useEffect(() => {
     setTestimonials(allTestimonials);
   }, []);
 
-  const showTestimonials = () => testimonials.map(test => {
-    const pos = 'center';
+  useEffect(() => {
+    if (testimonials.length > 0) {
+      let timeout = setTimeout(nextImage, 1000);
+    }
+  }, [index, testimonials]);
 
-    return <Testimonial pos={pos} />
+  const nextImage = () => {
+    console.log(testimonials.length);
+    if (index < testimonials.length - 1) {
+      setIndex(index + 1);
+    } else {
+      setIndex(0);
+    }
+  }
+
+  const showTestimonials = () => testimonials.map((test, i) => {
+    let pos;
+
+    if (i === index) {
+      pos = 'center';
+    } else if (index === i + 1 || (i === testimonials.length - 1 && index === 0)) {
+      pos = 'left'
+    } else {
+      pos = 'right'
+    }
+
+    return <Testimonial key={test.author} pos={pos} testimonial={test} />
   });
 
   return (
