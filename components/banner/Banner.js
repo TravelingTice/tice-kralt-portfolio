@@ -30,6 +30,10 @@ const BannerBg = ({ height, image }) => (
 const PositionedDiv = styled.div`
   position: absolute;
   bottom: 103px;
+  width: 100%;
+  @media (min-width: 992px) {
+    bottom: 150px;
+  }
   h1, h2 {
     display: inline-block;
     padding: 3px 10px;
