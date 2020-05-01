@@ -4,16 +4,16 @@ import { Container, Row, Col } from 'reactstrap';
 import sortBy from 'sort-by';
 import useViewportWidth from '../../hooks/useViewportWidth';
 
-const BannerBg = ({ height }) => (
+const BannerBg = ({ height, image }) => (
   <ParallaxBanner
       layers={[
         {
-          image: '/images/big-tice-background.jpg',
+          image,
           amount: 0.4,
           expanded: true,
           props: { 
             style: {
-              backgroundPosition: '60% 50%'
+              backgroundPosition: '50% 50%'
             }
           }
         }
@@ -42,6 +42,9 @@ const PositionedDiv = styled.div`
     @media (min-width: 768px) {
       font-size: 2em;
     }
+    @media (min-width: 992px) {
+      font-size: 2.6em;
+    }
   }
 `;
 
@@ -50,8 +53,14 @@ const Banner = () => {
     { breakPoint: 0, height: 413 },
     { breakPoint: 576, height: 500 },
     { breakPoint: 768, height: 600 },
-    { breakPoint: 992, height: 500 }
+    { breakPoint: 992, height: 700 }
   ];
+
+  const images = [
+    { breakPoint: 0, image: '/images/big-tice-background-800w-whitebottom.jpg'},
+    { breakPoint: 576, image: '/images/big-tice-background-800w-whitebottom.jpg'},
+    { breakPoint: 992, image: '/images/big-tice-background-1200w-whitebottom.jpg'},
+  ]
 
   const { vw } = useViewportWidth();
 
@@ -64,7 +73,18 @@ const Banner = () => {
     }
   }
 
+  const getImageForWidth = width => {
+    const sortedImages = images.sort(sortBy('-breakPoint'));
+
+    for (let i = 0; i < sortedImages.length; i ++) {
+      const { breakPoint, image } = sortedImages[i];
+      if (breakPoint < width) return image;
+    }
+  }
+
   const bannerHeight = getBannerHeightForWidth(vw);
+
+  const image = getImageForWidth(vw);
 
   return (
     <>
@@ -85,7 +105,7 @@ const Banner = () => {
           </Container>
         </PositionedDiv>
       </section>
-      <BannerBg height={bannerHeight}/>
+      <BannerBg height={bannerHeight} image={image} />
     </>
   );
 }
