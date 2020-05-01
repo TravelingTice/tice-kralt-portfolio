@@ -10,6 +10,7 @@ const Section = styled.section`
   height: ${props => props.height}px;
   position: relative;
   top: -20px;
+  padding-bottom: 30px;
 `;
 
 const Projects = () => {

@@ -56,7 +56,7 @@ const Testimonials = () => {
 
   useEffect(() => {
     if (testimonials.length > 0) {
-      let timeout = setTimeout(nextImage, 1000);
+      let timeout = setTimeout(nextImage, 7000);
     }
   }, [index, testimonials]);
 
