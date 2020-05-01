@@ -22,26 +22,29 @@ const Detail = ({ appear, project }) => {
   const states = {
     left: {
       leftOffset: -100,
-      opacity: 0
+      opacity: 0,
+      zIndex: 1
     },
     right: {
       leftOffset: 100,
-      opacity: 0
+      opacity: 0,
+      zIndex: 1
     },
     center: {
       leftOffset: 0,
-      opacity: 1
+      opacity: 1,
+      zIndex: 4
     }
   }
 
-  const { leftOffset, opacity } = states[appear];
+  const { leftOffset, opacity, zIndex } = states[appear];
 
   return (
     <Motion style={{leftOffset: spring(leftOffset), opacity: spring(opacity) }}>{({leftOffset, opacity}) => 
-      <div style={{position: 'absolute', left: leftOffset, opacity, height: 225, zIndex: 3 }}>
+      <div style={{position: 'absolute', left: leftOffset, opacity, zIndex, height: 225 }}>
         <h5 className="my-3">{project.title}</h5>
         <p className="px-4">{renderHTML(project.description)}</p>
-        <Button color='primary' variant='outlined'>View</Button>
+        <Button onClick={() => window.open(project.link)} color='primary' variant='outlined'>View</Button>
       </div>
     }
     </Motion>
