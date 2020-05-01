@@ -44,7 +44,7 @@ const Testimonial = ({ pos, testimonial }) => {
       <div style={{position: 'absolute', left: leftOffset, opacity, textAlign: 'center', width: '100%' }} className="px-3">
         {quotes()}
         <p>{testimonial.content}</p>
-        <a href={testimonial.authorLink}><h4>- {testimonial.author}</h4></a>
+        <a href={testimonial.authorLink}><h4 className="text-right">- {testimonial.author}</h4></a>
       </div>
     }</Motion>
   )
