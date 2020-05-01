@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import Link from 'next/link';
 import useViewportWidth from '../../hooks/useViewportWidth';
-import sortBy from 'sort-by';
 
 const Avatar = styled.img`
   width: 45px;
@@ -25,7 +24,6 @@ const SvgBg = styled.img`
 
 const Header = () => {
   const { vw } = useViewportWidth();
-
   const isBigScreen = vw > 778;
 
   const navHeight = isBigScreen ? 100 : 70;
