@@ -10,7 +10,6 @@ const Avatar = styled.img`
     height: 60px;
   }
   border-radius: 50%;
-  margin-left: 20px;
   margin-bottom: 2px;
 `;
 
@@ -33,7 +32,7 @@ const Header = () => {
       <SvgBg height={navHeight} src="/shapes/headerbg.svg" alt="" />
 
       <div style={{position: 'relative', width: '100%', height: '100%'}} className="d-flex align-items-center">
-        <Link href="/"><Avatar id="logo" src="/android-icon-192x192.png" alt="Tice Kralt Logo" /></Link>
+        <Link href="/"><Avatar id="logo" src="/android-icon-192x192.png" alt="Tice Kralt Logo" className="ml-3 ml-md-4 ml-lg-5" /></Link>
       </div>
       
     </header>
