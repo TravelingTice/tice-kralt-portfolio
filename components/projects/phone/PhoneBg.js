@@ -30,13 +30,21 @@ const PhoneImage = ({ appear, url }) => {
 }
 
 const PhoneBg = ({ project, pos }) => {
+  const { selectedProject } = useContext(ProjectsContext);
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
-    if (project) {
-      setTimeout(nextImage, 2000);
+    let nextImageTimeout;
+    if (project === selectedProject) {
+      nextImageTimeout = setTimeout(nextImage, 2000);
     }
-  }, [project, index]);
+    return () => {
+      if (project !== selectedProject) {
+        clearTimeout(nextImageTimeout);
+        setIndex(0);
+      }
+    }
+  }, [project, index, selectedProject]);
 
   const nextImage = () => {
     if (index < project.images.length - 1) {
