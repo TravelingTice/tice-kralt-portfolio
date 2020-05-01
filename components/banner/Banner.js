@@ -3,12 +3,6 @@ import styled from 'styled-components';
 import BannerBg from './BannerBg';
 import { DimensionsContext } from '../../contexts/DimensionsContext';
 
-// height of the banner
-const Section = styled.section`
-  height: ${props => props.height}px;
-  position: relative;
-`;
-
 const PositionedDiv = styled.div`
   position: absolute;
   bottom: 103px;
@@ -28,7 +22,7 @@ const Banner = () => {
 
   return (
     <>
-      <Section height={bannerHeight}>
+      <section style={{position: 'relative', height: bannerHeight}}>
         <PositionedDiv>
           <div>
             <h1>Tice Kralt</h1>
@@ -37,7 +31,7 @@ const Banner = () => {
             <h2>Full-stack web developer</h2>
           </div>
         </PositionedDiv>
-      </Section>
+      </section>
       <BannerBg navHeight={navHeight} height={bannerHeight}/>
     </>
   );
