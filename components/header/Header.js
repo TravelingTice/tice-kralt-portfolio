@@ -15,7 +15,7 @@ const Avatar = styled.img`
 
 const SvgBg = styled.img`
   position: absolute;
-  top: 0;
+  top: -1;
   left: 0;
   width: 100%;
   height: ${props => props.height}px;
