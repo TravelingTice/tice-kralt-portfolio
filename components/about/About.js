@@ -1,9 +1,7 @@
 const About = () => (
-  <section id="about">
+  <section id="about" style={{backgroundColor: '#2B303A', color: '#fcfcfc', padding: '10px 0'}}>
     
-    <div className="title-container">
-      <h2 className="title">About Me</h2>
-    </div>
+    <h2 className="my-4">About Me</h2>
 
     <div className="about-me">
 
