@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import ProjectsContextProvider from '../../contexts/ProjectsContext';
 import Phone from './phone/Phone';
+import { Container, Row, Col } from 'reactstrap';
 
 const ProjectsSvgTop = styled.img`
   width: 100%;
@@ -11,17 +12,21 @@ const ProjectsSvgTop = styled.img`
 
 const Projects = () => {
   return (
-    <section id="projects" style={{position: 'relative'}}>
-      
+    <section id="projects" style={{position: 'relative', paddingBottom: 50}}>
       <ProjectsSvgTop src="/shapes/banner-project.svg" alt="" />
 
-      <h2 className="ml-4 mb-5">My projects</h2>
+      <Container>
+        <Row>
+          <Col xs="12">
+            <h2 className="mb-5">My projects</h2>
 
-      <ProjectsContextProvider>
-        <Phone />
-      </ProjectsContextProvider>
+            <ProjectsContextProvider>
+              <Phone />
+            </ProjectsContextProvider>
 
-
+          </Col>
+        </Row>
+      </Container>
     </section>
   );
 }
