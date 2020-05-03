@@ -92,7 +92,7 @@ const Testimonials = () => {
       <Container>
         <Row>
           <Col xs="12" sm={{size: 10, offset: 1}}>
-            <h2 className="mb-5" style={{maxWidth: 500, margin: '0 auto'}}>Testimonials</h2>
+            <h2 className="mb-5" style={{maxWidth: 750, margin: '0 auto'}}>Testimonials</h2>
 
             <div className="d-flex justify-content-center">
               <div style={{position: 'relative', height: 300, maxWidth: 500, width: '100%' }}>
