@@ -16,5 +16,11 @@ module.exports = [
     images: [ "/PDQE/pdqe1.jpg", "/PDQE/pdqe2.jpg", "/PDQE/pdqe3.jpg", "/PDQE/pdqe4.jpg" ],
     link: "https://pdqe-nextjs.now.sh",
     description: "An app that will allow you to <strong>quote</strong> your products to clients and send them a beautifully designed email in a couple clicks."
+  },
+  {
+    title: "Map My Tours",
+    images: [ "/MMT/mmt1.jpg", "/MMT/mmt2.jpg", "/MMT/mmt3.jpg", "/MMT/mmt4.jpg" ],
+    link: "https://mapmytours.online",
+    description: "Make your own custom maps with custom marker icons, lines and kml files! And embed your custom maps in your website!"
   }
 ]
