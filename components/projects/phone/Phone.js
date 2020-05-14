@@ -1,12 +1,13 @@
-import { useContext } from "react";
+import { useContext, useState, useEffect } from "react";
 import { ProjectsContext } from "../../../contexts/ProjectsContext";
-import { Button } from '@material-ui/core';
+import { Button, IconButton } from '@material-ui/core';
 import styled from 'styled-components';
 import ArrowBackIosRoundedIcon from '@material-ui/icons/ArrowBackIosRounded';
 import ArrowForwardIosRoundedIcon from '@material-ui/icons/ArrowForwardIosRounded';
 import renderHTML from 'react-render-html';
 import PhoneBg from './PhoneBg';
 import { Motion, spring } from 'react-motion';
+import GitHubIcon from '@material-ui/icons/GitHub';
 
 const ArrowDiv = styled.div`
   display: flex;
@@ -18,6 +19,30 @@ const ArrowDiv = styled.div`
 `;
 
 const Detail = ({ appear, project }) => {
+  const [isHover, setHover] = useState(false);
+  const [isGh, setGh] = useState(false);
+
+  const handleMouseEnter = () => {
+    setHover(true);
+  }
+
+  const handleMouseLeave = () => {
+    setHover(false);
+  }
+
+  useEffect(() => {
+    let timeout;
+    if (!isHover) {
+      timeout = setTimeout(() => setGh(false), 3000);
+    } else {
+      setGh(true);
+    }
+    return () => {
+      if (isHover) {
+        if (timeout) clearTimeout(timeout);
+      }
+    }
+  }, [isHover]);
   // depending on what appear is
   const states = {
     left: {
@@ -39,12 +64,23 @@ const Detail = ({ appear, project }) => {
 
   const { leftOffset, opacity, zIndex } = states[appear];
 
+  const ghLeft = isGh ? 65 : 45;
+  const ghOpacity = isGh ? 1 : 0;
+  const ghZIndex = isGh ? 1 : -1;
+
   return (
-    <Motion style={{leftOffset: spring(leftOffset), opacity: spring(opacity) }}>{({leftOffset, opacity}) => 
+    <Motion style={{ghLeft: spring(ghLeft), ghOpacity: spring(ghOpacity), leftOffset: spring(leftOffset), opacity: spring(opacity) }}>{({ghLeft, ghOpacity, leftOffset, opacity}) => 
       <div style={{position: 'absolute', left: leftOffset, opacity, zIndex, height: 225 }}>
         <h5 className="my-3">{project.title}</h5>
         <p className="px-4">{renderHTML(project.description)}</p>
-        <Button onClick={() => window.open(project.link)} color='primary' variant='outlined'>View</Button>
+        <div className="d-flex justify-content-center">
+          <div style={{position: 'relative'}}>
+            <Button style={{backgroundColor: 'white'}} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} onClick={() => window.open(project.link)} color='primary' variant='outlined'>View</Button>
+            <div style={{position: 'absolute', top: -7, left: ghLeft, opacity: ghOpacity, zIndex: ghZIndex}}>
+              <IconButton color="primary" role="link" onClick={() => window.open(project.githubLink)}><GitHubIcon/></IconButton>
+            </div>
+          </div>
+        </div>
       </div>
     }
     </Motion>
