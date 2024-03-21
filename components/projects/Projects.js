@@ -1,7 +1,7 @@
-import styled from 'styled-components';
-import ProjectsContextProvider from '../../contexts/ProjectsContext';
-import Phone from './phone/Phone';
-import { Container, Row, Col } from 'reactstrap';
+import styled from "styled-components";
+import ProjectsContextProvider from "../../contexts/ProjectsContext";
+import Phone from "./phone/Phone";
+import { Container, Row, Col } from "reactstrap";
 
 const ProjectsSvgTop = styled.img`
   width: 100%;
@@ -16,8 +16,8 @@ const ProjectsSvgTop = styled.img`
 
 const Projects = () => {
   return (
-    <section id="projects" style={{position: 'relative', paddingBottom: 80}}>
-      <ProjectsSvgTop src="/shapes/project-top.svg" alt="" />
+    <section id="projects" style={{ position: "relative", paddingBottom: 80 }}>
+      <ProjectsSvgTop src="/legacy-1/shapes/project-top.svg" alt="" />
 
       <Container>
         <Row>
@@ -27,12 +27,11 @@ const Projects = () => {
             <ProjectsContextProvider>
               <Phone />
             </ProjectsContextProvider>
-
           </Col>
         </Row>
       </Container>
     </section>
   );
-}
+};
 
 export default Projects;
