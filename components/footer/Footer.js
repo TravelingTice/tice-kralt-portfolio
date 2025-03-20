@@ -52,7 +52,7 @@ const Footer = () => {
         paddingBottom: 20,
       }}
     >
-      <FooterSvgTop src="/legacy-1/shapes/footer-top.svg" alt="" />
+      <FooterSvgTop src="/shapes/footer-top.svg" alt="" />
 
       <div className="d-flex justify-content-center pt-4">{listIcons()}</div>
 

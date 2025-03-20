@@ -70,80 +70,77 @@ class MyDocument extends Document {
           <link
             rel="apple-touch-icon"
             sizes="57x57"
-            href="/legacy-1/apple-icon-57x57.png"
+            href="/apple-icon-57x57.png"
           />
           <link
             rel="apple-touch-icon"
             sizes="60x60"
-            href="/legacy-1/apple-icon-60x60.png"
+            href="/apple-icon-60x60.png"
           />
           <link
             rel="apple-touch-icon"
             sizes="72x72"
-            href="/legacy-1/apple-icon-72x72.png"
+            href="/apple-icon-72x72.png"
           />
           <link
             rel="apple-touch-icon"
             sizes="76x76"
-            href="/legacy-1/apple-icon-76x76.png"
+            href="/apple-icon-76x76.png"
           />
           <link
             rel="apple-touch-icon"
             sizes="114x114"
-            href="/legacy-1/apple-icon-114x114.png"
+            href="/apple-icon-114x114.png"
           />
           <link
             rel="apple-touch-icon"
             sizes="120x120"
-            href="/legacy-1/apple-icon-120x120.png"
+            href="/apple-icon-120x120.png"
           />
           <link
             rel="apple-touch-icon"
             sizes="144x144"
-            href="/legacy-1/apple-icon-144x144.png"
+            href="/apple-icon-144x144.png"
           />
           <link
             rel="apple-touch-icon"
             sizes="152x152"
-            href="/legacy-1/apple-icon-152x152.png"
+            href="/apple-icon-152x152.png"
           />
           <link
             rel="apple-touch-icon"
             sizes="180x180"
-            href="/legacy-1/apple-icon-180x180.png"
+            href="/apple-icon-180x180.png"
           />
           <link
             rel="icon"
             type="image/png"
             sizes="192x192"
-            href="/legacy-1/android-icon-192x192.png"
+            href="/android-icon-192x192.png"
           />
           <link
             rel="icon"
             type="image/png"
             sizes="32x32"
-            href="/legacy-1/favicon-32x32.png"
+            href="/favicon-32x32.png"
           />
           <link
             rel="icon"
             type="image/png"
             sizes="96x96"
-            href="/legacy-1/favicon-96x96.png"
+            href="/favicon-96x96.png"
           />
           <link
             rel="icon"
             type="image/png"
             sizes="16x16"
-            href="/legacy-1/favicon-16x16.png"
+            href="/favicon-16x16.png"
           />
 
-          <link rel="manifest" href="/legacy-1/manifest.json" />
+          <link rel="manifest" href="/manifest.json" />
 
           <meta name="msapplication-TileColor" content="#fdfdfd" />
-          <meta
-            name="msapplication-TileImage"
-            content="/legacy-1/ms-icon-144x144.png"
-          />
+          <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
           <meta name="theme-color" content="#fdfdfd" />
           <meta
             name="application-name"
@@ -166,20 +163,17 @@ class MyDocument extends Document {
           />
           <meta name="format-detection" content="telephone=no" />
           <meta name="mobile-web-app-capable" content="yes" />
-          <meta
-            name="msapplication-config"
-            content="/legacy-1/browserconfig.xml"
-          />
+          <meta name="msapplication-config" content="/browserconfig.xml" />
           <meta name="msapplication-tap-highlight" content="no" />
 
           <meta name="theme-color" content="#fdfdfd" />
 
           {/* <link rel='mask-icon' href='/safari-pinned-tab.svg' color='#5bbad5' /> */}
-          <link rel="shortcut icon" href="/legacy-1/favicon.ico" />
+          <link rel="shortcut icon" href="/favicon.ico" />
           {/* <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:300,400,500' /> */}
 
           <meta name="twitter:card" content="summary" />
-          <meta name="twitter:url" content="https://ticekralt.com/legacy-1" />
+          <meta name="twitter:url" content="https://ticekralt.com" />
           <meta
             name="twitter:title"
             content="Tice Kralt Full-stack Web Developer Portfolio"
@@ -190,7 +184,7 @@ class MyDocument extends Document {
           />
           <meta
             name="twitter:image"
-            content="https://ticekralt.com/legacy-1/android-icon-192x192.png"
+            content="https://ticekralt.com/android-icon-192x192.png"
           />
           <meta name="twitter:creator" content="@travelingtice" />
           <meta property="og:type" content="website" />
@@ -209,7 +203,7 @@ class MyDocument extends Document {
           <meta property="og:url" content="https://ticekralt.com" />
           <meta
             property="og:image"
-            content="https://ticekralt.com/legacy-1/apple-icon.png"
+            content="https://ticekralt.com/apple-icon.png"
           />
         </Head>
         <body>

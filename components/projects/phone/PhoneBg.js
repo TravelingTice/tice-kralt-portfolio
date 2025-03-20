@@ -33,7 +33,7 @@ const PhoneImage = ({ appear, url }) => {
             left: leftOffset,
             opacity,
           }}
-          src={`/legacy-1/images${url}`}
+          src={`/images${url}`}
           alt=""
         />
       )}
@@ -71,11 +71,7 @@ const PhoneBg = ({ project, pos }) => {
       className="d-flex w-100 justify-content-center align-items-center"
       style={{ height: "80%" }}
     >
-      <img
-        style={{ width: 50 }}
-        src="/legacy-1/shapes/loading.svg"
-        alt="loading"
-      />
+      <img style={{ width: 50 }} src="/shapes/loading.svg" alt="loading" />
     </div>
   );
 

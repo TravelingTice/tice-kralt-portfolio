@@ -20,7 +20,7 @@ const ProjectGrid = () => {
     <Grid>
       <ProjectCard
         title="Product Database Quote Engine"
-        image="/legacy-1/images/pdqeoffi.png"
+        image="/images/pdqeoffi.png"
         link="https://pdqe-demo.herokapp.com"
       >
         An app that will allow you to <strong>quote</strong> your products to
@@ -29,7 +29,7 @@ const ProjectGrid = () => {
 
       <ProjectCard
         title="PHAIWA Health Organisation Website"
-        image="/legacy-1/images/phaiwa1.jpg"
+        image="/images/phaiwa1.jpg"
         link="https://phaiwa.org.au"
       >
         <strong>Public Health Advocacy Institute of Western Australia</strong>'s
@@ -39,7 +39,7 @@ const ProjectGrid = () => {
 
       <ProjectCard
         title="Google Maps Tour Showcase"
-        image="/legacy-1/images/googlemaps.jpg"
+        image="/images/googlemaps.jpg"
         link="https://travelingtice.com/tour-map"
       >
         Showcase your roadtrip, bicycle tour or other travels on this awesome{" "}
@@ -49,7 +49,7 @@ const ProjectGrid = () => {
 
       <ProjectCard
         title="JaYoe Website"
-        image="/legacy-1/images/jayoe.jpg"
+        image="/images/jayoe.jpg"
         link="https://jayoe.com"
       >
         <strong>Matt</strong> is cycling around the world in 10 years and this

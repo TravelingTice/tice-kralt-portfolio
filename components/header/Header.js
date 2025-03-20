@@ -31,7 +31,7 @@ const Header = () => {
     <header
       style={{ position: "absolute", top: 0, height: navHeight, width: "100%" }}
     >
-      <SvgBg height={navHeight} src="/legacy-1/shapes/headerbg.svg" alt="" />
+      <SvgBg height={navHeight} src="/shapes/headerbg.svg" alt="" />
 
       <div
         style={{ position: "relative", width: "100%", height: "100%" }}
@@ -40,7 +40,7 @@ const Header = () => {
         <Link href="/">
           <Avatar
             id="logo"
-            src="/legacy-1/android-icon-192x192.png"
+            src="/android-icon-192x192.png"
             alt="Tice Kralt Logo"
             className="ml-3 ml-md-4 ml-lg-5"
           />

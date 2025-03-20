@@ -64,15 +64,15 @@ const Banner = () => {
   const images = [
     {
       breakPoint: 0,
-      image: "/legacy-1/images/big-tice-background-800w-whitebottom.jpg",
+      image: "/images/big-tice-background-800w-whitebottom.jpg",
     },
     {
       breakPoint: 576,
-      image: "/legacy-1/images/big-tice-background-800w-whitebottom.jpg",
+      image: "/images/big-tice-background-800w-whitebottom.jpg",
     },
     {
       breakPoint: 992,
-      image: "/legacy-1/images/big-tice-background-1200w-whitebottom.jpg",
+      image: "/images/big-tice-background-1200w-whitebottom.jpg",
     },
   ];
 

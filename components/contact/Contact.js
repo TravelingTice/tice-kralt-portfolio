@@ -99,7 +99,7 @@ const Contact = () => {
         paddingBottom: 150,
       }}
     >
-      <ContactSvgTop src="/legacy-1/shapes/contact-top.svg" alt="" />
+      <ContactSvgTop src="/shapes/contact-top.svg" alt="" />
 
       <Container>
         <Row>

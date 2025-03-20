@@ -17,7 +17,7 @@ const ProjectsSvgTop = styled.img`
 const Projects = () => {
   return (
     <section id="projects" style={{ position: "relative", paddingBottom: 80 }}>
-      <ProjectsSvgTop src="/legacy-1/shapes/project-top.svg" alt="" />
+      <ProjectsSvgTop src="/shapes/project-top.svg" alt="" />
 
       <Container>
         <Row>

@@ -2,7 +2,6 @@ require("dotenv").config();
 const withPWA = require("next-pwa");
 
 module.exports = withPWA({
-  basePath: "/legacy-1",
   pwa: {
     dest: "public",
     disable: process.env.NODE_ENV !== "production",

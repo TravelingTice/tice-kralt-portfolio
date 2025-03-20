@@ -117,7 +117,7 @@ const Testimonials = () => {
       id="testimonials"
       style={{ position: "relative", paddingBottom: 100 }}
     >
-      <TestimonialSvgTop src="/legacy-1/shapes/testimonial-top.svg" />
+      <TestimonialSvgTop src="/shapes/testimonial-top.svg" />
       <Container>
         <Row>
           <Col xs="12" sm={{ size: 10, offset: 1 }}>
