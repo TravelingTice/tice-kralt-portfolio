@@ -7,10 +7,10 @@
   "author": "Matthijs Kralt <matthijs29@live.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "next",
-    "build": "next build",
-    "start": "next start -p $PORT",
-    "heroku-postbuild": "npm run build",
+    "dev": "NODE_OPTIONS='--openssl-legacy-provider' next",
+    "build": "NODE_OPTIONS='--openssl-legacy-provider' next build",
+    "start": "NODE_OPTIONS='--openssl-legacy-provider' next start -p $PORT",
+    "heroku-postbuild": "NODE_OPTIONS='--openssl-legacy-provider' npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
