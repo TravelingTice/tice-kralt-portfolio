@@ -191,7 +191,7 @@ const Phone = () => {
         <div style={{ width: phoneWidth, position: "relative", height: 500 }}>
           <img
             style={{ width: "100%", position: "absolute", top: 0, zIndex: 5 }}
-            src="/legacy-1/shapes/iphonex.svg"
+            src="/shapes/iphonex.svg"
             alt="smartphone"
           />
 

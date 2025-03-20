@@ -29,7 +29,7 @@ const About = () => (
       position: "relative",
     }}
   >
-    <AboutSvgTop src="/legacy-1/shapes/aboutme-top.svg" alt="" />
+    <AboutSvgTop src="/shapes/aboutme-top.svg" alt="" />
 
     <Container>
       <Row>
@@ -46,7 +46,7 @@ const About = () => (
           xl={{ size: 2, offset: 2 }}
           className="d-flex justify-content-center align-items-center mt-3"
         >
-          <Avatar src="/legacy-1/images/avatar.jpg" alt="TravelingTice" />
+          <Avatar src="/images/avatar.jpg" alt="TravelingTice" />
         </Col>
 
         <Col xs="12" md="8" lg="7" xl="6" className="text-center text-md-right">
