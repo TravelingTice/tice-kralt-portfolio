@@ -9,7 +9,7 @@ export enum Breakpoints {
 }
 
 const breakpoint = readable(
-	typeof window !== 'undefined' ? window.innerWidth : 300,
+	typeof window !== 'undefined' ? window.innerWidth : 0,
 	(set) => {
 		if (typeof window === 'undefined') return
 

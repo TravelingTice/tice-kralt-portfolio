@@ -3,10 +3,10 @@
 	import breakpoint, { Breakpoints } from '$lib/helpers/breakpoint'
 	import MobileNav from '$lib/layout/MobileNav.svelte'
 	import isMobileMenu from './menu'
-	import { CrosshairIcon, MenuIcon } from 'svelte-feather-icons'
+	import { MenuIcon, XIcon } from 'svelte-feather-icons'
 </script>
 
-<header class="flex h-16 items-center justify-between px-4 md:h-20">
+<header class="flex h-16 items-center justify-between px-4 shadow md:h-20">
 	<a
 		href="/"
 		on:click={isMobileMenu.off}
@@ -14,28 +14,25 @@
 	>
 		<div class="flex items-center">
 			<img
-				class="mr-3 h-11 w-11"
-				style="color: #CFF249"
-				src="/images/maptool-logo.svg"
-				alt="{PUBLIC_APP_NAME} Logo"
+				class="mr-3 h-11 w-11 rounded-full"
+				src="/avatar.webp"
+				alt="Tice Kralt Avatar"
 			/>
-			<p class="font-heading text-xl uppercase">{PUBLIC_APP_NAME}</p>
+			<p class="font-heading text-xl">{PUBLIC_APP_NAME}</p>
 		</div>
 	</a>
 	<div>
-		{#if $breakpoint < Breakpoints.lg}
-			{#if $isMobileMenu}
-				<button on:click={isMobileMenu.off}><CrosshairIcon /></button>
-			{:else}
-				<button on:click={isMobileMenu.on}><MenuIcon /></button>
-			{/if}
-		{:else}
+		{#if $breakpoint > Breakpoints.lg}
 			<nav>
 				<ul class="flex items-center space-x-4">
 					<li><a href="/about">About</a></li>
 					<li><a href="/contact">Contact</a></li>
 				</ul>
 			</nav>
+		{:else if $isMobileMenu}
+			<button on:click={isMobileMenu.off}><XIcon /></button>
+		{:else}
+			<button on:click={isMobileMenu.on}><MenuIcon /></button>
 		{/if}
 	</div>
 </header>
