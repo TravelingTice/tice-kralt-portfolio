@@ -1,0 +1,45 @@
+<script lang="ts">
+	import { PUBLIC_APP_NAME } from '$env/static/public'
+	import breakpoint, { Breakpoints } from '$lib/helpers/breakpoint'
+	import MobileNav from '$lib/layout/MobileNav.svelte'
+	import isMobileMenu from './menu'
+	import { CrosshairIcon, MenuIcon } from 'svelte-feather-icons'
+</script>
+
+<header class="flex h-16 items-center justify-between px-4 md:h-20">
+	<a
+		href="/"
+		on:click={isMobileMenu.off}
+		title="Go to the {PUBLIC_APP_NAME} home page"
+	>
+		<div class="flex items-center">
+			<img
+				class="mr-3 h-11 w-11"
+				style="color: #CFF249"
+				src="/images/maptool-logo.svg"
+				alt="{PUBLIC_APP_NAME} Logo"
+			/>
+			<p class="font-heading text-xl uppercase">{PUBLIC_APP_NAME}</p>
+		</div>
+	</a>
+	<div>
+		{#if $breakpoint < Breakpoints.lg}
+			{#if $isMobileMenu}
+				<button on:click={isMobileMenu.off}><CrosshairIcon /></button>
+			{:else}
+				<button on:click={isMobileMenu.on}><MenuIcon /></button>
+			{/if}
+		{:else}
+			<nav>
+				<ul class="flex items-center space-x-4">
+					<li><a href="/about">About</a></li>
+					<li><a href="/contact">Contact</a></li>
+				</ul>
+			</nav>
+		{/if}
+	</div>
+</header>
+
+{#if $breakpoint < Breakpoints.lg && $isMobileMenu}
+	<MobileNav />
+{/if}
