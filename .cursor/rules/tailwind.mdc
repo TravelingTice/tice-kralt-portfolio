@@ -1,0 +1,6 @@
+---
+description: Always use tailwind
+globs: 
+alwaysApply: false
+---
+Always use TailwindCSS. Use inline Tailwind as much as possible. Only when you have to repeat yourself too much, create a class and use a `<style>` tag with @apply to apply tailwind styles
