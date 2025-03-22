@@ -1,0 +1,9 @@
+---
+description: Use arrow funcs
+globs: **/*.{js,ts}
+alwaysApply: false
+---
+
+Always use arrow functions instead of regular function declarations
+
+Prefer const over let unless reassignment is necessary
