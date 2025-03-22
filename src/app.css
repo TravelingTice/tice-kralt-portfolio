@@ -1,7 +1,8 @@
 @import 'tailwindcss';
+@plugin '@tailwindcss/typography';
 
 body {
-	@apply font-body text-dark;
+	@apply font-body;
 }
 
 h1,
