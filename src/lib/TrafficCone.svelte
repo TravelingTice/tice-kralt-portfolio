@@ -2,6 +2,8 @@
 	import { onMount } from 'svelte'
 	import * as THREE from 'three'
 	import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
+	import { TextGeometry } from 'three/examples/jsm/geometries/TextGeometry.js'
+	import { FontLoader } from 'three/examples/jsm/loaders/FontLoader.js'
 
 	let container: HTMLDivElement
 	let renderer = $state<THREE.WebGLRenderer | null>(null)
@@ -31,7 +33,6 @@
 		base.position.y = -0.1 // Position it below the cone
 
 		// Create the reflective stripes
-		const stripeGeometry = new THREE.TorusGeometry(1, 0.05, 16, 32)
 		const stripeMaterial = new THREE.MeshStandardMaterial({
 			color: 0xffffff, // White color
 			roughness: 0.5,
@@ -41,11 +42,17 @@
 		})
 
 		// Create two reflective stripes
-		const stripe1 = new THREE.Mesh(stripeGeometry, stripeMaterial)
+		const stripe1 = new THREE.Mesh(
+			new THREE.TorusGeometry(0.75, 0.05, 16, 32),
+			stripeMaterial
+		)
 		stripe1.position.y = 0.5
 		stripe1.rotation.x = Math.PI / 2
 
-		const stripe2 = new THREE.Mesh(stripeGeometry, stripeMaterial)
+		const stripe2 = new THREE.Mesh(
+			new THREE.TorusGeometry(0.53, 0.05, 16, 32),
+			stripeMaterial
+		)
 		stripe2.position.y = 1.2
 		stripe2.rotation.x = Math.PI / 2
 		stripe2.scale.set(0.8, 0.8, 0.8)
@@ -91,6 +98,39 @@
 		// Add traffic cone
 		const trafficCone = createTrafficCone()
 		scene.add(trafficCone)
+
+		// Add "UNDER CONSTRUCTION" text
+		const loader = new FontLoader()
+		loader.load(
+			'https://threejs.org/examples/fonts/helvetiker_bold.typeface.json',
+			(font) => {
+				const textGeometry = new TextGeometry('UNDER CONSTRUCTION', {
+					font: font,
+					size: 0.3,
+					depth: 0.05,
+					curveSegments: 12,
+					bevelEnabled: false
+				})
+
+				textGeometry.computeBoundingBox()
+				const textBox = textGeometry.boundingBox
+				const textWidth = textBox ? textBox.max.x - textBox.min.x : 4
+
+				const textMaterial = new THREE.MeshStandardMaterial({
+					color: 0xffffff,
+					roughness: 0.5,
+					metalness: 0.2
+				})
+
+				const textMesh = new THREE.Mesh(textGeometry, textMaterial)
+				textMesh.position.set(-textWidth / 2, 0.1, 2.5)
+				textMesh.rotation.x = -Math.PI / 10
+
+				if (scene) {
+					scene.add(textMesh)
+				}
+			}
+		)
 
 		// Add light
 		const ambientLight = new THREE.AmbientLight(0xffffff, 0.5)
