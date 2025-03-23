@@ -1,0 +1,19 @@
+@import 'tailwindcss';
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	/* TODO */
+}
+
+#svelte {
+	@apply flex min-h-screen flex-col;
+}
+
+/* TODO: Add Chrome IOS + Safari fixes for no-scroll */
+.no-scroll {
+	@apply h-screen overflow-hidden;
+}

@@ -1,0 +1,13 @@
+---
+description: Always use the new runes syntax for svelte
+globs: **/*.svelte
+alwaysApply: false
+---
+
+Always use the new Svelte runes syntax ($state, $derived, etc.) instead of the older reactive syntax
+
+Always use arrow functions instead of regular function declarations
+
+Prefer const over let unless reassignment is necessary
+
+Make sure to always make the script tag use lang="ts"
