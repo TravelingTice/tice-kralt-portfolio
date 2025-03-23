@@ -9,3 +9,5 @@ Always use the new Svelte runes syntax ($state, $derived, etc.) instead of the o
 Always use arrow functions instead of regular function declarations
 
 Prefer const over let unless reassignment is necessary
+
+Make sure to always make the script tag use lang="ts"

@@ -7,7 +7,7 @@
 
 <Header />
 
-<main class="flex-grow">
+<main class="flex flex-grow flex-col">
 	{@render children()}
 </main>
 
