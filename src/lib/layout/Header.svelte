@@ -18,7 +18,7 @@
 				src="/avatar.webp"
 				alt="Tice Kralt Avatar"
 			/>
-			<p class="font-heading text-xl">{PUBLIC_APP_NAME}</p>
+			<p class="font-heading text-xl">Tice Kralt</p>
 		</div>
 	</a>
 	<div>
