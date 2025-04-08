@@ -52,6 +52,10 @@ Track time easily for your projects! Use this beautifully designed time tracker 
 
 This was definitely a learning experience. I spent a lot of time back in 2020-2021 making this app. I made it really fancy and visually appealing. Adding things like a fancy onboarding tour and cool promotional video. Spent hours and days on it. Just to find out after doing some market research that I was definitely not the only one creating a time tracker app. Ah well. Lesson learnt and learnt a lot about React hooks and GraphQL in the process!
 
+Preview video: https://www.youtube.com/watch?v=_5DqRDdujgs
+
+Link: https://time-tracker-app-tice.netlify.app/
+
 # I Am Greener
 
 Make greener choices in a fun, gamified way!
