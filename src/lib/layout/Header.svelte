@@ -22,7 +22,7 @@
 		</div>
 	</a>
 	<div>
-		{#if $breakpoint > Breakpoints.lg}
+		{#if $breakpoint > Breakpoints.md}
 			<nav>
 				<ul class="flex items-center space-x-4">
 					<li><a href="/about">About</a></li>
@@ -37,6 +37,6 @@
 	</div>
 </header>
 
-{#if $breakpoint < Breakpoints.lg && $isMobileMenu}
+{#if $breakpoint < Breakpoints.md && $isMobileMenu}
 	<MobileNav />
 {/if}
