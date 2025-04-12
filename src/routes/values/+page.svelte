@@ -1,6 +1,15 @@
 <script lang="ts">
 	import SEO from '$lib/components/SEO.svelte'
-	import { categories } from './values'
+	import ValueModal from './ValueModal.svelte'
+	import { categories, type Category, type Value } from './values'
+	import { page } from '$app/state'
+	import { goto } from '$app/navigation'
+	import { onMount } from 'svelte'
+
+	// State for the modal
+	let isModalOpen = $state(false)
+	let selectedCategory = $state<Category | null>(null)
+	let selectedValue = $state<Value | null>(null)
 
 	const classesMap = {
 		blue: {
@@ -58,6 +67,50 @@
 			bullet: 'text-orange-500'
 		}
 	} as const
+
+	// Function to open a value modal
+	const openValueModal = (categoryIndex: number, valueIndex: number) => {
+		selectedCategory = categories[categoryIndex]
+		selectedValue = selectedCategory?.values[valueIndex] || null
+		isModalOpen = true
+
+		// Update URL
+		const categoryName = selectedCategory?.name
+			.toLowerCase()
+			.replace(/\W+/g, '-')
+
+		goto(`/values?value=${categoryName}-${valueIndex}`, {
+			keepFocus: true,
+			noScroll: true
+		})
+	}
+
+	// Function to close the modal
+	const closeModal = () => {
+		isModalOpen = false
+		selectedCategory = null
+		selectedValue = null
+		goto('/values', { keepFocus: true, noScroll: true })
+	}
+
+	// Check URL for initial modal opening
+	onMount(() => {
+		const urlValue = page.url.searchParams.get('value')
+		if (urlValue) {
+			const [categoryName, valueIndexStr] = urlValue.split('-')
+			const valueIndex = parseInt(valueIndexStr)
+
+			if (!isNaN(valueIndex)) {
+				const categoryIndex = categories.findIndex(
+					(c) => c.name.toLowerCase().replace(/\W+/g, '-') === categoryName
+				)
+
+				if (categoryIndex !== -1) {
+					openValueModal(categoryIndex, valueIndex)
+				}
+			}
+		}
+	})
 </script>
 
 <SEO
@@ -74,7 +127,7 @@
 	</p>
 
 	<div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-		{#each categories as category}
+		{#each categories as category, categoryIndex}
 			<div
 				class="flex flex-col rounded-lg border {classesMap[category.color]
 					.border} {classesMap[category.color]
@@ -84,10 +137,15 @@
 					{category.name}
 				</h2>
 				<ul class="flex-grow space-y-3">
-					{#each category.values as value}
+					{#each category.values as value, valueIndex}
 						<li class="flex items-start">
-							<span class="mr-2 {classesMap[category.color].bullet}">•</span>
-							<span>{value.text}</span>
+							<button
+								class="flex items-start text-left hover:opacity-80"
+								onclick={() => openValueModal(categoryIndex, valueIndex)}
+							>
+								<span class="mr-2 {classesMap[category.color].bullet}">•</span>
+								<span>{value.text}</span>
+							</button>
 						</li>
 					{/each}
 				</ul>
@@ -95,3 +153,10 @@
 		{/each}
 	</div>
 </div>
+
+<ValueModal
+	isOpen={isModalOpen}
+	category={selectedCategory}
+	value={selectedValue}
+	onClose={closeModal}
+/>

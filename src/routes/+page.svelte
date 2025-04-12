@@ -1,7 +1,7 @@
 <script lang="ts">
 	import breakpoint, { Breakpoints } from '$lib/helpers/breakpoint'
 	import { ExternalLinkIcon } from 'svelte-feather-icons'
-	import ProjectsGrid from '../components/ProjectsGrid.svelte'
+	import ProjectsGrid from '$lib/components/ProjectsGrid.svelte'
 	import 'simple-line-icons/css/simple-line-icons.css'
 	import SEO from '$lib/components/SEO.svelte'
 </script>
@@ -125,7 +125,7 @@
 						href="https://webinargeek.com"
 						target="_blank"
 						rel="noopener noreferrer"
-						class="bg-webinargeek-blue inline-flex items-center gap-2 rounded-lg px-6 py-3 text-white transition-all hover:bg-sky-900"
+						class="inline-flex items-center gap-2 rounded-lg bg-sky-800 px-6 py-3 text-white transition-all hover:bg-sky-900"
 					>
 						Visit WebinarGeek
 						<ExternalLinkIcon size="18" />
