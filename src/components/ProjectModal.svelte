@@ -17,6 +17,14 @@
 		url?: string
 		onClose: () => void
 	}>()
+
+	$effect(() => {
+		if (isOpen) {
+			document.body.classList.add('no-scroll')
+		} else {
+			document.body.classList.remove('no-scroll')
+		}
+	})
 </script>
 
 {#if isOpen}
