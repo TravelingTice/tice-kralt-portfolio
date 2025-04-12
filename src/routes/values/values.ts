@@ -41,7 +41,6 @@ export const categories: Category[] = [
 		name: 'Spirituality',
 		color: 'purple',
 		values: [
-			{ text: 'The Divine is watching, do the right thing, always.' },
 			{
 				text: 'I see the Divine as my guide in life and thus seek active connection with it to lead me on how to live my best life.'
 			},
@@ -61,7 +60,7 @@ export const categories: Category[] = [
 		color: 'green',
 		values: [
 			{
-				text: 'I embrace innovation, selecting new technologies, learning from them and applying what works.'
+				text: 'I embrace innovation, exploring new technologies, learning from them and applying what works.'
 			},
 			{
 				text: 'I embrace change, keeping myself in check if I am aspiring to be the best person I can be in a changing world.'
@@ -82,7 +81,7 @@ export const categories: Category[] = [
 				text: 'Having a positive mindset is key, because the outer world is a mirror of your inner world. Before you can change the world, you have to change yourself.'
 			},
 			{
-				text: 'I believe complaining is the most useless and harmful thing to yourself you can do.'
+				text: 'I believe complaining is the most useless and harmful thing you can do.'
 			},
 			{
 				text: 'I believe I am personally responsible for my actions and results I achieve in my life.'
@@ -110,10 +109,7 @@ export const categories: Category[] = [
 			},
 			{ text: 'I apply rigorous planning to every aspect of my life.' },
 			{ text: 'In anything I do, the goal is excellence.' },
-			{ text: 'In anything I do, I maintain integrity.' },
-			{
-				text: 'I believe mentorship is one of the best ways to develop yourself and your career, and should seek out mentorship as well as aspire to become a mentor.'
-			}
+			{ text: 'In anything I do, I maintain integrity.' }
 		]
 	},
 	{
@@ -133,7 +129,7 @@ export const categories: Category[] = [
 			{ text: "I will only chase my own dreams, not someone else's." },
 			{ text: 'My life is an adventure to find the truth, as in my truth.' },
 			{
-				text: 'Once I attain my freedom, I want to devote my life to addressing problems that affect the world, like for example climate change.'
+				text: 'Once I attain my freedom, I want to devote my life to addressing problems that affect the world, like for example climate change or poverty.'
 			}
 		]
 	},
@@ -142,7 +138,7 @@ export const categories: Category[] = [
 		color: 'orange',
 		values: [
 			{
-				text: 'However dire my situation, I will not kill myself'
+				text: 'However dire my situation, I will not kill myself.'
 			},
 			{
 				text: 'I will take criticism as an opportunity for growth and will never refute constructive criticism.'
@@ -151,7 +147,7 @@ export const categories: Category[] = [
 				text: 'I believe the best way to handle any problem is to go straight at it. Go directly towards your pain, do the most difficult thing first'
 			},
 			{
-				text: "I aspire to choose to do the best thing in whatever situation I'm in"
+				text: "I'll not let fear get the best of me and my decisions."
 			},
 			{
 				text: 'I believe failure is necessary to become successful'
