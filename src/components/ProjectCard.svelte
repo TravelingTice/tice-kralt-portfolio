@@ -1,13 +1,21 @@
 <script lang="ts">
-	export let title: string
-	export let excerpt: string
-	export let imageUrl: string
-	export let description: string = ''
-	export let url: string = ''
+	const {
+		title,
+		excerpt,
+		images,
+		description = '',
+		url = ''
+	} = $props<{
+		title: string
+		excerpt: string
+		images: string[]
+		description?: string
+		url?: string
+	}>()
 
 	import ProjectModal from './ProjectModal.svelte'
 
-	let isModalOpen = false
+	let isModalOpen = $state(false)
 
 	function openModal() {
 		isModalOpen = true
@@ -20,7 +28,7 @@
 
 <div class="overflow-hidden rounded-lg bg-white shadow-lg">
 	<div class="h-48 w-full cursor-pointer" on:click={openModal}>
-		<img src={imageUrl} alt={title} class="h-full w-full object-cover" />
+		<img src={images[0]} alt={title} class="h-full w-full object-cover" />
 	</div>
 	<div class="p-6">
 		<h3 class="mb-2 text-xl font-bold">{title}</h3>
@@ -37,7 +45,7 @@
 <ProjectModal
 	isOpen={isModalOpen}
 	{title}
-	{imageUrl}
+	{images}
 	{description}
 	{url}
 	onClose={closeModal}
