@@ -14,16 +14,19 @@
 	<div class="flex gap-2">
 		<a
 			href="https://github.com/travelingtice"
+			target="_blank"
 			class="rounded-full bg-gray-800 p-2 text-sm text-white"
 			><span class="sr-only">GitHub</span><GithubIcon size="18" /></a
 		>
 		<a
 			href="https://www.linkedin.com/in/matthijs-kralt/"
+			target="_blank"
 			class="rounded-full bg-gray-800 p-2 text-sm text-white"
 			><span class="sr-only">LinkedIn</span><LinkedinIcon size="18" /></a
 		>
 		<a
 			href="https://www.instagram.com/travelingtice/"
+			target="_blank"
 			class="rounded-full bg-gray-800 p-2 text-sm text-white"
 			><span class="sr-only">Instagram</span><InstagramIcon size="18" /></a
 		>

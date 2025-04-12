@@ -3,4 +3,4 @@ description: Always use tailwind
 globs: 
 alwaysApply: false
 ---
-Always use TailwindCSS. Use inline Tailwind as much as possible. Only when you have to repeat yourself too much, create a class and use a `<style>` tag with @apply to apply tailwind styles
+Always use TailwindCSS and use the latest v4 version. Use inline Tailwind as much as possible. Only when you have to repeat yourself too much, create a class and use a `<style>` tag to apply tailwind styles. Make sure to use v4 syntax!

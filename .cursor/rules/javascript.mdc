@@ -1,6 +1,6 @@
 ---
 description: Use arrow funcs
-globs: **/*.{js,ts}
+globs: *.svelte,*.js,*.ts
 alwaysApply: false
 ---
 
@@ -8,4 +8,4 @@ Always use arrow functions instead of regular function declarations
 
 Prefer const over let unless reassignment is necessary
 
-Never start the development server! This is already running in the background
+Never start the vite development server! This is already running in the background

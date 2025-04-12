@@ -1,12 +1,39 @@
 @import 'tailwindcss';
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	/* TODO */
+@theme {
+	--color-webinargeek-blue: rgb(0, 78, 94);
+	--color-travelingtice: rgb(0, 0, 89);
+	--font-body:
+		system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+		'Helvetica Neue', Arial, sans-serif;
+	--font-heading:
+		'Fira Sans Medium', system-ui, -apple-system, BlinkMacSystemFont,
+		'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+@font-face {
+	font-family: 'Fira Sans Medium';
+	src: url('/fonts/FiraSans-Medium.ttf') format('truetype');
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+
+@layer utilities {
+	.font-heading {
+		font-family: var(--font-heading);
+	}
+}
+
+@layer base {
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-family: var(--font-heading);
+	}
 }
 
 #svelte {

@@ -1,12 +1,6 @@
 <script>
 	import { fly } from 'svelte/transition'
 	import isMobileMenu from './menu'
-
-	$: if ($isMobileMenu) {
-		document.body.classList.add('no-scroll')
-	} else {
-		document.body.classList.remove('no-scroll')
-	}
 </script>
 
 <div
@@ -16,7 +10,6 @@
 	<nav class="my-8">
 		<ul class="flex flex-col items-center space-y-5">
 			<li><a href="/" on:click={isMobileMenu.off}>Home</a></li>
-			<li><a href="/about" on:click={isMobileMenu.off}>Pricing</a></li>
 			<li><a href="/contact" on:click={isMobileMenu.off}>Contact</a></li>
 		</ul>
 	</nav>

@@ -4,6 +4,14 @@
 	import MobileNav from '$lib/layout/MobileNav.svelte'
 	import isMobileMenu from './menu'
 	import { MenuIcon, XIcon } from 'svelte-feather-icons'
+
+	$: if (typeof document !== 'undefined') {
+		if ($isMobileMenu) {
+			document.body.classList.add('no-scroll')
+		} else {
+			document.body.classList.remove('no-scroll')
+		}
+	}
 </script>
 
 <header class="flex h-16 items-center justify-between px-4 shadow md:h-20">
@@ -18,14 +26,13 @@
 				src="/avatar.webp"
 				alt="Tice Kralt Avatar"
 			/>
-			<p class="font-heading text-xl">{PUBLIC_APP_NAME}</p>
+			<p class="font-heading text-xl">Tice Kralt</p>
 		</div>
 	</a>
 	<div>
-		{#if $breakpoint > Breakpoints.lg}
+		{#if $breakpoint > Breakpoints.md}
 			<nav>
 				<ul class="flex items-center space-x-4">
-					<li><a href="/about">About</a></li>
 					<li><a href="/contact">Contact</a></li>
 				</ul>
 			</nav>
@@ -37,6 +44,6 @@
 	</div>
 </header>
 
-{#if $breakpoint < Breakpoints.lg && $isMobileMenu}
+{#if $breakpoint < Breakpoints.md && $isMobileMenu}
 	<MobileNav />
 {/if}
