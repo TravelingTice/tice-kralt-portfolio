@@ -25,7 +25,6 @@
 		{#if $breakpoint > Breakpoints.md}
 			<nav>
 				<ul class="flex items-center space-x-4">
-					<li><a href="/about">About</a></li>
 					<li><a href="/contact">Contact</a></li>
 				</ul>
 			</nav>
