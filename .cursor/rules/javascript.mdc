@@ -1,6 +1,6 @@
 ---
 description: Use arrow funcs
-globs: **/*.{js,ts}
+globs: *.svelte,*.js,*.ts
 alwaysApply: false
 ---
 

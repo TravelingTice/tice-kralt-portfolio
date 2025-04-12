@@ -1,5 +1,6 @@
 <script lang="ts">
 	import breakpoint, { Breakpoints } from '$lib/helpers/breakpoint'
+	import ProjectsGrid from '../components/ProjectsGrid.svelte'
 </script>
 
 <section class="w-full">
@@ -29,4 +30,9 @@
 	</div>
 </section>
 
-<section></section>
+<section>
+	<div class="container mx-auto px-4 py-12">
+		<h1 class="pb-8 text-center text-3xl font-bold">My projects</h1>
+		<ProjectsGrid />
+	</div>
+</section>
