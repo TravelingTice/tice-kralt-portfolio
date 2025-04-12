@@ -1,8 +1,10 @@
 <script lang="ts">
 	import { PUBLIC_APP_NAME } from '$env/static/public'
 
+	const defaultTitle = 'Tice Kralt Portfolio Website'
+
 	const {
-		title = 'Tice Kralt Portfolio Website',
+		title = defaultTitle,
 		description = 'Welcome to the personal portfolio website of Tice Kralt. On this website I share all of my projects, and other areas of life that are important to mention.',
 		image = '/header_image_smaller.webp',
 		type = 'website',
@@ -16,9 +18,7 @@
 	}>()
 
 	const fullTitle =
-		title === 'Tice Kralt Portfolio Website'
-			? title
-			: `${title} | ${PUBLIC_APP_NAME}`
+		title === defaultTitle ? title : `${title} | ${PUBLIC_APP_NAME}`
 
 	const ogImage = image.startsWith('http') ? image : `${siteUrl}${image}`
 </script>
