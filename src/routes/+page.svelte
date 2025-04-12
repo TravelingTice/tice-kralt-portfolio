@@ -1,5 +1,6 @@
 <script lang="ts">
 	import breakpoint, { Breakpoints } from '$lib/helpers/breakpoint'
+	import { ExternalLinkIcon } from 'svelte-feather-icons'
 	import ProjectsGrid from '../components/ProjectsGrid.svelte'
 	import 'simple-line-icons/css/simple-line-icons.css'
 </script>
@@ -47,7 +48,7 @@
 		<div class="flex flex-col items-center md:flex-row">
 			<div class="mb-6 flex justify-center md:mb-0 md:w-1/3">
 				<img
-					src="/podcast/avatar.png"
+					src="/podcast/avatar.webp"
 					alt="Tice's Tech Trek Podcast"
 					class="h-40 w-40 rounded-full lg:h-64 lg:w-64"
 				/>
@@ -76,6 +77,53 @@
 						class="flex h-12 w-12 items-center justify-center rounded-full bg-white text-black transition-transform hover:scale-110 md:h-14 md:w-14"
 					>
 						<i class="icon-social-spotify text-xl md:text-2xl"></i>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- WebinarGeek Section -->
+<section class="relative py-12 text-white">
+	<div class="absolute inset-0">
+		<img
+			src="/webinargeek/webinargeek_banner.jpg"
+			alt="WebinarGeek Banner"
+			class="h-full w-full object-cover"
+		/>
+		<div class="absolute inset-0 bg-sky-900/70"></div>
+	</div>
+	<div class="relative container mx-auto px-4">
+		<h2 class="mb-6 text-center text-2xl font-bold md:mb-10 md:text-3xl">
+			My current position: Full stack developer at WebinarGeek.
+		</h2>
+		<div class="flex flex-col items-center md:flex-row">
+			<div class="mb-6 flex justify-center md:mb-0 md:w-1/3">
+				<div class="rounded-full bg-white">
+					<img
+						src="/webinargeek/logo.png"
+						alt="WebinarGeek Logo"
+						class="h-20 w-20 lg:h-32 lg:w-32"
+					/>
+				</div>
+			</div>
+			<div class="md:w-2/3">
+				<p class="mb-6 text-center md:text-left">
+					WebinarGeek is a dominating player in the webinar software market.
+					I've been working here since 2020 and still really like working here.
+					I learnt so much while being here. From working in a team, to
+					interpreting customer requests and much much more.
+				</p>
+				<div class="flex justify-center md:justify-start">
+					<a
+						href="https://webinargeek.com"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="bg-webinargeek-blue inline-flex items-center gap-2 rounded-lg px-6 py-3 text-white transition-all hover:bg-sky-900"
+					>
+						Visit WebinarGeek
+						<ExternalLinkIcon size="18" />
 					</a>
 				</div>
 			</div>
