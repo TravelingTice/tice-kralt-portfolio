@@ -1,20 +1,14 @@
 <script lang="ts">
-	import { XIcon, ExternalLinkIcon } from 'svelte-feather-icons'
-	import ImageCarousel from './ImageCarousel.svelte'
+	import { XIcon } from 'svelte-feather-icons'
 
 	const {
 		isOpen = false,
 		title = '',
-		images = [],
-		description = '',
-		url = '',
-		onClose = () => {}
+		onClose = () => {},
+		children
 	} = $props<{
 		isOpen: boolean
 		title: string
-		images: string[]
-		description: string
-		url?: string
 		onClose: () => void
 	}>()
 
@@ -54,26 +48,7 @@
 
 			<h2 id="modal-title" class="mb-6 text-2xl font-bold">{title}</h2>
 
-			<div class="mb-8">
-				<ImageCarousel {images} />
-			</div>
-
-			<div class="prose mb-6 max-w-none">
-				<p>{description}</p>
-			</div>
-
-			{#if url}
-				<div class="mt-6 flex justify-center">
-					<a
-						href={url}
-						target="_blank"
-						rel="noopener noreferrer"
-						class="inline-flex items-center gap-2 rounded-lg bg-black px-6 py-3 text-white transition-colors hover:bg-gray-800"
-					>
-						Visit Website <ExternalLinkIcon size="18" />
-					</a>
-				</div>
-			{/if}
+			{@render children()}
 		</div>
 	</div>
 {/if}
