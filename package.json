@@ -40,6 +40,7 @@
 	},
 	"dependencies": {
 		"@types/three": "^0.174.0",
+		"postmark": "^4.0.5",
 		"simple-line-icons": "^2.5.5",
 		"three": "^0.174.0"
 	}

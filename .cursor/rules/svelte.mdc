@@ -1,10 +1,10 @@
 ---
 description: Always use the new runes syntax for svelte
-globs: **/*.svelte
+globs: *.ts,*.svelte
 alwaysApply: false
 ---
 
-Always use the new Svelte runes syntax ($state, $derived, etc.) instead of the older reactive syntax
+Always use the new Svelte runes syntax ($state, $derived, etc.) instead of the older reactive syntax, please refer to the svelte docs on runes: https://svelte.dev/docs/svelte/what-are-runes
 
 Always use arrow functions instead of regular function declarations
 

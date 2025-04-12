@@ -4,6 +4,14 @@
 	import MobileNav from '$lib/layout/MobileNav.svelte'
 	import isMobileMenu from './menu'
 	import { MenuIcon, XIcon } from 'svelte-feather-icons'
+
+	$: if (typeof document !== 'undefined') {
+		if ($isMobileMenu) {
+			document.body.classList.add('no-scroll')
+		} else {
+			document.body.classList.remove('no-scroll')
+		}
+	}
 </script>
 
 <header class="flex h-16 items-center justify-between px-4 shadow md:h-20">

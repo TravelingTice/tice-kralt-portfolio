@@ -1,12 +1,6 @@
 <script>
 	import { fly } from 'svelte/transition'
 	import isMobileMenu from './menu'
-
-	$: if ($isMobileMenu) {
-		document.body.classList.add('no-scroll')
-	} else {
-		document.body.classList.remove('no-scroll')
-	}
 </script>
 
 <div
