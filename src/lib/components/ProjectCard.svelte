@@ -26,15 +26,21 @@
 	}
 </script>
 
-<div class="overflow-hidden rounded-lg bg-white shadow-lg">
-	<div class="h-48 w-full cursor-pointer" on:click={openModal}>
-		<img src={images[0]} alt={title} class="h-full w-full object-cover" />
+<div
+	class="group flex flex-col overflow-hidden rounded-xl bg-white ring-1 ring-ink/10 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-ink/10"
+>
+	<div class="h-48 w-full cursor-pointer overflow-hidden" on:click={openModal}>
+		<img
+			src={images[0]}
+			alt={title}
+			class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+		/>
 	</div>
-	<div class="p-6">
+	<div class="flex flex-grow flex-col p-6">
 		<h3 class="mb-2 text-xl font-bold">{title}</h3>
-		<p class="mb-4 text-gray-600">{excerpt}</p>
+		<p class="mb-5 text-gray-600">{excerpt}</p>
 		<button
-			class="rounded-lg bg-black px-4 py-2 text-sm text-white transition-colors hover:bg-gray-800"
+			class="mt-auto self-start rounded-full bg-ink px-5 py-2 text-sm font-medium text-white transition-colors hover:bg-accent"
 			on:click={openModal}
 		>
 			View more

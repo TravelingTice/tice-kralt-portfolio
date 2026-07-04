@@ -24,27 +24,50 @@
 			/>
 		{/if}
 
-		<div class="absolute inset-0 flex items-end bg-black/20">
-			<div class="p-6 text-white md:p-10">
-				<h1 class="mb-2 text-3xl font-bold md:text-5xl">Tice Kralt</h1>
-				<p class="max-w-lg text-lg md:text-xl">
+		<div
+			class="absolute inset-0 flex items-end bg-gradient-to-t from-ink/90 via-ink/30 to-transparent"
+		>
+			<div class="w-full p-6 pb-10 text-white md:p-12 md:pb-14">
+				<p class="eyebrow mb-3 text-sky-300">
+					Full-stack developer &amp; indie hacker
+				</p>
+				<h1 class="mb-3 text-4xl font-bold tracking-tight md:text-6xl">
+					Tice Kralt
+				</h1>
+				<p class="mb-6 max-w-lg text-lg text-white/80 md:text-xl">
 					Seeking ventures to build and grow
 				</p>
+				<div class="flex flex-wrap gap-3">
+					<a
+						href="#projects"
+						class="rounded-full bg-accent px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-accent-dark"
+						>View my projects</a
+					>
+					<a
+						href="/contact"
+						class="rounded-full border border-white/40 px-6 py-3 text-sm font-medium text-white transition-colors hover:border-white hover:bg-white/10"
+						>Get in touch</a
+					>
+				</div>
 			</div>
 		</div>
 	</div>
 </section>
 
-<section>
-	<div class="container mx-auto px-4 py-12">
-		<h1 class="pb-8 text-center text-3xl font-bold">My projects</h1>
+<section id="projects">
+	<div class="container mx-auto px-4 py-16 md:py-20">
+		<p class="eyebrow mb-2 text-center">Projects</p>
+		<h2 class="pb-10 text-center text-3xl font-bold md:text-4xl">
+			Things I've built
+		</h2>
 		<ProjectsGrid />
 	</div>
 </section>
 
 <!-- Podcast Section -->
-<section class="bg-black py-12 text-white md:py-16 lg:py-24">
+<section class="bg-ink py-14 text-white md:py-16 lg:py-24">
 	<div class="container mx-auto px-4">
+		<p class="eyebrow mb-2 text-center text-sky-300">Podcast</p>
 		<h2 class="mb-6 text-center text-2xl font-bold md:mb-10 md:text-3xl">
 			Follow my personal podcast! Tice's Tech Trek
 		</h2>
@@ -95,9 +118,10 @@
 			alt="WebinarGeek Banner"
 			class="h-full w-full object-cover"
 		/>
-		<div class="absolute inset-0 bg-sky-900/70"></div>
+		<div class="absolute inset-0 bg-webinargeek-blue/80"></div>
 	</div>
 	<div class="relative container mx-auto px-4">
+		<p class="eyebrow mb-2 text-center text-sky-300">Day job</p>
 		<h2
 			class="mx-auto mb-6 max-w-xl text-center text-2xl font-bold md:mb-10 md:text-3xl"
 		>
@@ -125,7 +149,7 @@
 						href="https://webinargeek.com"
 						target="_blank"
 						rel="noopener noreferrer"
-						class="inline-flex items-center gap-2 rounded-lg bg-sky-800 px-6 py-3 text-white transition-all hover:bg-sky-900"
+						class="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-medium text-webinargeek-blue transition-colors hover:bg-sky-50"
 					>
 						Visit WebinarGeek
 						<ExternalLinkIcon size="18" />
@@ -144,9 +168,10 @@
 			alt="TravelingTice Banner"
 			class="h-full w-full object-cover"
 		/>
-		<div class="bg-travelingtice/50 absolute inset-0"></div>
+		<div class="bg-travelingtice/60 absolute inset-0"></div>
 	</div>
 	<div class="relative container mx-auto px-4">
+		<p class="eyebrow mb-2 text-center text-sky-300">Travel</p>
 		<h2
 			class="mx-auto mb-6 max-w-xl text-center text-2xl font-bold md:mb-10 md:text-3xl"
 		>
@@ -175,7 +200,7 @@
 						href="https://www.youtube.com/@TravelingTice"
 						target="_blank"
 						rel="noopener noreferrer"
-						class="inline-flex items-center gap-2 rounded-lg bg-red-600 px-6 py-3 text-white transition-all hover:bg-red-700"
+						class="inline-flex items-center gap-2 rounded-full bg-red-600 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-red-700"
 					>
 						<i class="icon-social-youtube"></i>
 						YouTube
@@ -184,7 +209,7 @@
 						href="https://travelingtice.com"
 						target="_blank"
 						rel="noopener noreferrer"
-						class="bg-travelingtice inline-flex items-center gap-2 rounded-lg px-6 py-3 text-white transition-all hover:opacity-90"
+						class="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-medium text-travelingtice transition-colors hover:bg-sky-50"
 					>
 						Website
 						<ExternalLinkIcon size="18" />

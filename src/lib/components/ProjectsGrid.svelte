@@ -12,6 +12,38 @@
 
 	const projects: Project[] = [
 		{
+			title: 'Reach Out Right',
+			excerpt: 'Reach out to the people who need you.',
+			images: ['/projects/reachoutright/reachoutright1.webp'],
+			description:
+				"You're being ignored. It's not your message - you're reaching the wrong people. People do care about your product. You just haven't found them yet. Reach Out Right helps you find and reach the people who actually need your product.",
+			url: 'https://www.reachoutright.com'
+		},
+		{
+			title: 'Mascotly AI',
+			excerpt: 'Host a personable AI mascot on your website.',
+			images: ['/projects/mascotlyai/mascotlyai1.webp'],
+			description:
+				'Host a personable mascot on your website. Visitors can ask questions out loud, get instant spoken answers in real time, and be guided straight to the right pages and sections — without hunting through your site.',
+			url: 'https://mascotlyai.com'
+		},
+		{
+			title: 'Slop Goggles',
+			excerpt: 'Detect AI-generated comments and posts on Reddit.',
+			images: ['/projects/slopgoggles/slopgoggles1.webp'],
+			description:
+				'Detect AI-generated comments and posts on Reddit. A browser extension that puts on your "slop goggles" so you can instantly spot AI-generated content while browsing Reddit.',
+			url: 'https://slopgoggles.ticekralt.com'
+		},
+		{
+			title: 'LiveInterp',
+			excerpt: 'Effortless AI live interpretation for events and meetings.',
+			images: ['/projects/liveinterp/liveinterp1.webp'],
+			description:
+				"Deliver multilingual communication with live translated audio and transcriptions on every participant's phone. Launch live interpretation services in minutes.",
+			url: 'https://liveinterp.com'
+		},
+		{
 			title: 'Map My Travels',
 			excerpt: 'An interactive map builder to create awesome travel maps with!',
 			images: [
@@ -127,9 +159,9 @@
 	<div class="mt-8 flex justify-center">
 		<button
 			on:click={() => (showAll = true)}
-			class="rounded-lg bg-black px-6 py-3 text-white transition-colors hover:bg-gray-800"
+			class="rounded-full border border-ink/20 px-6 py-3 text-sm font-medium transition-colors hover:border-accent hover:text-accent"
 		>
-			Load More Projects
+			Show all projects
 		</button>
 	</div>
 {/if}

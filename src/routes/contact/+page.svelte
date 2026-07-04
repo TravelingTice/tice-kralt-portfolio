@@ -10,8 +10,9 @@
 	description="Get in touch with Tice Kralt for collaboration, job opportunities, or just to say hello."
 />
 
-<div class="container mx-auto max-w-3xl px-4 py-12">
-	<h1 class="mb-8 text-3xl font-bold md:text-4xl">Contact Me</h1>
+<div class="container mx-auto max-w-3xl px-4 py-16">
+	<p class="eyebrow mb-2">Contact</p>
+	<h1 class="mb-8 text-3xl font-bold md:text-4xl">Let's talk</h1>
 
 	<p class="mb-8">
 		I'm always open to discussing new opportunities, collaborations, or just
@@ -79,7 +80,7 @@
 					name="name"
 					value={form?.values?.name || ''}
 					required
-					class="mt-1 block w-full rounded-md border border-gray-300 p-2 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+					class="mt-1 block w-full rounded-lg border border-ink/20 bg-white p-2.5 focus:border-accent focus:ring-accent sm:text-sm"
 				/>
 			</div>
 
@@ -93,7 +94,7 @@
 					name="email"
 					value={form?.values?.email || ''}
 					required
-					class="mt-1 block w-full rounded-md border border-gray-300 p-2 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+					class="mt-1 block w-full rounded-lg border border-ink/20 bg-white p-2.5 focus:border-accent focus:ring-accent sm:text-sm"
 				/>
 			</div>
 
@@ -106,7 +107,7 @@
 					name="message"
 					rows="5"
 					required
-					class="mt-1 block w-full rounded-md border border-gray-300 p-2 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+					class="mt-1 block w-full rounded-lg border border-ink/20 bg-white p-2.5 focus:border-accent focus:ring-accent sm:text-sm"
 					>{form?.values?.message || ''}</textarea
 				>
 			</div>
@@ -114,7 +115,7 @@
 			<div>
 				<button
 					type="submit"
-					class="rounded-md border border-transparent bg-black px-4 py-2 text-sm text-white shadow-sm hover:bg-indigo-700 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:outline-none"
+					class="rounded-full bg-accent px-6 py-2.5 text-sm font-medium text-white transition-colors hover:bg-accent-dark"
 				>
 					Send Message
 				</button>
