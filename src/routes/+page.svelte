@@ -124,7 +124,7 @@
 		</div>
 		<ul>
 			{#each visibleProjects as project (project.title)}
-				<li><ProjectRow {...project} /></li>
+				<li><ProjectRow {...project} mrr={data.mrr} /></li>
 			{/each}
 		</ul>
 		{#if !showAllProjects}

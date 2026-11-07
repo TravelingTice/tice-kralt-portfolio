@@ -1,8 +1,26 @@
 <script lang="ts">
 	import type { Project } from '$lib/projects'
+	import type { Mrr } from '$lib/server/stripe'
 	import ProjectModal from './ProjectModal.svelte'
 
-	const { title, excerpt, logo, images, description, url }: Project = $props()
+	const {
+		title,
+		excerpt,
+		logo,
+		images,
+		description,
+		url,
+		allTimeRevenue = 0,
+		stripeMrr,
+		mrr = null
+	}: Project & { mrr?: Mrr | null } = $props()
+
+	const money = (amount: number, currency = 'usd') =>
+		new Intl.NumberFormat('en', {
+			style: 'currency',
+			currency,
+			minimumFractionDigits: Number.isInteger(amount) ? 0 : 2
+		}).format(amount)
 
 	let isModalOpen = $state(false)
 </script>
@@ -23,10 +41,20 @@
 		<span class="text-ink block font-medium">{title}</span>
 		<span class="text-muted block truncate text-sm">{excerpt}</span>
 	</span>
-	<span
-		class="text-faint opacity-0 transition group-hover:translate-x-0.5 group-hover:opacity-100"
-		aria-hidden="true">&rarr;</span
-	>
+	<span class="shrink-0 text-right tabular-nums">
+		{#if stripeMrr && mrr}
+			<span class="text-ink/90 block text-sm"
+				>{money(mrr.amount, mrr.currency)}<span class="text-faint">/mo</span
+				></span
+			>
+			<span class="text-faint block text-[11px]">MRR</span>
+		{:else if allTimeRevenue}
+			<span class="text-ink/90 block text-sm">{money(allTimeRevenue)}</span>
+			<span class="text-faint block text-[11px]">all-time</span>
+		{:else}
+			<span class="text-faint text-sm">$0</span>
+		{/if}
+	</span>
 </button>
 
 <ProjectModal

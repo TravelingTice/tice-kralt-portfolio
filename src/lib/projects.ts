@@ -5,6 +5,8 @@ export type Project = {
 	images: string[]
 	description: string
 	url?: string
+	allTimeRevenue?: number
+	stripeMrr?: boolean
 }
 
 export const projects: Project[] = [
@@ -72,6 +74,7 @@ export const projects: Project[] = [
 	},
 	{
 		title: 'Map My Travels',
+		stripeMrr: true,
 		excerpt: 'An interactive map builder to create awesome travel maps with!',
 		logo: '/projects/mapmytravels/mapmytravels1.webp',
 		images: [
@@ -115,6 +118,7 @@ export const projects: Project[] = [
 	},
 	{
 		title: 'Graduation Photoshoot Now',
+		allTimeRevenue: 14.99,
 		excerpt: 'No need to leave your dorm for your graduation photoshoot!',
 		logo: '/projects/graduationphotoshootnow/logo.png',
 		images: [
