@@ -20,12 +20,12 @@
 	title={category?.name || ''}
 	{onClose}
 >
-	<div class="prose max-w-none">
+	<div>
 		<p class="mb-6 text-lg font-medium">{value?.text || ''}</p>
 
 		<div class="mt-6">
-			<p class="text-sm text-gray-500">
-				Part of my <span class={`font-medium text-${category?.color}-800`}
+			<p class="text-faint text-sm">
+				Part of my <span class={`font-medium text-${category?.color}-300`}
 					>{category?.name}</span
 				> values
 			</p>

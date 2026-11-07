@@ -1,12 +1,10 @@
 <script lang="ts">
-	import { PUBLIC_APP_NAME } from '$env/static/public'
-
-	const defaultTitle = 'Tice Kralt Portfolio Website'
+	const defaultTitle = 'Tice Kralt - Solo Founder and Online Builder'
 
 	const {
 		title = defaultTitle,
-		description = 'Welcome to the personal portfolio website of Tice Kralt. On this website I share all of my projects, and other areas of life that are important to mention.',
-		image = '/header_image_smaller.webp',
+		description = "Tice Kralt (Matthijs Kralt) is a solo founder who has launched 10+ apps. Startups, podcast episodes of Tice's Tech Trek and more.",
+		image = '/og.png',
 		type = 'website',
 		siteUrl = 'https://ticekralt.com'
 	} = $props<{
@@ -17,8 +15,7 @@
 		siteUrl?: string
 	}>()
 
-	const fullTitle =
-		title === defaultTitle ? title : `${title} | ${PUBLIC_APP_NAME}`
+	const fullTitle = title === defaultTitle ? title : `${title} | Tice Kralt`
 
 	const ogImage = image.startsWith('http') ? image : `${siteUrl}${image}`
 </script>

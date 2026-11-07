@@ -1,4 +1,5 @@
 <script lang="ts">
+	import type { Snippet } from 'svelte'
 	import { XIcon } from 'svelte-feather-icons'
 
 	const {
@@ -10,6 +11,7 @@
 		isOpen: boolean
 		title: string
 		onClose: () => void
+		children: Snippet
 	}>()
 
 	$effect(() => {
@@ -23,7 +25,7 @@
 
 {#if isOpen}
 	<div
-		class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4"
+		class="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4 backdrop-blur-sm"
 		on:click={onClose}
 		on:keydown={(e) => e.key === 'Escape' && onClose()}
 		tabindex="0"
@@ -33,14 +35,15 @@
 	>
 		<!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
 		<div
-			class="relative max-h-[90vh] w-full max-w-3xl overflow-auto rounded-lg bg-white p-6 shadow-xl"
+			class="border-line bg-surface relative max-h-[90vh] w-full max-w-3xl overflow-auto rounded-2xl border p-6 shadow-2xl"
 			on:click|stopPropagation={() => {}}
 			on:keydown|stopPropagation={() => {}}
 			tabindex="-1"
 			role="document"
 		>
 			<button
-				class="absolute top-4 right-4 rounded-full p-1 text-gray-500 hover:bg-gray-100 hover:text-gray-700"
+				aria-label="Close"
+				class="text-faint hover:bg-line hover:text-ink absolute top-4 right-4 rounded-full p-1 transition-colors"
 				on:click={onClose}
 			>
 				<XIcon size="24" />

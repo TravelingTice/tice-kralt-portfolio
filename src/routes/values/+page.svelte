@@ -13,58 +13,58 @@
 
 	const classesMap = {
 		blue: {
-			border: 'border-blue-100',
-			background: 'bg-blue-50/10',
-			text: 'text-blue-800',
-			bullet: 'text-blue-500'
+			border: 'border-blue-400/20',
+			background: 'bg-blue-400/5',
+			text: 'text-blue-300',
+			bullet: 'text-blue-400'
 		},
 		purple: {
-			border: 'border-purple-100',
-			background: 'bg-purple-50/10',
-			text: 'text-purple-800',
-			bullet: 'text-purple-500'
+			border: 'border-purple-400/20',
+			background: 'bg-purple-400/5',
+			text: 'text-purple-300',
+			bullet: 'text-purple-400'
 		},
 		green: {
-			border: 'border-green-100',
-			background: 'bg-green-50/10',
-			text: 'text-green-800',
-			bullet: 'text-green-500'
+			border: 'border-green-400/20',
+			background: 'bg-green-400/5',
+			text: 'text-green-300',
+			bullet: 'text-green-400'
 		},
 		yellow: {
-			border: 'border-yellow-100',
-			background: 'bg-yellow-50/10',
-			text: 'text-yellow-800',
-			bullet: 'text-yellow-500'
+			border: 'border-yellow-400/20',
+			background: 'bg-yellow-400/5',
+			text: 'text-yellow-300',
+			bullet: 'text-yellow-400'
 		},
 		amber: {
-			border: 'border-amber-100',
-			background: 'bg-amber-50/10',
-			text: 'text-amber-800',
-			bullet: 'text-amber-500'
+			border: 'border-amber-400/20',
+			background: 'bg-amber-400/5',
+			text: 'text-amber-300',
+			bullet: 'text-amber-400'
 		},
 		red: {
-			border: 'border-red-100',
-			background: 'bg-red-50/10',
-			text: 'text-red-800',
-			bullet: 'text-red-500'
+			border: 'border-red-400/20',
+			background: 'bg-red-400/5',
+			text: 'text-red-300',
+			bullet: 'text-red-400'
 		},
 		sky: {
-			border: 'border-sky-100',
-			background: 'bg-sky-50/10',
-			text: 'text-sky-800',
-			bullet: 'text-sky-500'
+			border: 'border-sky-400/20',
+			background: 'bg-sky-400/5',
+			text: 'text-sky-300',
+			bullet: 'text-sky-400'
 		},
 		indigo: {
-			border: 'border-indigo-100',
-			background: 'bg-indigo-50/10',
-			text: 'text-indigo-800',
-			bullet: 'text-indigo-500'
+			border: 'border-indigo-400/20',
+			background: 'bg-indigo-400/5',
+			text: 'text-indigo-300',
+			bullet: 'text-indigo-400'
 		},
 		orange: {
-			border: 'border-orange-100',
-			background: 'bg-orange-50/10',
-			text: 'text-orange-800',
-			bullet: 'text-orange-500'
+			border: 'border-orange-400/20',
+			background: 'bg-orange-400/5',
+			text: 'text-orange-300',
+			bullet: 'text-orange-400'
 		}
 	} as const
 
@@ -118,10 +118,10 @@
 	description="Personal values that guide Tice Kralt's life and decision making"
 />
 
-<div class="container mx-auto max-w-6xl px-4 py-12">
+<div class="container mx-auto max-w-6xl px-5 py-12">
 	<h1 class="mb-8 text-3xl font-bold md:text-4xl">My Personal Values</h1>
 
-	<p class="mb-12 max-w-3xl text-lg">
+	<p class="text-muted mb-12 max-w-3xl text-lg">
 		These values guide my decisions and actions in life. They represent what I
 		believe in and what I aspire to be.
 	</p>
@@ -131,7 +131,7 @@
 			<div
 				class="flex flex-col rounded-lg border {classesMap[category.color]
 					.border} {classesMap[category.color]
-					.background} p-6 shadow-sm transition-all hover:shadow-md"
+					.background} p-6 transition-colors"
 			>
 				<h2 class="mb-4 text-xl font-bold {classesMap[category.color].text}">
 					{category.name}

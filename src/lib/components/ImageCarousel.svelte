@@ -22,7 +22,7 @@
 <div class="relative w-full">
 	{#if images.length > 0}
 		<div
-			class="flex h-[300px] items-center justify-center overflow-hidden rounded-lg bg-gray-50 sm:h-[400px]"
+			class="bg-paper flex h-[300px] items-center justify-center overflow-hidden rounded-xl sm:h-[400px]"
 		>
 			{#key currentIndex}
 				<img
@@ -37,7 +37,7 @@
 		{#if images.length > 1}
 			<!-- Navigation buttons -->
 			<button
-				class="absolute top-1/2 left-2 -translate-y-1/2 rounded-full bg-white/80 p-2 text-gray-800 shadow-md transition-colors duration-200 hover:bg-white"
+				class="text-ink absolute top-1/2 left-2 -translate-y-1/2 rounded-full bg-black/60 p-2 backdrop-blur transition-colors duration-200 hover:bg-black/80"
 				on:click={prevImage}
 				aria-label="Previous image"
 			>
@@ -45,7 +45,7 @@
 			</button>
 
 			<button
-				class="absolute top-1/2 right-2 -translate-y-1/2 rounded-full bg-white/80 p-2 text-gray-800 shadow-md transition-colors duration-200 hover:bg-white"
+				class="text-ink absolute top-1/2 right-2 -translate-y-1/2 rounded-full bg-black/60 p-2 backdrop-blur transition-colors duration-200 hover:bg-black/80"
 				on:click={nextImage}
 				aria-label="Next image"
 			>
@@ -58,8 +58,8 @@
 					<button
 						class="h-2 w-2 rounded-full transition-all duration-200 {currentIndex ===
 						index
-							? 'scale-110 bg-black'
-							: 'bg-gray-300 hover:bg-gray-400'}"
+							? 'bg-ink scale-110'
+							: 'bg-line hover:bg-faint'}"
 						on:click={() => goToImage(index)}
 						aria-label={`Go to image ${index + 1}`}
 					></button>

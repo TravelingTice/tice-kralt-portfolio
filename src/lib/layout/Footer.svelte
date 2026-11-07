@@ -1,38 +1,41 @@
 <script lang="ts">
-	import { PUBLIC_APP_NAME } from '$env/static/public'
-	import { GithubIcon, InstagramIcon, LinkedinIcon } from 'svelte-feather-icons'
+	import BrandIcon from '$lib/components/BrandIcon.svelte'
+
+	const links = [
+		{ name: 'x', label: 'X', href: 'https://x.com/travelingtice' },
+		{
+			name: 'github',
+			label: 'GitHub',
+			href: 'https://github.com/travelingtice'
+		},
+		{
+			name: 'linkedin',
+			label: 'LinkedIn',
+			href: 'https://www.linkedin.com/in/matthijs-kralt/'
+		},
+		{
+			name: 'instagram',
+			label: 'Instagram',
+			href: 'https://www.instagram.com/travelingtice/'
+		}
+	] as const
 </script>
 
-<footer class="bg-ink text-white">
+<footer class="border-line/60 mt-auto border-t">
 	<div
-		class="container mx-auto flex items-center justify-between px-4 py-8 md:px-8"
+		class="text-faint mx-auto flex w-full max-w-2xl items-center justify-between px-5 py-8 text-sm"
 	>
-		<div>
-			<p class="font-heading">{PUBLIC_APP_NAME}</p>
-			<p class="text-sm text-white/60">
-				&copy; {new Date().getFullYear()} &middot; Built with SvelteKit
-			</p>
-		</div>
-
-		<div class="flex gap-2">
-			<a
-				href="https://github.com/travelingtice"
-				target="_blank"
-				class="rounded-full bg-white/10 p-2.5 text-sm transition-colors hover:bg-accent"
-				><span class="sr-only">GitHub</span><GithubIcon size="18" /></a
-			>
-			<a
-				href="https://www.linkedin.com/in/matthijs-kralt/"
-				target="_blank"
-				class="rounded-full bg-white/10 p-2.5 text-sm transition-colors hover:bg-accent"
-				><span class="sr-only">LinkedIn</span><LinkedinIcon size="18" /></a
-			>
-			<a
-				href="https://www.instagram.com/travelingtice/"
-				target="_blank"
-				class="rounded-full bg-white/10 p-2.5 text-sm transition-colors hover:bg-accent"
-				><span class="sr-only">Instagram</span><InstagramIcon size="18" /></a
-			>
+		<p>&copy; {new Date().getFullYear()} Tice Kralt</p>
+		<div class="flex gap-4">
+			{#each links as link (link.name)}
+				<a
+					href={link.href}
+					target="_blank"
+					rel="noopener noreferrer"
+					class="hover:text-ink transition-colors"
+					aria-label={link.label}><BrandIcon name={link.name} /></a
+				>
+			{/each}
 		</div>
 	</div>
 </footer>

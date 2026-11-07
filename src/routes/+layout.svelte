@@ -11,7 +11,7 @@
 
 <Header />
 
-<main class="flex flex-grow flex-col">
+<main class="relative isolate flex flex-grow flex-col">
 	{@render children()}
 </main>
 

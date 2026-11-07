@@ -1,221 +1,269 @@
 <script lang="ts">
-	import breakpoint, { Breakpoints } from '$lib/helpers/breakpoint'
-	import { ExternalLinkIcon } from 'svelte-feather-icons'
-	import ProjectsGrid from '$lib/components/ProjectsGrid.svelte'
-	import 'simple-line-icons/css/simple-line-icons.css'
-	import SEO from '$lib/components/SEO.svelte'
+	import BrandIcon from '$lib/components/BrandIcon.svelte'
+	import ProjectRow from '$lib/components/ProjectRow.svelte'
+	import { projects } from '$lib/projects'
+
+	const { data } = $props()
+
+	const compact = new Intl.NumberFormat('en', {
+		notation: 'compact',
+		maximumFractionDigits: 1
+	})
+
+	const socials = $derived([
+		{
+			name: 'x' as const,
+			label: 'X',
+			href: 'https://x.com/travelingtice',
+			count: data.counts.x
+		},
+		{
+			name: 'youtube' as const,
+			label: 'YouTube',
+			href: 'https://www.youtube.com/@travelingtice',
+			count: data.counts.youtube
+		},
+		{
+			name: 'instagram' as const,
+			label: 'Instagram',
+			href: 'https://www.instagram.com/travelingtice/',
+			count: data.counts.instagram
+		},
+		{
+			name: 'linkedin' as const,
+			label: 'LinkedIn',
+			href: 'https://www.linkedin.com/in/matthijs-kralt/',
+			count: null
+		}
+	])
+
+	let showAllProjects = $state(false)
+	const visibleProjects = $derived(
+		showAllProjects ? projects : projects.slice(0, 8)
+	)
+
+	let showAllEpisodes = $state(false)
+	const episodes = $derived(
+		showAllEpisodes ? data.episodes : data.episodes.slice(0, 4)
+	)
+
+	const formatDate = (iso: string) =>
+		new Date(iso).toLocaleDateString('en', { month: 'short', year: 'numeric' })
 </script>
 
-<SEO image="/header_image_smaller.webp" />
+<div
+	class="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[640px] bg-[radial-gradient(700px_circle_at_30%_0%,rgba(108,180,238,0.09),transparent_70%)]"
+	aria-hidden="true"
+></div>
 
-<section class="w-full">
-	<div class="relative">
-		{#if $breakpoint < Breakpoints.md}
+<div class="mx-auto w-full max-w-2xl px-5">
+	<section class="pt-14 pb-16 md:pt-24">
+		<div class="flex items-end gap-5 md:gap-7">
+			<h1
+				class="font-heading to-ink/80 bg-gradient-to-b from-white bg-clip-text pb-2 text-[clamp(5.5rem,22vw,10rem)] leading-[0.85] tracking-[-0.045em] text-transparent"
+			>
+				Tice
+			</h1>
 			<img
-				src="/header_image_smaller.webp"
-				alt="Tice Kralt exploring the Canton Fair in China"
-				class="h-[50vh] w-full object-cover md:hidden"
+				src="/avatar.webp"
+				alt="Tice Kralt"
+				width="80"
+				height="80"
+				class="ring-line mb-4 h-16 w-16 rounded-full object-cover ring-1 md:mb-6 md:h-20 md:w-20"
 			/>
-		{:else}
-			<img
-				src="/header_image.webp"
-				alt="Tice Kralt exploring the Canton Fair in China"
-				class="hidden h-[60vh] w-full object-cover md:block"
-			/>
-		{/if}
+		</div>
+		<p class="text-muted mt-5 text-lg tracking-tight">
+			Solo founder &amp; online builder
+		</p>
 
+		<div class="mt-10 space-y-5 text-[17px] leading-[1.75] text-[#c4c4c4]">
+			<p>
+				My real name is <span class="text-ink">Matthijs Kralt</span>, and after
+				launching and failing <span class="text-ink">10+ apps</span>, I'm still
+				on my way to becoming an app founder. I'm interested in building apps
+				that really help people. I excel at building them. Marketing is still
+				something I struggle with, but I will get there.
+			</p>
+			<p>
+				I also speak <span class="text-ink">Chinese, Indonesian and Dutch</span>
+				besides English. I went to China 2 times to try to launch an app for Chinese
+				factory owners. Also becoming a
+				<span class="text-ink">dad in January 2027</span>, which is really
+				exciting!
+			</p>
+		</div>
+
+		<ul class="mt-10 flex flex-wrap items-center gap-x-7 gap-y-3">
+			{#each socials as social (social.name)}
+				<li>
+					<a
+						href={social.href}
+						target="_blank"
+						rel="noopener noreferrer"
+						class="text-muted hover:text-ink flex items-center gap-2 transition-colors"
+						aria-label={social.count
+							? `${social.label}: ${social.count} followers`
+							: social.label}
+					>
+						<BrandIcon name={social.name} class="h-[18px] w-[18px]" />
+						{#if social.count}
+							<span class="tabular-nums">{compact.format(social.count)}</span>
+						{/if}
+					</a>
+				</li>
+			{/each}
+		</ul>
+	</section>
+
+	<figure class="group relative mb-14 overflow-hidden rounded-2xl">
+		<img
+			src="/header_image_smaller.webp"
+			srcset="/header_image_smaller.webp 800w, /header_image.webp 1600w"
+			sizes="(min-width: 672px) 672px, 100vw"
+			alt="Tice at the Canton Fair in Guangzhou, China"
+			class="aspect-[5/2] w-full object-cover object-[center_40%] opacity-45 grayscale transition duration-700 [mask-image:linear-gradient(to_bottom,transparent,black_25%,black_75%,transparent)] group-hover:opacity-70 group-hover:grayscale-0 sm:aspect-[4/1]"
+			loading="lazy"
+		/>
 		<div
-			class="absolute inset-0 flex items-end bg-gradient-to-t from-ink/90 via-ink/30 to-transparent"
+			class="from-paper/60 absolute inset-0 bg-gradient-to-t to-transparent"
+		></div>
+		<figcaption
+			class="absolute bottom-3 left-4 text-xs text-[#c4c4c4] drop-shadow"
 		>
-			<div class="w-full p-6 pb-10 text-white md:p-12 md:pb-14">
-				<p class="eyebrow mb-3 text-sky-300">
-					Full-stack developer &amp; indie hacker
-				</p>
-				<h1 class="mb-3 text-4xl font-bold tracking-tight md:text-6xl">
-					Tice Kralt
-				</h1>
-				<p class="mb-6 max-w-lg text-lg text-white/80 md:text-xl">
-					Seeking ventures to build and grow
-				</p>
-				<div class="flex flex-wrap gap-3">
-					<a
-						href="#projects"
-						class="rounded-full bg-accent px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-accent-dark"
-						>View my projects</a
+			Canton Fair, Guangzhou
+		</figcaption>
+	</figure>
+
+	<section id="startups" class="mb-20 scroll-mt-20">
+		<div
+			class="border-line mb-2 flex items-baseline justify-between border-b pb-3"
+		>
+			<h2 class="eyebrow">My startups</h2>
+			<span class="text-faint text-xs tabular-nums">{projects.length}</span>
+		</div>
+		<ul>
+			{#each visibleProjects as project (project.title)}
+				<li><ProjectRow {...project} /></li>
+			{/each}
+		</ul>
+		{#if !showAllProjects}
+			<button
+				onclick={() => (showAllProjects = true)}
+				class="text-muted hover:text-ink mt-4 text-sm transition-colors"
+			>
+				Show all {projects.length} &darr;
+			</button>
+		{/if}
+	</section>
+
+	<section id="podcast" class="mb-20 scroll-mt-20">
+		<div
+			class="border-line mb-5 flex items-baseline justify-between border-b pb-3"
+		>
+			<h2 class="eyebrow">
+				Podcast<span
+					class="text-muted ml-2 font-sans font-normal tracking-normal normal-case"
+					>Tice's Tech Trek</span
+				>
+			</h2>
+			<div class="text-faint flex items-center gap-4 text-xs">
+				<a
+					href="https://www.youtube.com/@TicesTechTrek"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="hover:text-ink flex items-center gap-1.5 transition-colors"
+					aria-label="Podcast on YouTube: {data.counts.podcast} subscribers"
+				>
+					<BrandIcon name="youtube" class="h-4 w-4" />
+					<span class="tabular-nums">{compact.format(data.counts.podcast)}</span
 					>
-					<a
-						href="/contact"
-						class="rounded-full border border-white/40 px-6 py-3 text-sm font-medium text-white transition-colors hover:border-white hover:bg-white/10"
-						>Get in touch</a
-					>
-				</div>
+				</a>
+				<a
+					href="https://open.spotify.com/show/1XNO8yjHVI8NXfywgEnMMy"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="hover:text-ink transition-colors"
+					aria-label="Podcast on Spotify"
+				>
+					<BrandIcon name="spotify" class="h-4 w-4" />
+				</a>
 			</div>
 		</div>
-	</div>
-</section>
+		<p class="text-muted mb-6">
+			Building online businesses, failing and trying again.
+		</p>
 
-<section id="projects">
-	<div class="container mx-auto px-4 py-16 md:py-20">
-		<p class="eyebrow mb-2 text-center">Projects</p>
-		<h2 class="pb-10 text-center text-3xl font-bold md:text-4xl">
-			Things I've built
-		</h2>
-		<ProjectsGrid />
-	</div>
-</section>
+		{#if data.episodes.length}
+			<ul class="space-y-1">
+				{#each episodes as episode (episode.id)}
+					<li>
+						<a
+							href="https://www.youtube.com/watch?v={episode.id}"
+							target="_blank"
+							rel="noopener noreferrer"
+							class="group hover:bg-surface -mx-3 grid grid-cols-[112px_1fr] items-center gap-4 rounded-xl p-3 transition-colors sm:grid-cols-[148px_1fr] sm:gap-5"
+						>
+							<div
+								class="bg-surface ring-line overflow-hidden rounded-lg ring-1"
+							>
+								<img
+									src={episode.thumbnail}
+									alt=""
+									loading="lazy"
+									class="aspect-video w-full object-cover opacity-75 saturate-[.8] transition duration-300 group-hover:opacity-100 group-hover:saturate-100"
+								/>
+							</div>
+							<div class="min-w-0">
+								<p class="text-faint mb-1 text-xs tabular-nums">
+									{episode.number ? `#${episode.number} · ` : ''}{formatDate(
+										episode.published
+									)}
+								</p>
+								<p
+									class="text-ink/85 group-hover:text-ink line-clamp-2 text-[15px] leading-snug transition-colors"
+								>
+									{episode.title}
+								</p>
+							</div>
+						</a>
+					</li>
+				{/each}
+			</ul>
+			{#if !showAllEpisodes && data.episodes.length > episodes.length}
+				<button
+					onclick={() => (showAllEpisodes = true)}
+					class="text-muted hover:text-ink mt-6 text-sm transition-colors"
+				>
+					Show all {data.episodes.length} episodes &darr;
+				</button>
+			{/if}
+		{/if}
+	</section>
 
-<!-- Podcast Section -->
-<section class="bg-ink py-14 text-white md:py-16 lg:py-24">
-	<div class="container mx-auto px-4">
-		<p class="eyebrow mb-2 text-center text-sky-300">Podcast</p>
-		<h2 class="mb-6 text-center text-2xl font-bold md:mb-10 md:text-3xl">
-			Follow my personal podcast! Tice's Tech Trek
-		</h2>
-		<div class="mx-auto flex max-w-4xl flex-col items-center md:flex-row">
-			<div class="mb-6 flex justify-center md:mb-0 md:w-1/3">
-				<img
-					src="/podcast/avatar.webp"
-					alt="Tice's Tech Trek Podcast"
-					class="h-30 w-30 rounded-full lg:h-52 lg:w-52"
-				/>
-			</div>
-			<div class="md:w-2/3">
-				<p class="mb-6 text-center md:text-left">
-					Join me on Tice's Tech Trek where I document my indie hacker journey
-					toward financial independence through building online businesses. From
-					tech and development to business strategies and life lessons, I share
-					insights and experiences gained while carving my path in the digital
-					entrepreneurship world.
-				</p>
-				<div class="flex justify-center space-x-4 md:justify-start">
-					<a
-						href="https://www.youtube.com/@TicesTechTrek"
-						target="_blank"
-						aria-label="YouTube"
-						class="flex h-12 w-12 items-center justify-center rounded-full bg-white text-black transition-transform hover:scale-110 md:h-14 md:w-14"
-					>
-						<i class="icon-social-youtube text-xl md:text-2xl"></i>
-					</a>
-					<a
-						href="https://open.spotify.com/show/1XNO8yjHVI8NXfywgEnMMy"
-						target="_blank"
-						aria-label="Spotify"
-						class="flex h-12 w-12 items-center justify-center rounded-full bg-white text-black transition-transform hover:scale-110 md:h-14 md:w-14"
-					>
-						<i class="icon-social-spotify text-xl md:text-2xl"></i>
-					</a>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-
-<!-- WebinarGeek Section -->
-<section class="relative py-12 text-white md:py-16 lg:py-24">
-	<div class="absolute inset-0">
+	<section class="mb-16 flex items-center gap-4">
 		<img
-			src="/webinargeek/webinargeek_banner.jpg"
-			alt="WebinarGeek Banner"
-			class="h-full w-full object-cover"
+			src="/travelingtice/silhouette.png"
+			alt=""
+			class="h-10 w-10 shrink-0 object-contain opacity-50"
 		/>
-		<div class="absolute inset-0 bg-webinargeek-blue/80"></div>
-	</div>
-	<div class="relative container mx-auto px-4">
-		<p class="eyebrow mb-2 text-center text-sky-300">Day job</p>
-		<h2
-			class="mx-auto mb-6 max-w-xl text-center text-2xl font-bold md:mb-10 md:text-3xl"
-		>
-			My current position: Full stack developer at WebinarGeek.
-		</h2>
-		<div class="mx-auto flex max-w-4xl flex-col items-center md:flex-row">
-			<div class="mb-6 flex justify-center md:mb-0 md:w-1/3">
-				<div class="rounded-full bg-white">
-					<img
-						src="/webinargeek/logo.png"
-						alt="WebinarGeek Logo"
-						class="h-20 w-20 lg:h-28 lg:w-28"
-					/>
-				</div>
-			</div>
-			<div class="md:w-2/3">
-				<p class="mb-6 text-center md:text-left">
-					WebinarGeek is a dominating player in the webinar software market.
-					I've been working here since 2020 and still really like working here.
-					I learnt so much while being here. From working in a team, to
-					interpreting customer requests and much much more.
-				</p>
-				<div class="flex justify-center md:justify-start">
-					<a
-						href="https://webinargeek.com"
-						target="_blank"
-						rel="noopener noreferrer"
-						class="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-medium text-webinargeek-blue transition-colors hover:bg-sky-50"
-					>
-						Visit WebinarGeek
-						<ExternalLinkIcon size="18" />
-					</a>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-
-<!-- TravelingTice Section -->
-<section class="relative py-12 text-white md:py-16 lg:py-24">
-	<div class="absolute inset-0">
-		<img
-			src="/travelingtice/banner.jpeg"
-			alt="TravelingTice Banner"
-			class="h-full w-full object-cover"
-		/>
-		<div class="bg-travelingtice/60 absolute inset-0"></div>
-	</div>
-	<div class="relative container mx-auto px-4">
-		<p class="eyebrow mb-2 text-center text-sky-300">Travel</p>
-		<h2
-			class="mx-auto mb-6 max-w-xl text-center text-2xl font-bold md:mb-10 md:text-3xl"
-		>
-			Another passion of mine: Traveling. I was known as "TravelingTice"
-		</h2>
-		<div class="mx-auto flex max-w-4xl flex-col items-center md:flex-row">
-			<div class="mb-6 flex justify-center md:mb-0 md:w-1/3">
-				<div class="rounded-full">
-					<img
-						src="/travelingtice/logo.png"
-						alt="TravelingTice Logo"
-						class="h-20 w-20 lg:h-32 lg:w-32"
-					/>
-				</div>
-			</div>
-			<div class="md:w-2/3">
-				<p class="mb-6 text-center md:text-left">
-					After high school I didn't really feel like studying. Instead I felt
-					like packing all of my belongings in 4 bike bags and set off on a
-					bicycle touring journey! It was a scary thing to do but it has brought
-					me so much taught me so many life lessons. I created a "daily vlog" of
-					my trip, all of which you can still find on YouTube!
-				</p>
-				<div class="flex flex-wrap justify-center gap-4 md:justify-start">
-					<a
-						href="https://www.youtube.com/@TravelingTice"
-						target="_blank"
-						rel="noopener noreferrer"
-						class="inline-flex items-center gap-2 rounded-full bg-red-600 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-red-700"
-					>
-						<i class="icon-social-youtube"></i>
-						YouTube
-					</a>
-					<a
-						href="https://travelingtice.com"
-						target="_blank"
-						rel="noopener noreferrer"
-						class="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-medium text-travelingtice transition-colors hover:bg-sky-50"
-					>
-						Website
-						<ExternalLinkIcon size="18" />
-					</a>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
+		<p class="text-muted text-sm leading-relaxed">
+			Before building apps I cycled through 13 countries as
+			<span class="text-ink">TravelingTice</span>.
+			<a
+				href="https://www.youtube.com/@TravelingTice"
+				target="_blank"
+				rel="noopener noreferrer"
+				class="hover:text-ink decoration-line ml-1 whitespace-nowrap underline underline-offset-4 transition-colors"
+				>YouTube</a
+			>
+			&middot;
+			<a
+				href="https://travelingtice.com"
+				target="_blank"
+				rel="noopener noreferrer"
+				class="hover:text-ink decoration-line whitespace-nowrap underline underline-offset-4 transition-colors"
+				>Website</a
+			>
+		</p>
+	</section>
+</div>

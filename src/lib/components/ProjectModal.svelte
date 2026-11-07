@@ -29,13 +29,13 @@
 </script>
 
 <Modal {isOpen} {title} {onClose}>
-	<div class="mb-8">
-		<ImageCarousel {images} />
-	</div>
+	{#if images.length}
+		<div class="mb-8">
+			<ImageCarousel {images} />
+		</div>
+	{/if}
 
-	<div class="prose mb-6 max-w-none">
-		<p>{description}</p>
-	</div>
+	<p class="text-muted mb-6 leading-relaxed">{description}</p>
 
 	{#if url}
 		<div class="mt-6 flex justify-center">
@@ -43,9 +43,9 @@
 				href={url}
 				target="_blank"
 				rel="noopener noreferrer"
-				class="inline-flex items-center gap-2 rounded-lg bg-black px-6 py-3 text-white transition-colors hover:bg-gray-800"
+				class="bg-ink text-paper inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium transition-colors hover:bg-white"
 			>
-				Visit Website <ExternalLinkIcon size="18" />
+				Visit website <ExternalLinkIcon size="16" />
 			</a>
 		</div>
 	{/if}

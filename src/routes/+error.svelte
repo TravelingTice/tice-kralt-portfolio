@@ -38,11 +38,11 @@
 		</h1>
 
 		{#if page.error?.message && page.status !== 500}
-			<p class="mb-8 text-gray-600">
+			<p class="text-muted mb-8">
 				{page.error.message}
 			</p>
 		{:else}
-			<p class="mb-8 text-gray-600">
+			<p class="text-muted mb-8">
 				Sorry, we couldn't find what you were looking for. Please try again or
 				return to the homepage.
 			</p>
@@ -51,7 +51,7 @@
 		<div class="flex flex-wrap justify-center gap-4">
 			<a
 				href="/"
-				class="inline-flex items-center gap-2 rounded-lg bg-black px-6 py-3 text-white transition-colors hover:bg-gray-800"
+				class="bg-ink text-paper inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium transition-colors hover:bg-white"
 			>
 				Return Home
 			</a>
@@ -59,14 +59,14 @@
 			{#if page.status >= 500}
 				<button
 					on:click={() => window.location.reload()}
-					class="inline-flex items-center gap-2 rounded-lg border border-gray-300 bg-white px-6 py-3 text-gray-700 transition-colors hover:bg-gray-100"
+					class="border-line text-muted hover:border-faint hover:text-ink inline-flex items-center gap-2 rounded-full border px-5 py-2.5 text-sm transition-colors"
 				>
 					Try again
 				</button>
 			{:else}
 				<button
 					on:click={() => history.back()}
-					class="inline-flex items-center gap-2 rounded-lg border border-gray-300 bg-white px-6 py-3 text-gray-700 transition-colors hover:bg-gray-100"
+					class="border-line text-muted hover:border-faint hover:text-ink inline-flex items-center gap-2 rounded-full border px-5 py-2.5 text-sm transition-colors"
 				>
 					Go Back
 				</button>
