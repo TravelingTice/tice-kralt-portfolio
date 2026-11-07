@@ -42,9 +42,13 @@
 		showAllProjects ? projects : projects.slice(0, 8)
 	)
 
+	const latest = $derived(data.episodes[0])
+	let playingLatest = $state(false)
+
 	let showAllEpisodes = $state(false)
+	const olderEpisodes = $derived(data.episodes.slice(1))
 	const episodes = $derived(
-		showAllEpisodes ? data.episodes : data.episodes.slice(0, 4)
+		showAllEpisodes ? olderEpisodes : olderEpisodes.slice(0, 3)
 	)
 
 	const formatDate = (iso: string) =>
@@ -174,7 +178,61 @@
 			Building online businesses, failing and trying again.
 		</p>
 
-		{#if data.episodes.length}
+		{#if latest}
+			<div class="mb-6">
+				<div
+					class="bg-surface ring-line relative mb-4 aspect-video overflow-hidden rounded-2xl ring-1"
+				>
+					{#if playingLatest}
+						<iframe
+							src="https://www.youtube-nocookie.com/embed/{latest.id}?autoplay=1&rel=0"
+							title={latest.title}
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+							allowfullscreen
+							class="absolute inset-0 h-full w-full"
+						></iframe>
+					{:else}
+						<button
+							onclick={() => (playingLatest = true)}
+							class="group absolute inset-0 h-full w-full"
+							aria-label="Play {latest.title}"
+						>
+							<img
+								src="https://i.ytimg.com/vi/{latest.id}/sddefault.jpg"
+								alt=""
+								class="h-full w-full object-cover opacity-90 transition duration-500 group-hover:scale-[1.02] group-hover:opacity-100"
+							/>
+							<span
+								class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"
+							></span>
+							<span
+								class="text-paper absolute top-1/2 left-1/2 flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 shadow-2xl backdrop-blur transition group-hover:scale-110 group-hover:bg-white"
+							>
+								<svg
+									viewBox="0 0 24 24"
+									class="ml-1 h-7 w-7"
+									fill="currentColor"
+									><path d="M8 5.14v13.72L19 12 8 5.14z" /></svg
+								>
+							</span>
+						</button>
+					{/if}
+				</div>
+				<p class="text-faint mb-1 text-xs tabular-nums">
+					<span class="text-accent">Latest episode</span> &middot;
+					{latest.number ? `#${latest.number} · ` : ''}{formatDate(
+						latest.published
+					)}
+				</p>
+				<a
+					href="https://www.youtube.com/watch?v={latest.id}"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="text-ink hover:text-ink/80 text-xl tracking-tight transition-colors"
+					>{latest.title}</a
+				>
+			</div>
+
 			<ul class="space-y-1">
 				{#each episodes as episode (episode.id)}
 					<li>
@@ -210,7 +268,7 @@
 					</li>
 				{/each}
 			</ul>
-			{#if !showAllEpisodes && data.episodes.length > episodes.length}
+			{#if !showAllEpisodes && olderEpisodes.length > episodes.length}
 				<button
 					onclick={() => (showAllEpisodes = true)}
 					class="text-muted hover:text-ink mt-6 text-sm transition-colors"

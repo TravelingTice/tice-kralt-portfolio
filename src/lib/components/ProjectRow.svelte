@@ -43,13 +43,15 @@
 	</span>
 	<span class="shrink-0 text-right tabular-nums">
 		{#if stripeMrr && mrr}
-			<span class="text-ink/90 block text-sm"
-				>{money(mrr.amount, mrr.currency)}<span class="text-faint">/mo</span
+			<span class="block text-sm text-emerald-300"
+				>{money(mrr.amount, mrr.currency)}<span class="text-emerald-300/60"
+					>/mo</span
 				></span
 			>
 			<span class="text-faint block text-[11px]">MRR</span>
 		{:else if allTimeRevenue}
-			<span class="text-ink/90 block text-sm">{money(allTimeRevenue)}</span>
+			<span class="block text-sm text-emerald-300">{money(allTimeRevenue)}</span
+			>
 			<span class="text-faint block text-[11px]">all-time</span>
 		{:else}
 			<span class="text-faint text-sm">$0</span>
