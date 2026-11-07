@@ -86,7 +86,7 @@
 			</p>
 			<p>
 				I also speak <span class="text-ink">Chinese, Indonesian and Dutch</span>
-				besides English. I went to China 2 times to try to launch an app for Chinese
+				besides English. I went to China two times to try to launch an app for Chinese
 				factory owners. Also becoming a
 				<span class="text-ink">dad in January 2027</span>, which is really
 				exciting!

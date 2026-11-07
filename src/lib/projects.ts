@@ -90,6 +90,7 @@ export const projects: Project[] = [
 	},
 	{
 		title: 'PDQE',
+		allTimeRevenue: 133,
 		excerpt: 'Product database and quote engine for Chinese factory owners.',
 		logo: '/projects/pdqe/pdqe1.webp',
 		images: [

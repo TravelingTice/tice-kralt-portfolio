@@ -26,9 +26,6 @@
 					>
 				</li>
 				<li>
-					<a href="/values" class="hover:text-ink transition-colors">Values</a>
-				</li>
-				<li>
 					<a href="/contact" class="hover:text-ink transition-colors">Contact</a
 					>
 				</li>
