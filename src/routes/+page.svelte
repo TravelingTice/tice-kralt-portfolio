@@ -115,25 +115,6 @@
 		</ul>
 	</section>
 
-	<figure class="group relative mb-14 overflow-hidden rounded-2xl">
-		<img
-			src="/header_image_smaller.webp"
-			srcset="/header_image_smaller.webp 800w, /header_image.webp 1600w"
-			sizes="(min-width: 672px) 672px, 100vw"
-			alt="Tice at the Canton Fair in Guangzhou, China"
-			class="aspect-[5/2] w-full object-cover object-[center_40%] opacity-45 grayscale transition duration-700 [mask-image:linear-gradient(to_bottom,transparent,black_25%,black_75%,transparent)] group-hover:opacity-70 group-hover:grayscale-0 sm:aspect-[4/1]"
-			loading="lazy"
-		/>
-		<div
-			class="from-paper/60 absolute inset-0 bg-gradient-to-t to-transparent"
-		></div>
-		<figcaption
-			class="absolute bottom-3 left-4 text-xs text-[#c4c4c4] drop-shadow"
-		>
-			Canton Fair, Guangzhou
-		</figcaption>
-	</figure>
-
 	<section id="startups" class="mb-20 scroll-mt-20">
 		<div
 			class="border-line mb-2 flex items-baseline justify-between border-b pb-3"
