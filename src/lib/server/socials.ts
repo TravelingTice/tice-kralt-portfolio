@@ -9,6 +9,9 @@ export const FALLBACK_COUNTS = {
 	podcast: 54
 }
 
+// ponytail: LinkedIn blocks scraping, update by hand
+const LINKEDIN_CONNECTIONS = 340
+
 export type Episode = {
 	id: string
 	number: string
@@ -72,7 +75,8 @@ export async function getFollowerCounts() {
 		x: pick(xCount, FALLBACK_COUNTS.x),
 		youtube: pick(youtubeCount, FALLBACK_COUNTS.youtube),
 		instagram: pick(instagramCount, FALLBACK_COUNTS.instagram),
-		podcast: pick(podcastCount, FALLBACK_COUNTS.podcast)
+		podcast: pick(podcastCount, FALLBACK_COUNTS.podcast),
+		linkedin: LINKEDIN_CONNECTIONS
 	}
 }
 

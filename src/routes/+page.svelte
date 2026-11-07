@@ -33,7 +33,7 @@
 			name: 'linkedin' as const,
 			label: 'LinkedIn',
 			href: 'https://www.linkedin.com/in/matthijs-kralt/',
-			count: null
+			count: data.counts.linkedin
 		}
 	])
 
@@ -60,7 +60,7 @@
 	<section class="pt-14 pb-16 md:pt-24">
 		<div class="flex items-end gap-5 md:gap-7">
 			<h1
-				class="font-heading to-ink/80 bg-gradient-to-b from-white bg-clip-text pb-2 text-[clamp(5.5rem,22vw,10rem)] leading-[0.85] tracking-[-0.045em] text-transparent"
+				class="font-heading to-ink/80 -mt-[0.12em] bg-gradient-to-b from-white bg-clip-text pt-[0.12em] pr-[0.06em] pb-2 text-[clamp(5.5rem,22vw,10rem)] leading-[0.85] tracking-[-0.045em] text-transparent"
 			>
 				Tice
 			</h1>
