@@ -22,9 +22,7 @@
 </script>
 
 <footer class="mt-auto">
-	<figure
-		class="group relative mx-auto block w-full max-w-2xl px-5"
-	>
+	<figure class="group relative mx-auto block w-full max-w-2xl px-5">
 		<img
 			src="/header_image_smaller.webp"
 			srcset="/header_image_smaller.webp 800w, /header_image.webp 1600w"
