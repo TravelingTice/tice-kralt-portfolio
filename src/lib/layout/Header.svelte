@@ -1,3 +1,7 @@
+<script lang="ts">
+	import { MicIcon } from 'svelte-feather-icons'
+</script>
+
 <header
 	class="border-line/60 bg-paper/75 sticky top-0 z-30 border-b backdrop-blur-md"
 >
@@ -15,8 +19,10 @@
 					>
 				</li>
 				<li>
-					<a href="/#podcast" class="hover:text-ink transition-colors"
-						>Podcast</a
+					<a
+						href="/#podcast"
+						class="hover:text-ink flex items-center gap-1.5 transition-colors"
+						><MicIcon size="14" />Podcast</a
 					>
 				</li>
 				<li>
