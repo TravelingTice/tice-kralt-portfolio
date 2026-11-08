@@ -11,7 +11,6 @@
 />
 
 <div class="mx-auto w-full max-w-2xl px-5 py-16">
-	<p class="eyebrow mb-2">Contact</p>
 	<h1 class="mb-8 text-3xl font-bold md:text-4xl">Let's talk</h1>
 
 	<p class="text-muted mb-8">
