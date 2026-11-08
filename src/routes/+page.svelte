@@ -218,10 +218,6 @@
 				</a>
 			</div>
 		</div>
-		<p class="text-muted mb-6">
-			Building online businesses, failing and trying again.
-		</p>
-
 		{#if latest}
 			<div class="mb-6">
 				<div
