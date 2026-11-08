@@ -8,7 +8,7 @@
 
 <Header />
 
-<main class="relative isolate flex flex-grow flex-col">
+<main class="relative flex flex-grow flex-col">
 	{@render children()}
 </main>
 
