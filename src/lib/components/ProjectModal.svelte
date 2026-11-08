@@ -45,7 +45,8 @@
 				rel="noopener noreferrer"
 				class="bg-ink text-paper inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium transition-colors hover:bg-white"
 			>
-				Visit website <ExternalLinkIcon size="16" />
+				{url.includes('github.com') ? 'View on GitHub' : 'Visit website'}
+				<ExternalLinkIcon size="16" />
 			</a>
 		</div>
 	{/if}

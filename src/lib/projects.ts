@@ -18,9 +18,10 @@ export const projects: Project[] = [
 		date: '2026-10',
 		excerpt: 'Ultrafast browser powered by Jev.',
 		logo: '/projects/browsefast/logo.png',
-		images: [],
+		images: ['/projects/browsefast/browsefast1.webp'],
 		description:
-			'An ultrafast browser powered by Jev. Built to get you where you want to go on the web without the waiting.'
+			"A browser that was supposed to be really fast with Jev. I gave up on developing it because it wasn't actually that fast or worked well.",
+		url: 'https://github.com/TravelingTice/browsefast'
 	},
 	{
 		title: 'GmailClass',
