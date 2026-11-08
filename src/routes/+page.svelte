@@ -1,7 +1,7 @@
 <script lang="ts">
 	import BrandIcon from '$lib/components/BrandIcon.svelte'
 	import ProjectRow from '$lib/components/ProjectRow.svelte'
-	import { projects } from '$lib/projects'
+	import { projects, type Project } from '$lib/projects'
 
 	const { data } = $props()
 
@@ -37,9 +37,34 @@
 		}
 	])
 
+	type SortKey = 'revenue' | 'date'
+	let sortKey = $state<SortKey>('revenue')
+	let sortDesc = $state(true)
+
+	// ponytail: MRR annualised so it ranks against all-time totals
+	const revenueOf = (p: Project) =>
+		p.stripeMrr && data.mrr ? data.mrr.amount * 12 : (p.allTimeRevenue ?? 0)
+
+	const sortedProjects = $derived(
+		[...projects].sort((a, b) => {
+			const byDate = a.date.localeCompare(b.date)
+			const primary =
+				sortKey === 'revenue' ? revenueOf(a) - revenueOf(b) || byDate : byDate
+			return sortDesc ? -primary : primary
+		})
+	)
+
+	function sortBy(key: SortKey) {
+		if (sortKey === key) sortDesc = !sortDesc
+		else {
+			sortKey = key
+			sortDesc = true
+		}
+	}
+
 	let showAllProjects = $state(false)
 	const visibleProjects = $derived(
-		showAllProjects ? projects : projects.slice(0, 8)
+		showAllProjects ? sortedProjects : sortedProjects.slice(0, 8)
 	)
 
 	const latest = $derived(data.episodes[0])
@@ -123,8 +148,27 @@
 		<div
 			class="border-line mb-2 flex items-baseline justify-between border-b pb-3"
 		>
-			<h2 class="eyebrow">My startups</h2>
-			<span class="text-faint text-xs tabular-nums">{projects.length}</span>
+			<h2 class="eyebrow">
+				My startups<span class="text-faint ml-2 tabular-nums"
+					>{projects.length}</span
+				>
+			</h2>
+			<div class="flex gap-1 text-xs" role="group" aria-label="Sort startups">
+				{#each ['revenue', 'date'] as const as key (key)}
+					<button
+						onclick={() => sortBy(key)}
+						aria-pressed={sortKey === key}
+						class="rounded-full px-2.5 py-1 capitalize transition-colors {sortKey ===
+						key
+							? 'bg-surface text-ink ring-line ring-1'
+							: 'text-faint hover:text-ink'}"
+					>
+						{key}{#if sortKey === key}<span class="ml-1" aria-hidden="true"
+								>{sortDesc ? '↓' : '↑'}</span
+							>{/if}
+					</button>
+				{/each}
+			</div>
 		</div>
 		<ul>
 			{#each visibleProjects as project (project.title)}

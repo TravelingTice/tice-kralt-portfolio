@@ -5,6 +5,9 @@ export type Project = {
 	images: string[]
 	description: string
 	url?: string
+	// YYYY-MM, used for sorting
+	date: string
+	dateLabel?: string
 	allTimeRevenue?: number
 	stripeMrr?: boolean
 }
@@ -12,6 +15,7 @@ export type Project = {
 export const projects: Project[] = [
 	{
 		title: 'Browsefast',
+		date: '2026-10',
 		excerpt: 'Ultrafast browser powered by Jev.',
 		logo: '/projects/browsefast/logo.png',
 		images: [],
@@ -20,6 +24,7 @@ export const projects: Project[] = [
 	},
 	{
 		title: 'GmailClass',
+		date: '2026-10',
 		excerpt: 'Gmail email classifier powered by Jev.',
 		logo: '/projects/gmailclass/logo.png',
 		images: ['/projects/gmailclass/gmailclass1.webp'],
@@ -29,6 +34,7 @@ export const projects: Project[] = [
 	},
 	{
 		title: 'PSLRating',
+		date: '2026-09',
 		excerpt: 'Get your PSL rating instantly.',
 		logo: '/projects/pslrating/logo.png',
 		images: ['/projects/pslrating/pslrating1.webp'],
@@ -38,6 +44,7 @@ export const projects: Project[] = [
 	},
 	{
 		title: 'Reach Out Right',
+		date: '2026-07',
 		excerpt: 'Reach out to the people who need you.',
 		logo: '/projects/reachoutright/logo.png',
 		images: ['/projects/reachoutright/reachoutright1.webp'],
@@ -47,6 +54,7 @@ export const projects: Project[] = [
 	},
 	{
 		title: 'Mascotly AI',
+		date: '2026-06',
 		excerpt: 'Host a personable AI mascot on your website.',
 		logo: '/projects/mascotlyai/logo.png',
 		images: ['/projects/mascotlyai/mascotlyai1.webp'],
@@ -56,6 +64,7 @@ export const projects: Project[] = [
 	},
 	{
 		title: 'Slop Goggles',
+		date: '2026-04',
 		excerpt: 'Detect AI-generated comments and posts on Reddit.',
 		logo: '/projects/slopgoggles/logo.png',
 		images: ['/projects/slopgoggles/slopgoggles1.webp'],
@@ -65,6 +74,7 @@ export const projects: Project[] = [
 	},
 	{
 		title: 'LiveInterp',
+		date: '2026-05',
 		excerpt: 'Effortless AI live interpretation for events and meetings.',
 		logo: '/projects/liveinterp/logo.png',
 		images: ['/projects/liveinterp/liveinterp1.webp'],
@@ -74,6 +84,7 @@ export const projects: Project[] = [
 	},
 	{
 		title: 'Map My Travels',
+		date: '2022-02',
 		stripeMrr: true,
 		excerpt: 'An interactive map builder to create awesome travel maps with!',
 		logo: '/projects/mapmytravels/mapmytravels1.webp',
@@ -90,6 +101,8 @@ export const projects: Project[] = [
 	},
 	{
 		title: 'PDQE',
+		date: '2024-01',
+		dateLabel: '2024 – 2025',
 		allTimeRevenue: 133,
 		excerpt: 'Product database and quote engine for Chinese factory owners.',
 		logo: '/projects/pdqe/pdqe1.webp',
@@ -109,6 +122,7 @@ export const projects: Project[] = [
 	},
 	{
 		title: 'Amsterdam Surfers',
+		date: '2025-03',
 		excerpt:
 			'Race through the streets of Amsterdam in a Dutch "sloep" on king\'s day.',
 		logo: '/projects/amsterdamsurfers/amsterdamsurfers1.webp',
@@ -119,6 +133,7 @@ export const projects: Project[] = [
 	},
 	{
 		title: 'Graduation Photoshoot Now',
+		date: '2024-03',
 		allTimeRevenue: 14.99,
 		excerpt: 'No need to leave your dorm for your graduation photoshoot!',
 		logo: '/projects/graduationphotoshootnow/logo.png',
@@ -132,6 +147,7 @@ export const projects: Project[] = [
 	},
 	{
 		title: 'Do It Or Else',
+		date: '2024-02',
 		excerpt: 'Link massive pain to not following through on your goals.',
 		logo: '/projects/doitorelse/logo.png',
 		images: [
@@ -148,6 +164,7 @@ export const projects: Project[] = [
 	},
 	{
 		title: 'Personal Wallet App',
+		date: '2020-03',
 		excerpt: 'Get your financial act together.',
 		logo: '/projects/personalwalletapp/logo.png',
 		images: [
@@ -169,6 +186,7 @@ export const projects: Project[] = [
 	},
 	{
 		title: 'Time Tracker App',
+		date: '2021-01',
 		excerpt: 'Track time easily for your projects!',
 		logo: '/projects/timetrackerapp/timetrackerapp1.webp',
 		images: ['/projects/timetrackerapp/timetrackerapp1.webp'],

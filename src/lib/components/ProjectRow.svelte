@@ -10,6 +10,8 @@
 		images,
 		description,
 		url,
+		date,
+		dateLabel,
 		allTimeRevenue = 0,
 		stripeMrr,
 		mrr = null
@@ -38,7 +40,18 @@
 		class="bg-surface ring-line h-11 w-11 shrink-0 rounded-[11px] object-cover ring-1"
 	/>
 	<span class="min-w-0 flex-1">
-		<span class="text-ink block font-medium">{title}</span>
+		<span class="text-ink block font-medium"
+			>{title}<span class="text-faint ml-2 text-xs font-normal tabular-nums"
+				>{dateLabel ??
+					new Date(+date.slice(0, 4), +date.slice(5, 7) - 1).toLocaleDateString(
+						'en',
+						{
+							month: 'short',
+							year: 'numeric'
+						}
+					)}</span
+			></span
+		>
 		<span class="text-muted block truncate text-sm">{excerpt}</span>
 	</span>
 	<span class="shrink-0 text-right tabular-nums">
