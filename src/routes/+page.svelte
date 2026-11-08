@@ -259,7 +259,7 @@
 					{/if}
 				</div>
 				<p class="text-faint mb-1 text-xs tabular-nums">
-					<span class="text-accent">Latest episode</span> &middot;
+					Latest episode &middot;
 					{latest.number ? `#${latest.number} · ` : ''}{formatDate(
 						latest.published
 					)}
