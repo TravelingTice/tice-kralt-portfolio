@@ -114,6 +114,7 @@
 </script>
 
 <SEO
+	noindex
 	title="My Values"
 	description="Personal values that guide Tice Kralt's life and decision making"
 />

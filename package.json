@@ -39,8 +39,11 @@
 		"vite": "^6.0.0"
 	},
 	"dependencies": {
+		"@resvg/resvg-js": "^2.6.2",
 		"@types/three": "^0.174.0",
 		"postmark": "^4.0.5",
+		"satori": "^0.63.2",
+		"satori-html": "^0.3.2",
 		"three": "^0.174.0"
 	}
 }

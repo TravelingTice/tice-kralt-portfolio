@@ -87,7 +87,7 @@ export const projects: Project[] = [
 		date: '2022-02',
 		stripeMrr: true,
 		excerpt: 'An interactive map builder to create awesome travel maps with!',
-		logo: '/projects/mapmytravels/mapmytravels1.webp',
+		logo: '/projects/mapmytravels/logo.png',
 		images: [
 			'/projects/mapmytravels/mapmytravels1.webp',
 			'/projects/mapmytravels/mapmytours2.webp',
@@ -105,7 +105,7 @@ export const projects: Project[] = [
 		dateLabel: '2024 – 2025',
 		allTimeRevenue: 133,
 		excerpt: 'Product database and quote engine for Chinese factory owners.',
-		logo: '/projects/pdqe/pdqe1.webp',
+		logo: '/projects/pdqe/logo.png',
 		images: [
 			'/projects/pdqe/pdqe1.webp',
 			'/projects/pdqe/pdqe2.webp',
@@ -125,7 +125,7 @@ export const projects: Project[] = [
 		date: '2025-03',
 		excerpt:
 			'Race through the streets of Amsterdam in a Dutch "sloep" on king\'s day.',
-		logo: '/projects/amsterdamsurfers/amsterdamsurfers1.webp',
+		logo: '/projects/amsterdamsurfers/logo.png',
 		images: ['/projects/amsterdamsurfers/amsterdamsurfers1.webp'],
 		description:
 			'Race through the streets of Amsterdam in a Dutch "sloep" on king\'s day. Avoid party boats, bicycles and drunk students/tourists, who you typically find in the Amsterdam canals during king\'s day! In March 2025 "vibe coding" became a huge trend and on Twitter people started to vibe code games (instead of useful stuff lol). When Pieter Levels organised a "vibe jam" I decided to join in and vibe code my own little game. It was a lot of fun and taught me a lot about prompt engineering and working with AI powered editors such as Cursor.',
@@ -188,10 +188,32 @@ export const projects: Project[] = [
 		title: 'Time Tracker App',
 		date: '2021-01',
 		excerpt: 'Track time easily for your projects!',
-		logo: '/projects/timetrackerapp/timetrackerapp1.webp',
+		logo: '/projects/timetrackerapp/logo.png',
 		images: ['/projects/timetrackerapp/timetrackerapp1.webp'],
 		description:
 			'Track time easily for your projects! Use this beautifully designed time tracker to enjoy time tracking like never before. This was definitely a learning experience. I spent a lot of time back in 2020-2021 making this app. I made it really fancy and visually appealing. Adding things like a fancy onboarding tour and cool promotional video. Spent hours and days on it. Just to find out after doing some market research that I was definitely not the only one creating a time tracker app. Ah well. Lesson learnt and learnt a lot about React hooks and GraphQL in the process!',
 		url: 'https://time-tracker-app-tice.netlify.app/'
 	}
 ]
+
+export type SortKey = 'revenue' | 'date'
+
+// ponytail: MRR annualised so it ranks against all-time totals
+export const revenueOf = (p: Project, mrr: number | null) =>
+	p.stripeMrr && mrr ? mrr * 12 : (p.allTimeRevenue ?? 0)
+
+export function sortProjects(
+	list: Project[],
+	mrr: number | null,
+	key: SortKey = 'revenue',
+	desc = true
+) {
+	return [...list].sort((a, b) => {
+		const byDate = a.date.localeCompare(b.date)
+		const primary =
+			key === 'revenue'
+				? revenueOf(a, mrr) - revenueOf(b, mrr) || byDate
+				: byDate
+		return desc ? -primary : primary
+	})
+}

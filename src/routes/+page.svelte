@@ -1,7 +1,8 @@
 <script lang="ts">
 	import BrandIcon from '$lib/components/BrandIcon.svelte'
 	import ProjectRow from '$lib/components/ProjectRow.svelte'
-	import { projects, type Project } from '$lib/projects'
+	import SEO from '$lib/components/SEO.svelte'
+	import { projects, sortProjects, type SortKey } from '$lib/projects'
 
 	const { data } = $props()
 
@@ -37,21 +38,11 @@
 		}
 	])
 
-	type SortKey = 'revenue' | 'date'
 	let sortKey = $state<SortKey>('revenue')
 	let sortDesc = $state(true)
 
-	// ponytail: MRR annualised so it ranks against all-time totals
-	const revenueOf = (p: Project) =>
-		p.stripeMrr && data.mrr ? data.mrr.amount * 12 : (p.allTimeRevenue ?? 0)
-
 	const sortedProjects = $derived(
-		[...projects].sort((a, b) => {
-			const byDate = a.date.localeCompare(b.date)
-			const primary =
-				sortKey === 'revenue' ? revenueOf(a) - revenueOf(b) || byDate : byDate
-			return sortDesc ? -primary : primary
-		})
+		sortProjects(projects, data.mrr?.amount ?? null, sortKey, sortDesc)
 	)
 
 	function sortBy(key: SortKey) {
@@ -79,6 +70,8 @@
 	const formatDate = (iso: string) =>
 		new Date(iso).toLocaleDateString('en', { month: 'short', year: 'numeric' })
 </script>
+
+<SEO />
 
 <div
 	class="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[640px] bg-[radial-gradient(700px_circle_at_30%_0%,rgba(108,180,238,0.09),transparent_70%)]"
