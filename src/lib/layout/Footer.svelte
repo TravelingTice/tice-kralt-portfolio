@@ -44,7 +44,14 @@
 		<div
 			class="text-faint mx-auto flex w-full max-w-2xl items-center justify-between px-5 py-8 text-sm"
 		>
-			<p>&copy; {new Date().getFullYear()} Tice Kralt</p>
+			<p>
+				&copy; {new Date().getFullYear()} Tice Kralt &middot;
+				<a
+					href="/sitemap.xml"
+					data-sveltekit-reload
+					class="hover:text-ink transition-colors">Sitemap</a
+				>
+			</p>
 			<div class="flex gap-4">
 				{#each links as link (link.name)}
 					<a
