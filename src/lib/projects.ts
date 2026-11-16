@@ -14,6 +14,16 @@ export type Project = {
 
 export const projects: Project[] = [
 	{
+		title: 'FirstPass',
+		date: '2026-11',
+		excerpt: 'Pre-check your app before App Review.',
+		logo: '/projects/firstpass/logo.png',
+		images: ['/projects/firstpass/firstpass1.webp'],
+		description:
+			'Stop losing weeks to App Review. Every rejection costs you days of waiting. FirstPass pre-checks your build and listing against the guidelines apps get rejected for most and shows you what to fix instantly, before you submit.',
+		url: 'https://firstpass.ticekralt.com'
+	},
+	{
 		title: 'Browsefast',
 		date: '2026-10',
 		excerpt: 'Ultrafast browser powered by Jev.',
