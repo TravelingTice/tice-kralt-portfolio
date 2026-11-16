@@ -3,6 +3,7 @@
 
 	const CELL = 170
 	const SWAY = 6
+	const PARALLAX = 0.3
 
 	type Point = {
 		x: number
@@ -32,8 +33,11 @@
 			let seed = 2026
 			const rand = () => (seed = (seed * 16807) % 2147483647) / 2147483647
 
+			const scrollable = document.documentElement.scrollHeight - innerHeight
+			const height = innerHeight + (still ? 0 : scrollable * PARALLAX)
+
 			points = []
-			for (let row = -1; row <= innerHeight / CELL + 1; row++) {
+			for (let row = -1; row <= height / CELL + 1; row++) {
 				for (let col = -1; col <= innerWidth / CELL + 1; col++) {
 					const point = {
 						x: (col + rand() * 0.84) * CELL,
@@ -65,9 +69,13 @@
 
 		const draw = (time: number) => {
 			ctx.clearRect(0, 0, innerWidth, innerHeight)
+			const shift = still ? 0 : scrollY * PARALLAX
 			const positions = points.map((point) => ({
 				x: point.x + Math.cos(time * point.speed + point.phase) * SWAY,
-				y: point.y + Math.sin(time * point.speed * 1.3 + point.phase) * SWAY
+				y:
+					point.y -
+					shift +
+					Math.sin(time * point.speed * 1.3 + point.phase) * SWAY
 			}))
 
 			ctx.lineWidth = 1
@@ -102,8 +110,11 @@
 		build()
 		draw(0)
 		addEventListener('resize', onResize)
+		const pageHeight = new ResizeObserver(onResize)
+		pageHeight.observe(document.body)
 
 		return () => {
+			pageHeight.disconnect()
 			cancelAnimationFrame(frame)
 			removeEventListener('resize', onResize)
 		}
